@@ -1,4 +1,5 @@
 import { Client } from "discord.js";
+import { IntentOptions } from "./config/IntentOptions";
 import { onMessage } from "./events/onMessage";
 import { onReady } from "./events/onReady";
 import { logHandler } from "./helpers/logHandler";
@@ -10,7 +11,7 @@ if (!token) {
   process.exit(1);
 }
 
-const Rosalia = new Client();
+const Rosalia = new Client({ intents: IntentOptions });
 
 Rosalia.on("ready", onReady);
 
