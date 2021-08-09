@@ -15,6 +15,6 @@ const Rosalia = new Client({ intents: IntentOptions });
 
 Rosalia.on("ready", onReady);
 
-Rosalia.on("message", async (message) => await onMessage(message));
+Rosalia.on("messageCreate", async (message) => await onMessage(message));
 
 Rosalia.login(token);
