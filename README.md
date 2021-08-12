@@ -2,12 +2,6 @@
 
 A quick bot for running specific commands in my server.
 
-![](https://img.shields.io/codeclimate/maintainability/nhcarrigan/rosalia-nightsong)
-![](https://img.shields.io/codeclimate/issues/nhcarrigan/rosalia-nightsong)
-![](https://img.shields.io/codeclimate/tech-debt/nhcarrigan/rosalia-nightsong)
-![](https://img.shields.io/lgtm/alerts/github/nhcarrigan/rosalia-nightsong)
-![](https://img.shields.io/lgtm/grade/javascript/github/nhcarrigan/rosalia-nightsong)
-
 ## Live Version
 
 View the bot and play in our [discord server](http://chat.nhcarrigan.com).
