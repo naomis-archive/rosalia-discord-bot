@@ -1,4 +1,5 @@
 import { Client } from "discord.js";
+
 import { IntentOptions } from "./config/IntentOptions";
 import { onMessage } from "./events/onMessage";
 import { onReady } from "./events/onReady";
