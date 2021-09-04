@@ -14,7 +14,8 @@ export const slime: CommandInt = {
 
       await member?.setNickname(`${randomNoun}slime`);
       await channel.send("You've been slimed!");
-    } catch (error) {
+    } catch (err) {
+      const error = err as Error;
       logHandler.log("error", {
         errorMessage: error.message,
         errorStack: error.stack,
