@@ -1,3 +1,4 @@
+/* eslint-disable jsdoc/require-jsdoc */
 import { slimeList } from "../data/slimeList";
 import { logHandler } from "../helpers/logHandler";
 import { CommandInt } from "../interfaces/CommandInt";
