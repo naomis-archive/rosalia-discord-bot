@@ -5,7 +5,10 @@ import {
 } from "@discordjs/builders";
 
 import { Command } from "../interfaces/Command";
+import { handleAbout } from "../modules/subcommands/rosalia/handleAbout";
+import { handleDonate } from "../modules/subcommands/rosalia/handleDonate";
 import { handlePing } from "../modules/subcommands/rosalia/handlePing";
+import { handleProfile } from "../modules/subcommands/rosalia/handleProfile";
 import { errorEmbedGenerator } from "../utils/errorEmbedGenerator";
 import { rosaErrorHandler } from "../utils/rosaErrorHandler";
 
@@ -17,6 +20,21 @@ export const rosalia: Command = {
       new SlashCommandSubcommandBuilder()
         .setName("ping")
         .setDescription("Returns Rosalia's response time.")
+    )
+    .addSubcommand(
+      new SlashCommandSubcommandBuilder()
+        .setName("about")
+        .setDescription("Returns information about the bot.")
+    )
+    .addSubcommand(
+      new SlashCommandSubcommandBuilder()
+        .setName("profile")
+        .setDescription("Provides a link to Rosalia's profile")
+    )
+    .addSubcommand(
+      new SlashCommandSubcommandBuilder()
+        .setName("donate")
+        .setDescription("Provides a link to donate to the bot's development")
     ),
   run: async (Rosa, interaction) => {
     try {
@@ -27,6 +45,15 @@ export const rosalia: Command = {
       switch (subcommand) {
         case "ping":
           await handlePing(Rosa, interaction);
+          break;
+        case "about":
+          await handleAbout(Rosa, interaction);
+          break;
+        case "profile":
+          await handleProfile(Rosa, interaction);
+          break;
+        case "donate":
+          await handleDonate(Rosa, interaction);
           break;
         default:
           await interaction.editReply({ content: "Invalid command!" });
