@@ -29,6 +29,11 @@ export const validateEnv = (Rosa: RosaliaNightsong): boolean => {
     return false;
   }
 
+  if (!process.env.MONGO_URI) {
+    rosaLogHandler.log("debug", "Missing MongoDB URI!");
+    return false;
+  }
+
   if (process.env.NODE_ENV !== "production") {
     rosaLogHandler.log("debug", "Running in development mode!");
   }
@@ -36,6 +41,7 @@ export const validateEnv = (Rosa: RosaliaNightsong): boolean => {
     homeId: process.env.HOME_GUILD,
     token: process.env.DISCORD_TOKEN,
     userId: process.env.APP_ID,
+    mongo: process.env.MONGO_URI,
   };
   return true;
 };

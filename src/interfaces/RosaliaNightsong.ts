@@ -9,5 +9,6 @@ export interface RosaliaNightsong extends Client {
     token: string;
     homeId: string;
     userId: string;
+    mongo: string;
   };
 }
