@@ -1,8 +1,8 @@
-import { logHandler } from "../helpers/logHandler";
+import { rosaLogHandler } from "../utils/rosaLogHandler";
 
 /**
  * Handles the ready event from Discord.
  */
 export const onReady = (): void => {
-  logHandler.log("debug", "Rosalia is online!");
+  rosaLogHandler.log("debug", "Rosalia is online!");
 };
