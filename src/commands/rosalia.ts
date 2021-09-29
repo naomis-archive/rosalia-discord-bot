@@ -5,6 +5,7 @@ import {
 } from "@discordjs/builders";
 
 import { Command } from "../interfaces/Command";
+import { handleAbout } from "../modules/subcommands/rosalia/handleAbout";
 import { handlePing } from "../modules/subcommands/rosalia/handlePing";
 import { errorEmbedGenerator } from "../utils/errorEmbedGenerator";
 import { rosaErrorHandler } from "../utils/rosaErrorHandler";
@@ -17,6 +18,11 @@ export const rosalia: Command = {
       new SlashCommandSubcommandBuilder()
         .setName("ping")
         .setDescription("Returns Rosalia's response time.")
+    )
+    .addSubcommand(
+      new SlashCommandSubcommandBuilder()
+        .setName("about")
+        .setDescription("Returns information about the bot.")
     ),
   run: async (Rosa, interaction) => {
     try {
@@ -27,6 +33,9 @@ export const rosalia: Command = {
       switch (subcommand) {
         case "ping":
           await handlePing(Rosa, interaction);
+          break;
+        case "about":
+          await handleAbout(Rosa, interaction);
           break;
         default:
           await interaction.editReply({ content: "Invalid command!" });
