@@ -19,11 +19,11 @@ Sentry.init({
 });
 
 (async () => {
-  validateEnv();
-
   const Rosa: RosaliaNightsong = new Client({
     intents: IntentOptions,
   }) as RosaliaNightsong;
+
+  validateEnv(Rosa);
 
   Rosa.webhook = new WebhookClient({ url: process.env.WH_URL || "oh no" });
 
@@ -35,4 +35,9 @@ Sentry.init({
   );
 
   await Rosa.login(process.env.DISCORD_TOKEN);
+
+  Rosa.user?.setActivity({
+    name: "an RPG on Discord!",
+    type: "PLAYING",
+  });
 })();
