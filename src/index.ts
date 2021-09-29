@@ -1,11 +1,12 @@
 import { RewriteFrames } from "@sentry/integrations";
 import * as Sentry from "@sentry/node";
-import { Client } from "discord.js";
+import { Client, WebhookClient } from "discord.js";
 
 import { IntentOptions } from "./config/IntentOptions";
 import { onInteraction } from "./events/onInteraction";
 import { onReady } from "./events/onReady";
-import { rosaLogHandler } from "./utils/rosaLogHandler";
+import { RosaliaNightsong } from "./interfaces/RosaliaNightsong";
+import { validateEnv } from "./utils/validateEnv";
 
 Sentry.init({
   dsn: process.env.SENTRY_DSN,
@@ -17,20 +18,21 @@ Sentry.init({
   ],
 });
 
-const token = process.env.DISCORD_TOKEN;
+(async () => {
+  validateEnv();
 
-if (!token) {
-  rosaLogHandler.log("error", "Missing discord token...");
-  process.exit(1);
-}
+  const Rosa: RosaliaNightsong = new Client({
+    intents: IntentOptions,
+  }) as RosaliaNightsong;
 
-const Rosalia = new Client({ intents: IntentOptions });
+  Rosa.webhook = new WebhookClient({ url: process.env.WH_URL || "oh no" });
 
-Rosalia.on("ready", onReady);
+  Rosa.on("ready", async () => await onReady(Rosa));
 
-Rosalia.on(
-  "interactionCreate",
-  async (interaction) => await onInteraction(interaction)
-);
+  Rosa.on(
+    "interactionCreate",
+    async (interaction) => await onInteraction(interaction)
+  );
 
-Rosalia.login(token);
+  await Rosa.login(process.env.DISCORD_TOKEN);
+})();
