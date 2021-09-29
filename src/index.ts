@@ -31,7 +31,7 @@ Sentry.init({
 
   Rosa.on(
     "interactionCreate",
-    async (interaction) => await onInteraction(interaction)
+    async (interaction) => await onInteraction(Rosa, interaction)
   );
 
   await Rosa.login(process.env.DISCORD_TOKEN);
