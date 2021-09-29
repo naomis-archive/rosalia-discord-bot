@@ -1,7 +1,7 @@
 import { Client } from "discord.js";
 
 import { IntentOptions } from "./config/IntentOptions";
-import { onMessage } from "./events/onMessage";
+import { onInteraction } from "./events/onInteraction";
 import { onReady } from "./events/onReady";
 import { logHandler } from "./helpers/logHandler";
 
@@ -16,6 +16,9 @@ const Rosalia = new Client({ intents: IntentOptions });
 
 Rosalia.on("ready", onReady);
 
-Rosalia.on("messageCreate", async (message) => await onMessage(message));
+Rosalia.on(
+  "interactionCreate",
+  async (interaction) => await onInteraction(interaction)
+);
 
 Rosalia.login(token);
