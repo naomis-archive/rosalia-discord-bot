@@ -7,6 +7,7 @@ import {
 import { Command } from "../interfaces/Command";
 import { handleAbout } from "../modules/subcommands/rosalia/handleAbout";
 import { handlePing } from "../modules/subcommands/rosalia/handlePing";
+import { handleProfile } from "../modules/subcommands/rosalia/handleProfile";
 import { errorEmbedGenerator } from "../utils/errorEmbedGenerator";
 import { rosaErrorHandler } from "../utils/rosaErrorHandler";
 
@@ -23,6 +24,11 @@ export const rosalia: Command = {
       new SlashCommandSubcommandBuilder()
         .setName("about")
         .setDescription("Returns information about the bot.")
+    )
+    .addSubcommand(
+      new SlashCommandSubcommandBuilder()
+        .setName("profile")
+        .setDescription("Provides a link to Rosalia's profile")
     ),
   run: async (Rosa, interaction) => {
     try {
@@ -36,6 +42,9 @@ export const rosalia: Command = {
           break;
         case "about":
           await handleAbout(Rosa, interaction);
+          break;
+        case "profile":
+          await handleProfile(Rosa, interaction);
           break;
         default:
           await interaction.editReply({ content: "Invalid command!" });
