@@ -1,7 +1,3 @@
 import { IntentsString } from "discord.js";
 
-export const IntentOptions: IntentsString[] = [
-  "GUILDS",
-  "GUILD_MESSAGES",
-  "DIRECT_MESSAGES",
-];
+export const IntentOptions: IntentsString[] = ["GUILDS"];
