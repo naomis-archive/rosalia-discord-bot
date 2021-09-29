@@ -6,6 +6,9 @@ import { IntentOptions } from "./config/IntentOptions";
 import { onInteraction } from "./events/onInteraction";
 import { onReady } from "./events/onReady";
 import { RosaliaNightsong } from "./interfaces/RosaliaNightsong";
+import { loadCommands } from "./utils/loadCommands";
+import { registerCommands } from "./utils/registerCommands";
+import { rosaLogHandler } from "./utils/rosaLogHandler";
 import { validateEnv } from "./utils/validateEnv";
 
 Sentry.init({
@@ -19,13 +22,20 @@ Sentry.init({
 });
 
 (async () => {
+  rosaLogHandler.log("debug", "Starting process...");
   const Rosa: RosaliaNightsong = new Client({
     intents: IntentOptions,
   }) as RosaliaNightsong;
 
+  rosaLogHandler.log("debug", "Loading environment...");
   validateEnv(Rosa);
 
   Rosa.webhook = new WebhookClient({ url: process.env.WH_URL || "oh no" });
+
+  rosaLogHandler.log("debug", "Loading commands...");
+  // eslint-disable-next-line require-atomic-updates
+  Rosa.commands = await loadCommands(Rosa);
+  await registerCommands(Rosa);
 
   Rosa.on("ready", async () => await onReady(Rosa));
 

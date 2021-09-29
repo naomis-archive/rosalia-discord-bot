@@ -24,12 +24,18 @@ export const validateEnv = (Rosa: RosaliaNightsong): boolean => {
     return false;
   }
 
+  if (!process.env.APP_ID) {
+    rosaLogHandler.log("debug", "Missing Discord application ID!");
+    return false;
+  }
+
   if (process.env.NODE_ENV !== "production") {
     rosaLogHandler.log("debug", "Running in development mode!");
   }
-
-  Rosa.configs.homeId = process.env.HOME_GUILD;
-  Rosa.configs.token = process.env.DISCORD_TOKEN;
-  Rosa.configs.userId = Rosa.user?.id as string;
+  Rosa.configs = {
+    homeId: process.env.HOME_GUILD,
+    token: process.env.DISCORD_TOKEN,
+    userId: process.env.APP_ID,
+  };
   return true;
 };

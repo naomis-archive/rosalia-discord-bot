@@ -21,9 +21,7 @@ export const registerCommands = async (
   Rosa: RosaliaNightsong
 ): Promise<boolean> => {
   try {
-    const rest = new REST({ version: "9" }).setToken(
-      process.env.TOKEN as string
-    );
+    const rest = new REST({ version: "9" }).setToken(Rosa.configs.token);
 
     const commandData: {
       name: string;
