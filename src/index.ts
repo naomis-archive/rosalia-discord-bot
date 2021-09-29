@@ -3,6 +3,7 @@ import * as Sentry from "@sentry/node";
 import { Client, WebhookClient } from "discord.js";
 
 import { IntentOptions } from "./config/IntentOptions";
+import { connectDatabase } from "./database/connectDatabase";
 import { onInteraction } from "./events/onInteraction";
 import { onReady } from "./events/onReady";
 import { RosaliaNightsong } from "./interfaces/RosaliaNightsong";
@@ -31,6 +32,8 @@ Sentry.init({
   validateEnv(Rosa);
 
   Rosa.webhook = new WebhookClient({ url: process.env.WH_URL || "oh no" });
+
+  await connectDatabase(Rosa);
 
   rosaLogHandler.log("debug", "Loading commands...");
   // eslint-disable-next-line require-atomic-updates
