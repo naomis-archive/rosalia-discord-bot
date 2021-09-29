@@ -1,21 +1,53 @@
-import { Client } from "discord.js";
+import { RewriteFrames } from "@sentry/integrations";
+import * as Sentry from "@sentry/node";
+import { Client, WebhookClient } from "discord.js";
 
 import { IntentOptions } from "./config/IntentOptions";
-import { onMessage } from "./events/onMessage";
+import { onInteraction } from "./events/onInteraction";
 import { onReady } from "./events/onReady";
-import { logHandler } from "./helpers/logHandler";
+import { RosaliaNightsong } from "./interfaces/RosaliaNightsong";
+import { loadCommands } from "./utils/loadCommands";
+import { registerCommands } from "./utils/registerCommands";
+import { rosaLogHandler } from "./utils/rosaLogHandler";
+import { validateEnv } from "./utils/validateEnv";
 
-const token = process.env.DISCORD_TOKEN;
+Sentry.init({
+  dsn: process.env.SENTRY_DSN,
+  tracesSampleRate: 1.0,
+  integrations: [
+    new RewriteFrames({
+      root: global.__dirname,
+    }),
+  ],
+});
 
-if (!token) {
-  logHandler.log("error", "Missing discord token...");
-  process.exit(1);
-}
+(async () => {
+  rosaLogHandler.log("debug", "Starting process...");
+  const Rosa: RosaliaNightsong = new Client({
+    intents: IntentOptions,
+  }) as RosaliaNightsong;
 
-const Rosalia = new Client({ intents: IntentOptions });
+  rosaLogHandler.log("debug", "Loading environment...");
+  validateEnv(Rosa);
 
-Rosalia.on("ready", onReady);
+  Rosa.webhook = new WebhookClient({ url: process.env.WH_URL || "oh no" });
 
-Rosalia.on("messageCreate", async (message) => await onMessage(message));
+  rosaLogHandler.log("debug", "Loading commands...");
+  // eslint-disable-next-line require-atomic-updates
+  Rosa.commands = await loadCommands(Rosa);
+  await registerCommands(Rosa);
 
-Rosalia.login(token);
+  Rosa.on("ready", async () => await onReady(Rosa));
+
+  Rosa.on(
+    "interactionCreate",
+    async (interaction) => await onInteraction(Rosa, interaction)
+  );
+
+  await Rosa.login(process.env.DISCORD_TOKEN);
+
+  Rosa.user?.setActivity({
+    name: "an RPG on Discord!",
+    type: "PLAYING",
+  });
+})();

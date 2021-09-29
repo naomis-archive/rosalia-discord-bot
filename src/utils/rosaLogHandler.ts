@@ -4,12 +4,12 @@ const { combine, timestamp, colorize, printf } = format;
 
 /**
  * Standard log handler, using winston to wrap and format
- * messages. Call with `logHandler.log(level, message)`.
+ * messages. Call with `rosaLogHandler.log(level, message)`.
  *
  * @param {string} level - The log level to use.
  * @param {string} message - The message to log.
  */
-export const logHandler = createLogger({
+export const rosaLogHandler = createLogger({
   levels: config.npm.levels,
   level: "silly",
   transports: [new transports.Console()],
