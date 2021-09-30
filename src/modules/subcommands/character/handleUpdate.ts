@@ -36,7 +36,7 @@ export const handleUpdate: CommandHandler = async (Rosa, interaction) => {
     const characterEmbed = viewCharacter(character);
 
     await interaction.editReply({
-      content: "Your character has been created!",
+      content: "Your character has been updated!",
       embeds: [characterEmbed],
     });
   } catch (error) {
