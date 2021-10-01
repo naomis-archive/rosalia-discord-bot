@@ -7,6 +7,7 @@ import {
 import { Command } from "../interfaces/Command";
 import { handleDetails } from "../modules/subcommands/inventory/handleDetails";
 import { handleSell } from "../modules/subcommands/inventory/handleSell";
+import { handleUse } from "../modules/subcommands/inventory/handleUse";
 import { handleView } from "../modules/subcommands/inventory/handleView";
 import { errorEmbedGenerator } from "../utils/errorEmbedGenerator";
 import { rosaErrorHandler } from "../utils/rosaErrorHandler";
@@ -41,6 +42,17 @@ export const inventory: Command = {
             .setDescription("The name of the item you want to sell.")
             .setRequired(true)
         )
+    )
+    .addSubcommand(
+      new SlashCommandSubcommandBuilder()
+        .setName("use")
+        .setDescription("Use an item.")
+        .addStringOption((option) =>
+          option
+            .setName("item")
+            .setDescription("The name of the item you want to use.")
+            .setRequired(true)
+        )
     ),
   run: async (Rosa, interaction) => {
     try {
@@ -57,6 +69,9 @@ export const inventory: Command = {
           break;
         case "sell":
           await handleSell(Rosa, interaction);
+          break;
+        case "use":
+          await handleUse(Rosa, interaction);
           break;
         default:
           await interaction.editReply({ content: "Invalid command!" });

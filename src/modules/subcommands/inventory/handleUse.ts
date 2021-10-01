@@ -9,12 +9,13 @@ import { CommandHandler } from "../../../interfaces/CommandHandler";
 import { errorEmbedGenerator } from "../../../utils/errorEmbedGenerator";
 import { rosaErrorHandler } from "../../../utils/rosaErrorHandler";
 
+import { consumeItem } from "./uses/consumeItem";
 import { equipItem } from "./uses/equipItem";
 
 /**
- * Handles the logic to sell an item.
+ * Handles the logic to use an item.
  */
-export const handleSell: CommandHandler = async (Rosa, interaction) => {
+export const handleUse: CommandHandler = async (Rosa, interaction) => {
   try {
     const target = interaction.options.getString("item", true);
 
@@ -33,14 +34,21 @@ export const handleSell: CommandHandler = async (Rosa, interaction) => {
       (i) => i.name.toLowerCase() === target.toLowerCase()
     );
 
-    const sellEmbed = new MessageEmbed();
+    const validEmbed = new MessageEmbed();
 
     if (!data) {
-      sellEmbed.setTitle("Item not found");
-      sellEmbed.setDescription(
+      validEmbed.setTitle("Item not found");
+      validEmbed.setDescription(
         "That item does not appear to exist. Please try again."
       );
-      await interaction.editReply({ embeds: [sellEmbed] });
+      await interaction.editReply({ embeds: [validEmbed] });
+      return;
+    }
+
+    if (data.type === "sellable") {
+      validEmbed.setTitle("Cannot use that");
+      validEmbed.setDescription("Sellable items cannot be used.");
+      await interaction.editReply({ embeds: [validEmbed] });
       return;
     }
 
@@ -52,51 +60,31 @@ export const handleSell: CommandHandler = async (Rosa, interaction) => {
 
     const item = inventories.find((el) => el === data.name);
     if (!item) {
-      sellEmbed.setTitle("Item not found");
-      sellEmbed.setDescription("You do not have that item in your inventory.");
-      await interaction.editReply({ embeds: [sellEmbed] });
+      validEmbed.setTitle("Item not found");
+      validEmbed.setDescription("You do not have that item in your inventory.");
+      await interaction.editReply({ embeds: [validEmbed] });
       return;
     }
 
     if (data.type === "consumable") {
-      const index = character.inventory.consumable.findIndex(
-        (el) => el === data.name
-      );
-      character.inventory.consumable.splice(index, 1);
-    }
-    if (data.type === "sellable") {
-      const index = character.inventory.sellable.findIndex(
-        (el) => el === data.name
-      );
-      character.inventory.sellable.splice(index, 1);
+      const embed = await consumeItem(Rosa, data, character);
+      await interaction.editReply({ embeds: [embed] });
+      return;
     }
     if (data.type === "equipment") {
-      if (character.equipment[data.slot] === data.name) {
-        await equipItem(Rosa, data, character);
-      }
-      const index = character.inventory.equippable.findIndex(
-        (el) => el === data.name
-      );
-      character.inventory.equippable.splice(index, 1);
+      const embed = await equipItem(Rosa, data, character);
+      await interaction.editReply({ embeds: [embed] });
+      return;
     }
-    character.inventory.gold += data.value;
-    character.markModified("inventory");
-    await character.save();
-
-    sellEmbed.setTitle(`${data.name} sold`);
-    sellEmbed.setDescription(`You sold ${data.name} for ${data.value} gold.`);
-    sellEmbed.addField("Gold", `${character.inventory.gold}`);
-
-    await interaction.editReply({ embeds: [sellEmbed] });
   } catch (error) {
     const errorId = await rosaErrorHandler(
       Rosa,
-      "sell command",
+      "use command",
       error,
       interaction.guild?.id
     );
     await interaction.editReply({
-      embeds: [errorEmbedGenerator(Rosa, "sell", errorId)],
+      embeds: [errorEmbedGenerator(Rosa, "use", errorId)],
     });
   }
 };
