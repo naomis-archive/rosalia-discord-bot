@@ -6,6 +6,7 @@ import {
 
 import { Command } from "../interfaces/Command";
 import { handleCreate } from "../modules/subcommands/character/handleCreate";
+import { handleEquipment } from "../modules/subcommands/character/handleEquipment";
 import { handleUpdate } from "../modules/subcommands/character/handleUpdate";
 import { handleView } from "../modules/subcommands/character/handleView";
 import { errorEmbedGenerator } from "../utils/errorEmbedGenerator";
@@ -67,6 +68,11 @@ export const character: Command = {
             .setName("description")
             .setDescription("A description of your character.")
         )
+    )
+    .addSubcommand(
+      new SlashCommandSubcommandBuilder()
+        .setName("equipment")
+        .setDescription("View your character's equipment")
     ),
   run: async (Rosa, interaction) => {
     try {
@@ -83,6 +89,9 @@ export const character: Command = {
           break;
         case "update":
           await handleUpdate(Rosa, interaction);
+          break;
+        case "equipment":
+          await handleEquipment(Rosa, interaction);
           break;
         default:
           await interaction.editReply({ content: "Invalid Command!" });

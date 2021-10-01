@@ -1,9 +1,5 @@
 import { Document } from "mongoose";
 
-import { Consumable } from "./Consumable";
-import { Equipment } from "./Equipment";
-import { Sellable } from "./Sellable";
-
 export interface Character extends Document {
   discordId: string;
   name: string;
@@ -22,16 +18,16 @@ export interface Character extends Document {
     xp: number;
   };
   equipment: {
-    mainHand: Equipment | null;
-    offHand: Equipment | null;
-    armor: Equipment | null;
-    helmet: Equipment | null;
-    accessory: Equipment | null;
+    mainHand: string;
+    offHand: string;
+    armor: string;
+    helmet: string;
+    accessory: string;
   };
   inventory: {
-    equippable: [Equipment];
-    consumable: [Consumable];
-    sellable: [Sellable];
+    equippable: string[];
+    consumable: string[];
+    sellable: string[];
     gold: number;
     backpack: number; // how many items the adventurer can carry
   };
