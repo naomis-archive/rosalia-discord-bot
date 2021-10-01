@@ -1,7 +1,3 @@
-import { Consumable } from "./Consumable";
-import { Equipment } from "./Equipment";
-import { Sellable } from "./Sellable";
-
 export interface Monster {
   name: string;
   description: string;
@@ -15,6 +11,6 @@ export interface Monster {
   drops: {
     gold: number;
     exp: number;
-    items: Array<Equipment | Consumable | Sellable>;
+    items: string[];
   };
 }

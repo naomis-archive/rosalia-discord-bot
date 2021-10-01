@@ -58,7 +58,7 @@ export const handleCreate: CommandHandler = async (Rosa, interaction) => {
         backpack: 10,
       },
       adventure: {
-        areas: [],
+        areas: ["Farmlands"],
         dungeons: [],
         cooldown: 0,
       },
