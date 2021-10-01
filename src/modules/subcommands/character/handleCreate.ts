@@ -55,7 +55,7 @@ export const handleCreate: CommandHandler = async (Rosa, interaction) => {
         consumable: [],
         sellable: [],
         gold: 0,
-        backpack: 10,
+        backpack: 5,
       },
       adventure: {
         areas: ["Farmlands"],

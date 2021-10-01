@@ -25,13 +25,13 @@ export const handleView: CommandHandler = async (Rosa, interaction) => {
     const { equippable, consumable, sellable } = character.inventory;
 
     const equippableString = equippable.length
-      ? equippable.map((el) => el.name).join(", ")
+      ? equippable.join(", ")
       : "*no equippable items*";
     const consumableString = consumable.length
-      ? consumable.map((el) => el.name).join(", ")
+      ? consumable.join(", ")
       : "*no consumable items*";
     const sellableString = sellable.length
-      ? sellable.map((el) => el.name).join(", ")
+      ? sellable.join(", ")
       : "*no sellable items*";
 
     const embed = new MessageEmbed();
@@ -46,8 +46,10 @@ export const handleView: CommandHandler = async (Rosa, interaction) => {
       "Backpack Slots",
       `${equippable.length + consumable.length + sellable.length} / ${
         character.inventory.backpack
-      }`
+      }`,
+      true
     );
+    embed.addField("Gold", `${character.inventory.gold}`, true);
 
     await interaction.editReply({ embeds: [embed] });
   } catch (error) {

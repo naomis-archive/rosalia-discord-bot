@@ -19,26 +19,11 @@ const CharacterSchema = new Schema({
     xp: Number,
   },
   equipment: {
-    mainHand: {
-      type: Object,
-      default: null,
-    },
-    offHand: {
-      type: Object,
-      default: null,
-    },
-    armor: {
-      type: Object,
-      default: null,
-    },
-    helmet: {
-      type: Object,
-      default: null,
-    },
-    accessory: {
-      type: Object,
-      default: null,
-    },
+    mainHand: String,
+    offHand: String,
+    armor: String,
+    helmet: String,
+    accessory: String,
   },
   inventory: {
     equippable: Array,
