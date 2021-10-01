@@ -19,4 +19,10 @@ export const sellables: Sellable[] = [
     description: "A wing from a fairy.",
     value: 3,
   },
+  {
+    type: "sellable",
+    name: "Spider Silk",
+    description: "The silk from a spider.",
+    value: 5,
+  },
 ];
