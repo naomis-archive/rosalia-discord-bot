@@ -70,7 +70,7 @@ export const handleSell: CommandHandler = async (Rosa, interaction) => {
       );
       character.inventory.sellable.splice(index, 1);
     }
-    if (data.type === "equipment") {
+    if (data.type === "equippable") {
       if (character.equipment[data.slot] === data.name) {
         await equipItem(Rosa, data, character);
       }

@@ -2,7 +2,7 @@ import { Equipment } from "../../interfaces/game/Equipment";
 
 export const equippables: Equipment[] = [
   {
-    type: "equipment",
+    type: "equippable",
     name: "Short Sword",
     description: "A small sword, quick but not very powerful.",
     effects: [
@@ -15,7 +15,7 @@ export const equippables: Equipment[] = [
     value: 10,
   },
   {
-    type: "equipment",
+    type: "equippable",
     name: "Long Sword",
     description: "A standard sword, decent for most combat.",
     effects: [
@@ -28,7 +28,7 @@ export const equippables: Equipment[] = [
     value: 20,
   },
   {
-    type: "equipment",
+    type: "equippable",
     name: "Hand-and-a-Half Sword",
     description: "Very large, can be held in one hand if you're strong enough.",
     effects: [
@@ -41,7 +41,7 @@ export const equippables: Equipment[] = [
     value: 30,
   },
   {
-    type: "equipment",
+    type: "equippable",
     name: "Leather Armor",
     description: "A simple leather armor, good for defending yourself.",
     effects: [
@@ -54,7 +54,7 @@ export const equippables: Equipment[] = [
     value: 10,
   },
   {
-    type: "equipment",
+    type: "equippable",
     name: "Chainmail",
     description: "A standard chainmail, good for defending yourself.",
     effects: [
@@ -67,7 +67,7 @@ export const equippables: Equipment[] = [
     value: 20,
   },
   {
-    type: "equipment",
+    type: "equippable",
     name: "Plate Armor",
     description: "A heavy plate armor, good for defending yourself.",
     effects: [
@@ -80,7 +80,7 @@ export const equippables: Equipment[] = [
     value: 30,
   },
   {
-    type: "equipment",
+    type: "equippable",
     name: "Leather Helmet",
     description: "A simple leather helmet, good for defending yourself.",
     effects: [
@@ -93,7 +93,7 @@ export const equippables: Equipment[] = [
     value: 5,
   },
   {
-    type: "equipment",
+    type: "equippable",
     name: "Chainmail Helmet",
     description: "A standard chainmail helmet, good for defending yourself.",
     effects: [
@@ -106,7 +106,7 @@ export const equippables: Equipment[] = [
     value: 10,
   },
   {
-    type: "equipment",
+    type: "equippable",
     name: "Plate Helmet",
     description: "A heavy plate helmet, good for defending yourself.",
     effects: [
@@ -119,7 +119,7 @@ export const equippables: Equipment[] = [
     value: 15,
   },
   {
-    type: "equipment",
+    type: "equippable",
     name: "Wizard Robe",
     description: "An enchanted wizard robe",
     effects: [
@@ -136,7 +136,7 @@ export const equippables: Equipment[] = [
     value: 20,
   },
   {
-    type: "equipment",
+    type: "equippable",
     name: "Wizard Hat",
     description: "An enchanted wizard hat",
     effects: [
@@ -153,7 +153,7 @@ export const equippables: Equipment[] = [
     value: 10,
   },
   {
-    type: "equipment",
+    type: "equippable",
     name: "Wizard Staff",
     description: "An enchanted wizard staff",
     effects: [

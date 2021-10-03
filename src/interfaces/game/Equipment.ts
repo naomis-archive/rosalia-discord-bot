@@ -1,5 +1,5 @@
 export interface Equipment {
-  type: "equipment";
+  type: "equippable";
   name: string;
   description: string;
   effects: {
