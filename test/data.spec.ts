@@ -4,11 +4,32 @@ import { dungeons, explorations } from "../src/config/data/adventures";
 import { consumables } from "../src/config/data/consumables";
 import { equippables } from "../src/config/data/equippables";
 import { monsters } from "../src/config/data/monsters";
+import { restOptions, restChoices } from "../src/config/data/restOptions";
 import { sellables } from "../src/config/data/sellables";
 
 suite("Data", () => {
   const items = [...equippables, ...sellables, ...consumables];
   const adventures = [...explorations, ...dungeons];
+
+  suite("Rest validation", () => {
+    test("There should be the same number of choices as options.", () => {
+      assert.equal(Object.keys(restOptions).length, restChoices.length);
+    });
+
+    for (const option of Object.keys(restOptions)) {
+      test(`${option} should have a matching choice.`, () => {
+        const found = restChoices.find((el) => el[1] === option);
+        assert.exists(found, `${option} does not have a matching choice.`);
+      });
+    }
+
+    for (const choice of restChoices) {
+      test(`${choice[1]} should have a matching option.`, () => {
+        const found = Object.keys(restOptions).includes(choice[1]);
+        assert.isTrue(found, `${choice[1]} does not have a matching option.`);
+      });
+    }
+  });
 
   suite("Adventure Validation", () => {
     for (const adventure of adventures) {
