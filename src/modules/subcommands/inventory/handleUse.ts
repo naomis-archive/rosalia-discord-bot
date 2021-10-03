@@ -71,7 +71,7 @@ export const handleUse: CommandHandler = async (Rosa, interaction) => {
       await interaction.editReply({ embeds: [embed] });
       return;
     }
-    if (data.type === "equipment") {
+    if (data.type === "equippable") {
       const embed = await equipItem(Rosa, data, character);
       await interaction.editReply({ embeds: [embed] });
       return;
