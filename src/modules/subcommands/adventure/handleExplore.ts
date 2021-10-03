@@ -1,9 +1,11 @@
 /* eslint-disable jsdoc/require-param */
 import { explorations } from "../../../config/data/adventures";
+import { monsters } from "../../../config/data/monsters";
 import CharacterModel from "../../../database/models/CharacterModel";
 import { CommandHandler } from "../../../interfaces/CommandHandler";
 import { errorEmbedGenerator } from "../../../utils/errorEmbedGenerator";
 import { rosaErrorHandler } from "../../../utils/rosaErrorHandler";
+import { handleBattle } from "../../battle/handleBattle";
 import { giveDungeon } from "../../results/giveDungeon";
 import { giveItem } from "../../results/giveItem";
 import { showCooldown } from "../../results/showCooldown";
@@ -60,8 +62,19 @@ export const handleExplore: CommandHandler = async (Rosa, interaction) => {
     const result = Math.ceil(Math.random() * 100);
 
     if (result <= 60) {
-      await character.save();
-      await interaction.editReply({ content: "Battle system coming soon!" });
+      const monsterIndex = Math.floor(
+        Math.random() * location.results.monsters.length
+      );
+      const monsterName = location.results.monsters[monsterIndex];
+      const monster = monsters.find((el) => el.name === monsterName);
+
+      if (!monster) {
+        await interaction.editReply({
+          content: `You encountered a ${monsterName} but there was no data available. Please contact the developer.`,
+        });
+        return;
+      }
+      await handleBattle(Rosa, interaction, character, monster);
     }
     if (result > 60 && result <= 70) {
       await giveItem(Rosa, interaction, character, location);
