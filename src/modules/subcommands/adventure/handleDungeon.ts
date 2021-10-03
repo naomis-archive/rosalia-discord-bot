@@ -5,6 +5,7 @@ import { CommandHandler } from "../../../interfaces/CommandHandler";
 import { errorEmbedGenerator } from "../../../utils/errorEmbedGenerator";
 import { rosaErrorHandler } from "../../../utils/rosaErrorHandler";
 import { giveItem } from "../../results/giveItem";
+import { showCooldown } from "../../results/showCooldown";
 
 /**
  * Handles the logic of visiting a dungeon area.
@@ -45,15 +46,14 @@ export const handleDungeon: CommandHandler = async (Rosa, interaction) => {
       return;
     }
 
-    if (Date.now() - character.adventure.cooldown < 14400000) {
+    if (Date.now() - character.adventure.cooldown <= 0) {
       await interaction.editReply({
-        content:
-          "You are still recovering from your last activity. Try again later.",
+        embeds: [showCooldown(character.adventure.cooldown - Date.now())],
       });
       return;
     }
 
-    character.adventure.cooldown = Date.now();
+    character.adventure.cooldown = Date.now() + 14400000;
 
     const result = Math.ceil(Math.random() * 100);
 
