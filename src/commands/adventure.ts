@@ -5,6 +5,7 @@ import {
 } from "@discordjs/builders";
 
 import { Command } from "../interfaces/Command";
+import { handleDungeon } from "../modules/subcommands/adventure/handleDungeon";
 import { handleExplore } from "../modules/subcommands/adventure/handleExplore";
 import { handleMap } from "../modules/subcommands/adventure/handleMap";
 import { errorEmbedGenerator } from "../utils/errorEmbedGenerator";
@@ -29,6 +30,19 @@ export const adventure: Command = {
             .setDescription("The name of the area you would like to explore.")
             .setRequired(true)
         )
+    )
+    .addSubcommand(
+      new SlashCommandSubcommandBuilder()
+        .setName("dungeon")
+        .setDescription("Explore a dungeon you have discovered.")
+        .addStringOption((option) =>
+          option
+            .setName("area")
+            .setDescription(
+              "The name of the dungeon you would like to explore."
+            )
+            .setRequired(true)
+        )
     ),
   run: async (Rosa, interaction) => {
     try {
@@ -42,6 +56,9 @@ export const adventure: Command = {
           break;
         case "explore":
           await handleExplore(Rosa, interaction);
+          break;
+        case "dungeon":
+          await handleDungeon(Rosa, interaction);
           break;
         default:
           await interaction.editReply({ content: "Invalid command!" });
