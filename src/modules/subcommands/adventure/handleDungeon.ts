@@ -73,12 +73,12 @@ export const handleDungeon: CommandHandler = async (Rosa, interaction) => {
   } catch (error) {
     const errorId = await rosaErrorHandler(
       Rosa,
-      "explore command",
+      "dungeon command",
       error,
       interaction.guild?.id
     );
     await interaction.editReply({
-      embeds: [errorEmbedGenerator(Rosa, "explore", errorId)],
+      embeds: [errorEmbedGenerator(Rosa, "dungeon", errorId)],
     });
   }
 };

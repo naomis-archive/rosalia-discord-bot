@@ -20,8 +20,8 @@ export const showCooldown = (cooldown: number): MessageEmbed => {
   const secondsRemain = seconds - days * 86400 - hours * 3600 - minutes * 60;
 
   const embed = new MessageEmbed();
-  embed.setTitle("You are resting!");
-  embed.setDescription("You are still recovering from your last activity.");
+  embed.setTitle("You are busy!");
+  embed.setDescription("You are still occupied with your last activity.");
   embed.addField(
     "Time remaining:",
     `${days}d ${hours}h ${minutes}m ${secondsRemain}s`
