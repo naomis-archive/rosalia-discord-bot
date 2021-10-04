@@ -3,6 +3,7 @@ import { model, Schema } from "mongoose";
 import { Character } from "../../interfaces/game/Character";
 
 const CharacterSchema = new Schema({
+  discordId: String,
   name: String,
   description: String,
   race: String,
