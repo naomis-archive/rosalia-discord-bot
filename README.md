@@ -18,6 +18,28 @@ If you have feedback or a bug report, please feel free to open a GitHub issue!
 
 If you would like to contribute to the project, you may create a Pull Request containing your proposed changes and we will review it as soon as we are able! Please review our [contributing guidelines](CONTRIBUTING.md) first.
 
+## Using with docker
+
+You can use this bot with docker! First you must build the image:
+```shell
+sudo docker build -t bot:latest . #You can change bot with any name you want, latest is the tag, check docker documentation
+```
+
+Now you can run the bot with the following command:
+```shell
+sudo docker run \
+-it \ #or -d for running in daemon
+-e "WH_URL=yoururl" \
+-e "DISCORD_TOKEN=yourtoken" \
+-e "HOME_GUILD=yourguildID" \
+-e "APP_ID=yourappID" \
+-e "MONGO_URI=mongouri" \
+-e "SENTRY_DSN=dsn" \
+-e "NODE_ENV=development" \
+bot
+```
+For better env variables, you can use [docker-compose](https://docs.docker.com/compose/).
+
 ## Code of Conduct
 
 Before interacting with our community, please read our [Code of Conduct](CODE_OF_CONDUCT.md).
