@@ -2,7 +2,7 @@ import { model, Schema } from "mongoose";
 
 import { Character } from "../../interfaces/game/Character";
 
-const CharacterSchema = new Schema({
+export const CharacterSchema = new Schema<Character>({
   discordId: String,
   name: String,
   description: String,
