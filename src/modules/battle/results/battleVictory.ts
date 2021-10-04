@@ -59,8 +59,9 @@ export const battleVictory = async (
         monster.drops.items[
           Math.floor(Math.random() * monster.drops.items.length)
         ];
+
       const itemData = [...equippables, ...consumables, ...sellables].find(
-        (el) => (el.name = itemName)
+        (el) => el.name === itemName
       );
 
       if (!itemData) {
