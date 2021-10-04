@@ -33,6 +33,7 @@ export const battleVictory = async (
     character.stats.health = health;
     character.stats.mana = mana;
     character.experience.xp = character.experience.xp + monster.drops.exp;
+    character.inventory.gold = character.inventory.gold + monster.drops.gold;
     if (
       character.experience.level < 100 &&
       character.experience.xp >= levelScale[character.experience.level]
@@ -76,7 +77,6 @@ export const battleVictory = async (
           resultString += `\nThe monster dropped a ${itemName}, but your backpack is too full!`;
         } else {
           character.inventory[itemData.type].push(itemData.name);
-          character.markModified("inventory");
           resultString += `\nThe monster dropped a ${itemName}! You slip it into your backpack.`;
         }
       }
@@ -84,6 +84,7 @@ export const battleVictory = async (
 
     character.markModified("stats");
     character.markModified("experience");
+    character.markModified("inventory");
     await character.save();
 
     const resultEmbed = new MessageEmbed();
