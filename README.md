@@ -2,6 +2,10 @@
 
 A quick bot for running specific commands in my server.
 
+> A note to contributors
+>
+> This project has opted in to Hacktoberfest - however, we are very much in an early beta state. Prior to contributing to the project, we recommend you join our [support server](https://chat.nhcarrigan.com) and view the `#rosa-beta-reports` channel to see the discussions regarding the beta experience.
+
 ## Live Version
 
 View the bot and play in our [discord server](http://chat.nhcarrigan.com).
