@@ -1,6 +1,6 @@
 {
   "name": "rosalia-nightsong",
-  "version": "0.0.1-rc.0",
+  "version": "0.0.1-rc.1",
   "description": "A discord bot that does random things for my server.",
   "main": "prod/index.js",
   "scripts": {
