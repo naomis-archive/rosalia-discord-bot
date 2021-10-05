@@ -57,6 +57,8 @@ export const handleDungeon: CommandHandler = async (Rosa, interaction) => {
 
     character.adventure.cooldown = Date.now() + 14400000;
 
+    character.markModified("adventure");
+
     const result = Math.ceil(Math.random() * 100);
 
     if (result <= 50) {
