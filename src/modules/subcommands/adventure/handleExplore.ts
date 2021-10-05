@@ -59,6 +59,8 @@ export const handleExplore: CommandHandler = async (Rosa, interaction) => {
 
     character.adventure.cooldown = Date.now() + 3600000;
 
+    character.markModified("adventure");
+
     const result = Math.ceil(Math.random() * 100);
 
     if (result <= 60) {
