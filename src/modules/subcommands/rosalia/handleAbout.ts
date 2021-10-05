@@ -21,7 +21,7 @@ export const handleAbout: CommandHandler = async (Rosa, interaction) => {
     aboutEmbed.addField("Creation date", "Sunday, 31 May 2020", true);
     aboutEmbed.addField("Guilds", guilds.toString(), true);
     aboutEmbed.addField("Members", members.toString(), true);
-    aboutEmbed.addField("Available spells", commands.toString(), true);
+    aboutEmbed.addField("Available Commands", commands.toString(), true);
     aboutEmbed.addField("Favourite Colour", "Green", true);
 
     await interaction.editReply({ embeds: [aboutEmbed] });
