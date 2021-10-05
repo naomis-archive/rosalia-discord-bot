@@ -24,6 +24,7 @@ export const handleMap: CommandHandler = async (Rosa, interaction) => {
 
     const mapEmbed = new MessageEmbed();
     mapEmbed.setTitle("Available Destinations!");
+    mapEmbed.setAuthor(interaction.user.tag, interaction.user.displayAvatarURL());
     mapEmbed.setDescription(
       "These are the locations you are able to visit on an adventure."
     );

@@ -68,6 +68,7 @@ export const handleBattle = async (
     initialEmbed.setDescription(
       `A ${monster.name} has appeared before you!\n${monster.description}`
     );
+    initialEmbed.setAuthor(interaction.user.tag, interaction.user.displayAvatarURL());
     initialEmbed.addField("Monster Health", monsterHealth.toString(), true);
     initialEmbed.addField("Monster Mana", monsterMana.toString(), true);
     initialEmbed.addField("\u200b", "\u200b", true);
@@ -195,6 +196,7 @@ export const handleBattle = async (
       const resultEmbed = new MessageEmbed();
       resultEmbed.setTitle("Battle continues!");
       resultEmbed.setDescription(resultString);
+      resultEmbed.setAuthor(interaction.user.tag, interaction.user.displayAvatarURL());
       resultEmbed.addField("Monster Health", monsterHealth.toString(), true);
       resultEmbed.addField("Monster Mana", monsterMana.toString(), true);
       resultEmbed.addField("\u200b", "\u200b", true);

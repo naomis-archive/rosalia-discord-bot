@@ -24,6 +24,7 @@ export const handleEquipment: CommandHandler = async (Rosa, interaction) => {
 
     const embed = new MessageEmbed();
     embed.setTitle(`${character.name}'s Equipment`);
+    embed.setAuthor(interaction.user.tag, interaction.user.displayAvatarURL());
     embed.addField(
       "Main Hand",
       character.equipment.mainHand || "*nothing equipped*",

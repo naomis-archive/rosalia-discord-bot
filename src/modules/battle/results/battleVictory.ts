@@ -87,6 +87,7 @@ export const battleVictory = async (
 
     const resultEmbed = new MessageEmbed();
     resultEmbed.setTitle("Battle Won!");
+    resultEmbed.setAuthor(interaction.user.tag, interaction.user.displayAvatarURL());
     resultEmbed.setDescription(
       resultString + "\nYou return to town feeling excited about your conquest."
     );

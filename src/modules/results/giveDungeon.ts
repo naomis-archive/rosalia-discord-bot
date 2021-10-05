@@ -47,7 +47,7 @@ export const giveDungeon = async (
     character.adventure.dungeons.push(dungeon.name);
     character.markModified("adventure");
     await character.save();
-
+    embed.setAuthor(interaction.user.tag, interaction.user.displayAvatarURL());
     embed.setDescription(
       `While exploring the area, you discover something strange... You make a note of the location and return back to town.`
     );

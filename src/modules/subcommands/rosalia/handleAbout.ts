@@ -14,6 +14,7 @@ export const handleAbout: CommandHandler = async (Rosa, interaction) => {
     const { guilds, members, commands } = getCounts(Rosa);
     const aboutEmbed = new MessageEmbed();
     aboutEmbed.setTitle("Rosalia Nightsong");
+    aboutEmbed.setAuthor(interaction.user.tag, interaction.user.displayAvatarURL());
     aboutEmbed.setDescription(
       "I am a Discord bot that offers a fun and relaxing RPG game you can play in your servers! I was created by [nhcarrigan](https://www.nhcarrigan.com). You can view my [source code](https://github.com/RosaliaNightsong/discord-bot) or join my [official chat server](https://chat.nhcarrigan.com)!"
     );

@@ -32,6 +32,7 @@ export const battleFlee = async (
 
     const resultEmbed = new MessageEmbed();
     resultEmbed.setTitle("Battle fled!");
+    resultEmbed.setAuthor(interaction.user.tag, interaction.user.displayAvatarURL());
     resultEmbed.setDescription(
       `You have managed to escape from the ${monster.name}`
     );
