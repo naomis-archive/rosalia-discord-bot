@@ -49,6 +49,7 @@ export const giveItem = async (
 
     const embed = new MessageEmbed();
     embed.setTitle(`${adventure.name} Results!`);
+    embed.setAuthor(interaction.user.tag, interaction.user.displayAvatarURL());
     embed.setDescription(
       `You found a treasure chest! When you open it, inside is a ${randomItem.name}! Unfortunately, your backpack is full and you cannot carry any more items! You return to town empty handed.`
     );

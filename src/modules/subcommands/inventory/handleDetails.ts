@@ -31,6 +31,10 @@ export const handleDetails: CommandHandler = async (Rosa, interaction) => {
     }
 
     itemEmbed.setTitle(item.name);
+    itemEmbed.setAuthor(
+      interaction.user.tag,
+      interaction.user.displayAvatarURL()
+    );
     itemEmbed.setDescription(item.description);
     itemEmbed.addField("Value", `${item.value} gold.`, true);
     if (item.type !== "sellable") {

@@ -34,6 +34,10 @@ export const battleDefeat = async (
 
     const resultEmbed = new MessageEmbed();
     resultEmbed.setTitle("Battle lost!");
+    resultEmbed.setAuthor(
+      interaction.user.tag,
+      interaction.user.displayAvatarURL()
+    );
     resultEmbed.setDescription(
       `You have been defeated by the ${monster.name}. You wake up back in town, feeling quite a bit weaker.`
     );

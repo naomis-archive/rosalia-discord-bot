@@ -36,6 +36,7 @@ export const handleView: CommandHandler = async (Rosa, interaction) => {
 
     const embed = new MessageEmbed();
     embed.setTitle(`${character.name}'s Inventory!`);
+    embed.setAuthor(interaction.user.tag, interaction.user.displayAvatarURL());
     embed.setDescription(
       "These are the items you currently have in your inventory."
     );

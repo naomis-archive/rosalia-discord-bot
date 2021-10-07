@@ -40,6 +40,10 @@ export const handleSell: CommandHandler = async (Rosa, interaction) => {
       sellEmbed.setDescription(
         "That item does not appear to exist. Please try again."
       );
+      sellEmbed.setAuthor(
+        interaction.user.tag,
+        interaction.user.displayAvatarURL()
+      );
       await interaction.editReply({ embeds: [sellEmbed] });
       return;
     }
