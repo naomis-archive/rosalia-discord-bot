@@ -32,7 +32,10 @@ export const battleMonsterFlee = async (
 
     const resultEmbed = new MessageEmbed();
     resultEmbed.setTitle("Monster fled!");
-    resultEmbed.setAuthor(interaction.user.tag, interaction.user.displayAvatarURL());
+    resultEmbed.setAuthor(
+      interaction.user.tag,
+      interaction.user.displayAvatarURL()
+    );
     resultEmbed.setDescription(
       `The ${monster.name} ran away! You return to town feeling a bit disappointed.`
     );

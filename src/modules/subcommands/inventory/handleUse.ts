@@ -38,7 +38,10 @@ export const handleUse: CommandHandler = async (Rosa, interaction) => {
 
     if (!data) {
       validEmbed.setTitle("Item not found");
-      validEmbed.setAuthor(interaction.user.tag, interaction.user.displayAvatarURL());
+      validEmbed.setAuthor(
+        interaction.user.tag,
+        interaction.user.displayAvatarURL()
+      );
       validEmbed.setDescription(
         "That item does not appear to exist. Please try again."
       );

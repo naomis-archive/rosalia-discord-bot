@@ -64,7 +64,10 @@ export const handleRest: CommandHandler = async (Rosa, interaction) => {
 
     const restEmbed = new MessageEmbed();
     restEmbed.setTitle("You took a rest!");
-    restEmbed.setAuthor(interaction.user.tag, interaction.user.displayAvatarURL());
+    restEmbed.setAuthor(
+      interaction.user.tag,
+      interaction.user.displayAvatarURL()
+    );
     restEmbed.setDescription(
       `Your rest was ${room}. You recovered ${healthGain} health and ${manaGain} mana.`
     );
