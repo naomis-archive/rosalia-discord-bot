@@ -26,7 +26,7 @@ export const handleRest: CommandHandler = async (Rosa, interaction) => {
 
     const roomData = restOptions[room as Room];
 
-    const character = await CharacterModel.findOne({ userId: user });
+    const character = await CharacterModel.findOne({ discordId: user });
 
     if (!character) {
       await interaction.editReply({

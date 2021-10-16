@@ -13,7 +13,7 @@ export const handleMap: CommandHandler = async (Rosa, interaction) => {
   try {
     const user = interaction.user.id;
 
-    const character = await CharacterModel.findOne({ userId: user });
+    const character = await CharacterModel.findOne({ discordId: user });
 
     if (!character) {
       await interaction.editReply({
