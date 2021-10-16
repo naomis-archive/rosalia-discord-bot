@@ -8,6 +8,7 @@ import { Character } from "../../../interfaces/game/Character";
 import { Monster } from "../../../interfaces/game/Monster";
 import { RosaliaNightsong } from "../../../interfaces/RosaliaNightsong";
 import { errorEmbedGenerator } from "../../../utils/errorEmbedGenerator";
+import { getRandomValue } from "../../../utils/getRandomValue";
 import { rosaErrorHandler } from "../../../utils/rosaErrorHandler";
 
 /**
@@ -56,10 +57,7 @@ export const battleVictory = async (
     const itemDrop = Math.ceil(Math.random() * 100) <= 20;
 
     if (itemDrop) {
-      const itemName =
-        monster.drops.items[
-          Math.floor(Math.random() * monster.drops.items.length)
-        ];
+      const itemName = getRandomValue(monster.drops.items) as string;
 
       const itemData = [...equippables, ...consumables, ...sellables].find(
         (el) => el.name === itemName

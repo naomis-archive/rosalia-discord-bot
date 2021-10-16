@@ -5,6 +5,7 @@ import { Adventure } from "../../interfaces/game/Adventure";
 import { Character } from "../../interfaces/game/Character";
 import { RosaliaNightsong } from "../../interfaces/RosaliaNightsong";
 import { errorEmbedGenerator } from "../../utils/errorEmbedGenerator";
+import { getRandomValue } from "../../utils/getRandomValue";
 import { rosaErrorHandler } from "../../utils/rosaErrorHandler";
 
 /**
@@ -28,10 +29,7 @@ export const giveDungeon = async (
       });
       return;
     }
-    const random =
-      adventure.results.dungeon[
-        Math.floor(Math.random() * adventure.results.dungeon.length)
-      ];
+    const random = getRandomValue(adventure.results.dungeon) as string;
     const dungeon = dungeons.find((el) => el.name === random);
 
     if (!dungeon) {

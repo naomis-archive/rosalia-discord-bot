@@ -4,6 +4,7 @@ import { monsters } from "../../../config/data/monsters";
 import CharacterModel from "../../../database/models/CharacterModel";
 import { CommandHandler } from "../../../interfaces/CommandHandler";
 import { errorEmbedGenerator } from "../../../utils/errorEmbedGenerator";
+import { getRandomValue } from "../../../utils/getRandomValue";
 import { rosaErrorHandler } from "../../../utils/rosaErrorHandler";
 import { handleBattle } from "../../battle/handleBattle";
 import { giveDungeon } from "../../results/giveDungeon";
@@ -64,10 +65,7 @@ export const handleExplore: CommandHandler = async (Rosa, interaction) => {
     const result = Math.ceil(Math.random() * 100);
 
     if (result <= 60) {
-      const monsterIndex = Math.floor(
-        Math.random() * location.results.monsters.length
-      );
-      const monsterName = location.results.monsters[monsterIndex];
+      const monsterName = getRandomValue(location.results.monsters) as string;
       const monster = monsters.find((el) => el.name === monsterName);
 
       if (!monster) {
