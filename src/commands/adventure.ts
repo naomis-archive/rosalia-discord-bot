@@ -10,6 +10,7 @@ import { handleDungeon } from "../modules/subcommands/adventure/handleDungeon";
 import { handleExplore } from "../modules/subcommands/adventure/handleExplore";
 import { handleMap } from "../modules/subcommands/adventure/handleMap";
 import { handleRest } from "../modules/subcommands/adventure/handleRest";
+import { handleSearch } from "../modules/subcommands/adventure/handleSearch";
 import { errorEmbedGenerator } from "../utils/errorEmbedGenerator";
 import { rosaErrorHandler } from "../utils/rosaErrorHandler";
 
@@ -59,6 +60,11 @@ export const adventure: Command = {
             .setRequired(true)
             .addChoices(restChoices)
         )
+    )
+    .addSubcommand(
+      new SlashCommandSubcommandBuilder()
+        .setName("search")
+        .setDescription("Search around for new areas to explore.")
     ),
   run: async (Rosa, interaction) => {
     try {
@@ -78,6 +84,9 @@ export const adventure: Command = {
           break;
         case "rest":
           await handleRest(Rosa, interaction);
+          break;
+        case "search":
+          await handleSearch(Rosa, interaction);
           break;
         default:
           await interaction.editReply({ content: "Invalid command!" });

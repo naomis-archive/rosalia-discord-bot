@@ -57,7 +57,7 @@ export const handleExplore: CommandHandler = async (Rosa, interaction) => {
       return;
     }
 
-    character.adventure.cooldown = Date.now() + 3600000;
+    character.adventure.cooldown = Date.now() + 7200000;
 
     character.markModified("adventure");
 
