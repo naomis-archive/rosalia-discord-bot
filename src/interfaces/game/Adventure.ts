@@ -5,6 +5,6 @@ export interface Adventure {
   results: {
     monsters: string[];
     treasure: string[];
-    dungeon?: string; // only if type is exploration
+    dungeon?: string[]; // only if type is exploration
   };
 }

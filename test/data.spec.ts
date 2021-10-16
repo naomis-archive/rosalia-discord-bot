@@ -48,12 +48,12 @@ suite("Data", () => {
       });
 
       if (adventure.type === "exploration") {
-        test(`${adventure.name} should have a valid dungeon.`, () => {
-          const found = dungeons.find(
-            (d) => d.name === adventure.results.dungeon
-          );
-          assert.exists(found, `${adventure.results.dungeon} not found.`);
-        });
+        for (const dungeon of adventure.results.dungeon) {
+          test(`${adventure.name} should have a valid ${dungeon} dungeon.`, () => {
+            const found = dungeons.find((d) => d.name === dungeon);
+            assert.exists(found, `${dungeon} not found.`);
+          });
+        }
       }
     }
   });

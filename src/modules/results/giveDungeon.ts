@@ -22,9 +22,17 @@ export const giveDungeon = async (
   adventure: Adventure
 ): Promise<void> => {
   try {
-    const dungeon = dungeons.find(
-      (el) => el.name === adventure.results.dungeon
-    );
+    if (!adventure.results.dungeon || !adventure.results.dungeon.length) {
+      await interaction.editReply({
+        content: `You could have discovered a dungeon, but the ${adventure.name} adventure has no dungeons attached! Please contact the developer.`,
+      });
+      return;
+    }
+    const random =
+      adventure.results.dungeon[
+        Math.floor(Math.random() * adventure.results.dungeon.length)
+      ];
+    const dungeon = dungeons.find((el) => el.name === random);
 
     if (!dungeon) {
       await interaction.editReply({
