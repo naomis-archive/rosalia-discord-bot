@@ -3,6 +3,7 @@ import { assert } from "chai";
 import { dungeons, explorations } from "../src/config/data/adventures";
 import { consumables } from "../src/config/data/consumables";
 import { equippables } from "../src/config/data/equippables";
+import { markets } from "../src/config/data/markets";
 import { monsters } from "../src/config/data/monsters";
 import { restOptions, restChoices } from "../src/config/data/restOptions";
 import { sellables } from "../src/config/data/sellables";
@@ -48,13 +49,24 @@ suite("Data", () => {
       });
 
       if (adventure.type === "exploration") {
-        for (const dungeon of adventure.results.dungeon) {
-          test(`${adventure.name} should have a valid ${dungeon} dungeon.`, () => {
+        test(`${adventure.name} should have valid dungeons.`, () => {
+          for (const dungeon of adventure.results.dungeon) {
             const found = dungeons.find((d) => d.name === dungeon);
             assert.exists(found, `${dungeon} not found.`);
-          });
-        }
+          }
+        });
       }
+    }
+  });
+
+  suite("Market Validation", () => {
+    for (const market of markets) {
+      test(`${market.name} should have valid items.`, () => {
+        for (const item of market.wares) {
+          const found = items.find((i) => i.name === item);
+          assert.exists(found, `${item} not found.`);
+        }
+      });
     }
   });
 
@@ -121,6 +133,17 @@ suite("Data", () => {
           `${dungeon.name} is not unique.`
         );
         dungeonSet.add(dungeon.name);
+      }
+    });
+
+    test("Markets should be unique.", () => {
+      const marketSet = new Set();
+      for (const market of markets) {
+        assert.isFalse(
+          marketSet.has(market.name),
+          `${market.name} is not unique.`
+        );
+        marketSet.add(market.name);
       }
     });
 
