@@ -23,12 +23,7 @@ export const battleDefeat = async (
   try {
     character.stats.health = 10;
     character.stats.mana = 5;
-    character.stats.attack =
-      character.stats.attack - Math.ceil(Math.random() * 5);
-    character.stats.defence =
-      character.stats.defence - Math.ceil(Math.random() * 5);
-    character.stats.magic =
-      character.stats.magic + Math.ceil(Math.random() * 5);
+
     character.markModified("stats");
     await character.save();
 
@@ -39,7 +34,7 @@ export const battleDefeat = async (
       interaction.user.displayAvatarURL()
     );
     resultEmbed.setDescription(
-      `You have been defeated by the ${monster.name}. You wake up back in town, feeling quite a bit weaker.`
+      `You have been defeated by the ${monster.name}. You wake up back in town.`
     );
 
     await interaction.editReply({ embeds: [resultEmbed], components: [] });
