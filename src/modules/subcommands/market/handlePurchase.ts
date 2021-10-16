@@ -27,9 +27,7 @@ export const handlePurchase: CommandHandler = async (Rosa, interaction) => {
     }
 
     if (
-      !purchasableItems.find(
-        (item) => item.toLowerCase() === target.toLowerCase()
-      )
+      !purchasableItems.find((i) => i.toLowerCase() === target.toLowerCase())
     ) {
       await interaction.editReply({
         content:
