@@ -4,6 +4,7 @@ import { explorations } from "../../../config/data/adventures";
 import CharacterModel from "../../../database/models/CharacterModel";
 import { CommandHandler } from "../../../interfaces/CommandHandler";
 import { errorEmbedGenerator } from "../../../utils/errorEmbedGenerator";
+import { getRandomValue } from "../../../utils/getRandomValue";
 import { rosaErrorHandler } from "../../../utils/rosaErrorHandler";
 import { showCooldown } from "../../results/showCooldown";
 
@@ -43,8 +44,7 @@ export const handleSearch: CommandHandler = async (Rosa, interaction) => {
       return;
     }
 
-    const newArea =
-      explorations[Math.floor(Math.random() * explorations.length)];
+    const newArea = getRandomValue(explorations);
 
     if (character.adventure.areas.includes(newArea.name)) {
       await character.save();
