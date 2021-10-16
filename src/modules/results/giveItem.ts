@@ -7,6 +7,7 @@ import { Adventure } from "../../interfaces/game/Adventure";
 import { Character } from "../../interfaces/game/Character";
 import { RosaliaNightsong } from "../../interfaces/RosaliaNightsong";
 import { errorEmbedGenerator } from "../../utils/errorEmbedGenerator";
+import { getRandomValue } from "../../utils/getRandomValue";
 import { rosaErrorHandler } from "../../utils/rosaErrorHandler";
 
 /**
@@ -24,10 +25,7 @@ export const giveItem = async (
   adventure: Adventure
 ): Promise<void> => {
   try {
-    const randomIndex = Math.floor(
-      Math.random() * adventure.results.treasure.length
-    );
-    const randomItemName = adventure.results.treasure[randomIndex];
+    const randomItemName = getRandomValue(adventure.results.treasure);
     const randomItem = [...equippables, ...consumables, ...sellables].find(
       (el) => el.name === randomItemName
     );
