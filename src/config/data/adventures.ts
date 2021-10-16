@@ -62,7 +62,7 @@ export const dungeons: Adventure[] = [
     description:
       "You can barely see in here, but this place seems to be inhabited by wizards.",
     results: {
-      monsters: ["Wizard", "Necromancer"],
+      monsters: ["Wizard"],
       treasure: ["Wizard Robe", "Wizard Hat"],
     },
   },
