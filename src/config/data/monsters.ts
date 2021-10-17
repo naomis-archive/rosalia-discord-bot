@@ -3,7 +3,7 @@ import { Monster } from "../../interfaces/game/Monster";
 export const monsters: Monster[] = [
   {
     name: "Slime",
-    description: ["A small blue slime.",],
+    description: ["A small blue slime.","A small rock slime.","A small fire slime.","A small corrosive slime.","A small dirt eating slime.","A small water slime.",],
     stats: {
       attack: 1,
       defence: 1,
@@ -19,7 +19,7 @@ export const monsters: Monster[] = [
   },
   {
     name: "Rat",
-    description: ["A slightly large rat.",],
+    description: ["A slightly large rat.","A rat larger than normal","A ferocious looking rat"],
     stats: {
       attack: 2,
       defence: 2,
@@ -35,7 +35,7 @@ export const monsters: Monster[] = [
   },
   {
     name: "Spider",
-    description: ["A large spider.",],
+    description: ["A large spider.","A spider that can haunt your dreams","A monsterous spider making eerie sounds"],
     stats: {
       attack: 5,
       defence: 5,
@@ -51,7 +51,7 @@ export const monsters: Monster[] = [
   },
   {
     name: "Bandit",
-    description: ["A less than polite person.",],
+    description: ["A less than polite person.","A common criminal","A human who will always want your coin by questionable methods"],
     stats: {
       attack: 10,
       defence: 5,
@@ -67,7 +67,7 @@ export const monsters: Monster[] = [
   },
   {
     name: "Goblin",
-    description: ["A cackling goblin.",],
+    description: ["A cackling goblin.","A small green goblin","A goblin: These creatures can be ferocious"],
     stats: {
       attack: 7,
       defence: 5,
@@ -83,7 +83,7 @@ export const monsters: Monster[] = [
   },
   {
     name: "Fairy",
-    description: ["A beautiful fairy.",],
+    description: ["A beautiful fairy.","A magicial being of nature","A evil looking fairy"],
     stats: {
       attack: 3,
       defence: 3,
@@ -99,7 +99,7 @@ export const monsters: Monster[] = [
   },
   {
     name: "Wisp",
-    description: ["A floating ball of light",],
+    description: ["A floating ball of light","A green ball of light","A mysterious ball of light","A magical ball of light"],
     stats: {
       attack: 1,
       defence: 1,
@@ -115,7 +115,7 @@ export const monsters: Monster[] = [
   },
   {
     name: "Treant",
-    description: ["A walking, talking, attacking tree",],
+    description: ["A walking, talking, attacking tree","A walking tree. A great way to get some combat exercise and wood","A walking tree? This ought to have some medicinal roots"],
     stats: {
       attack: 10,
       defence: 20,
@@ -131,7 +131,7 @@ export const monsters: Monster[] = [
   },
   {
     name: "Mandrake",
-    description: ["A large, poisonous plant",],
+    description: ["A large, poisonous plant","A poisonous plant usable for alchemy","Warning: Do not eat Mandrake or you may not like the effects"],
     stats: {
       attack: 15,
       defence: 15,
@@ -147,7 +147,7 @@ export const monsters: Monster[] = [
   },
   {
     name: "Wizard",
-    description: ["A wizard with a staff",],
+    description: ["A wizard with a staff","A Wizard capable of attack magic", "A wizard capable of dark magic"],
     stats: {
       attack: 5,
       defence: 10,
