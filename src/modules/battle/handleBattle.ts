@@ -150,7 +150,7 @@ export const handleBattle = async (
       const monsterChoice = Math.ceil(Math.random() * 100);
 
       // run
-      if (monsterChoice <= 20) {
+      if (monsterChoice <= 10) {
         await battleMonsterFlee(
           Rosa,
           interaction,
@@ -188,7 +188,7 @@ export const handleBattle = async (
           resultString += `${monster.name}'s attack was not effective.`;
         }
       }
-
+      
       // did player die?
       if (playerHealth <= 0) {
         await battleDefeat(Rosa, interaction, character, monster);
