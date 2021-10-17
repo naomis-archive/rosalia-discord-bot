@@ -57,7 +57,10 @@ export const giveDungeon = async (
     embed.setDescription(
       `While exploring the area, you discover something strange... You make a note of the location and return back to town.`
     );
-    embed.addField(`${dungeon.name} discovered!`, getRandomValue(dungeon.description));
+    embed.addField(
+      `${dungeon.name} discovered!`,
+      getRandomValue(dungeon.description)
+    );
 
     await interaction.editReply({ embeds: [embed] });
   } catch (error) {
