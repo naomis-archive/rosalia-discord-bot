@@ -1,5 +1,3 @@
-
-
 export interface Adventure {
   type: "exploration" | "dungeon";
   name: string;
