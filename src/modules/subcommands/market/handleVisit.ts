@@ -54,6 +54,6 @@ export const handleVisit: CommandHandler = async (Rosa, interaction) => {
     });
   }
 };
-function getRandomValue(description: string[] | undefined): string {
+export function getRandomValue(description: string[] | undefined): string {
   throw new Error("Function not implemented.");
 }
