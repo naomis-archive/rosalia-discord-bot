@@ -37,7 +37,7 @@ export const handleVisit: CommandHandler = async (Rosa, interaction) => {
       const item = itemData.find((el) => el.name === ware);
       marketEmbed.addField(
         `${item?.name} - ${(item?.value || 0) * 5} gold` || "Unknown Item",
-        String(item?.description) || `Could not load data for ${ware}`
+        getRandomValue(item?.description) || `Could not load data for ${ware}`
       );
     }
 
@@ -54,3 +54,7 @@ export const handleVisit: CommandHandler = async (Rosa, interaction) => {
     });
   }
 };
+function getRandomValue(description: string[] | undefined): string {
+  throw new Error("Function not implemented.");
+}
+
