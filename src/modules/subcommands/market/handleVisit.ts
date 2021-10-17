@@ -8,7 +8,6 @@ import { markets } from "../../../config/data/markets";
 import { sellables } from "../../../config/data/sellables";
 import { CommandHandler } from "../../../interfaces/CommandHandler";
 import { errorEmbedGenerator } from "../../../utils/errorEmbedGenerator";
-import { getRandomValue } from "../../../utils/getRandomValue";
 import { rosaErrorHandler } from "../../../utils/rosaErrorHandler";
 
 /**
