@@ -8,6 +8,7 @@ import { markets } from "../../../config/data/markets";
 import { sellables } from "../../../config/data/sellables";
 import { CommandHandler } from "../../../interfaces/CommandHandler";
 import { errorEmbedGenerator } from "../../../utils/errorEmbedGenerator";
+import { getRandomValue } from "../../../utils/getRandomValue";
 import { rosaErrorHandler } from "../../../utils/rosaErrorHandler";
 
 /**
@@ -37,7 +38,7 @@ export const handleVisit: CommandHandler = async (Rosa, interaction) => {
       const item = itemData.find((el) => el.name === ware);
       marketEmbed.addField(
         `${item?.name} - ${(item?.value || 0) * 5} gold` || "Unknown Item",
-        item?.description || `Could not load data for ${ware}`
+        String(item?.description) || `Could not load data for ${ware}`
       );
     }
 
