@@ -189,9 +189,9 @@ export const handleBattle = async (
         }
       }
       // does nothing
-      if (monsterChoice > 10 && monsterChoice < 20){
+      if (monsterChoice > 10 && monsterChoice < 20) {
         resultString += `${monster.name} did nothing.`;
-     }
+      }
 
       // did player die?
       if (playerHealth <= 0) {
