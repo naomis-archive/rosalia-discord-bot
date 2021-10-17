@@ -1,6 +1,6 @@
 export interface Monster {
   name: string;
-  description: string;
+  description: Array<string>;
   stats: {
     attack: number;
     defence: number;
