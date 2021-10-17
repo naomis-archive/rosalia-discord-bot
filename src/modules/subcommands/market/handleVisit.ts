@@ -38,7 +38,8 @@ export const handleVisit: CommandHandler = async (Rosa, interaction) => {
       const item = itemData.find((el) => el.name === ware);
       marketEmbed.addField(
         `${item?.name} - ${(item?.value || 0) * 5} gold` || "Unknown Item",
-       getRandomValue(item?.description || [""])||`Could not load data for ${ware}`
+        getRandomValue(item?.description || [""]) ||
+          `Could not load data for ${ware}`
       );
     }
 
@@ -55,4 +56,3 @@ export const handleVisit: CommandHandler = async (Rosa, interaction) => {
     });
   }
 };
-
