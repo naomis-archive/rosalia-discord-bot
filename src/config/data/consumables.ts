@@ -4,7 +4,7 @@ export const consumables: Consumable[] = [
   {
     type: "consumable",
     name: "Small Health Potion",
-    description: "Restores a bit of health",
+    description: ["Restores a bit of health",],
     effects: [
       {
         stat: "health",
@@ -16,7 +16,7 @@ export const consumables: Consumable[] = [
   {
     type: "consumable",
     name: "Small Mana Potion",
-    description: "Restores a bit of mana",
+    description: ["Restores a bit of mana",],
     effects: [
       {
         stat: "mana",
@@ -28,7 +28,7 @@ export const consumables: Consumable[] = [
   {
     type: "consumable",
     name: "Health Potion",
-    description: "Restores some health",
+    description: ["Restores some health",],
     effects: [
       {
         stat: "health",
@@ -40,7 +40,7 @@ export const consumables: Consumable[] = [
   {
     type: "consumable",
     name: "Mana Potion",
-    description: "Restores some mana",
+    description: ["Restores some mana",],
     effects: [
       {
         stat: "mana",
@@ -52,7 +52,7 @@ export const consumables: Consumable[] = [
   {
     type: "consumable",
     name: "Large Health Potion",
-    description: "Restores a lot of health",
+    description: ["Restores a lot of health",],
     effects: [
       {
         stat: "health",
@@ -64,7 +64,7 @@ export const consumables: Consumable[] = [
   {
     type: "consumable",
     name: "Large Mana Potion",
-    description: "Restores a lot of mana",
+    description: ["Restores a lot of mana",],
     effects: [
       {
         stat: "mana",
@@ -76,7 +76,7 @@ export const consumables: Consumable[] = [
   {
     type: "consumable",
     name: "Scroll of Attack",
-    description: "Increases attack by 5",
+    description: ["Increases attack by 5",],
     effects: [
       {
         stat: "attack",
@@ -88,7 +88,7 @@ export const consumables: Consumable[] = [
   {
     type: "consumable",
     name: "Scroll of Defence",
-    description: "Increases defence by 5",
+    description: ["Increases defence by 5",],
     effects: [
       {
         stat: "defence",
@@ -100,7 +100,7 @@ export const consumables: Consumable[] = [
   {
     type: "consumable",
     name: "Scroll of Magic",
-    description: "Increases magic by 5",
+    description: ["Increases magic by 5",],
     effects: [
       {
         stat: "magic",
@@ -112,7 +112,7 @@ export const consumables: Consumable[] = [
   {
     type: "consumable",
     name: "Tome of Attack",
-    description: "Increases attack by 10",
+    description: ["Increases attack by 10",],
     effects: [
       {
         stat: "attack",
@@ -124,7 +124,7 @@ export const consumables: Consumable[] = [
   {
     type: "consumable",
     name: "Tome of Defence",
-    description: "Increases defence by 10",
+    description: ["Increases defence by 10",],
     effects: [
       {
         stat: "defence",
@@ -136,7 +136,7 @@ export const consumables: Consumable[] = [
   {
     type: "consumable",
     name: "Tome of Magic",
-    description: "Increases magic by 10",
+    description: ["Increases magic by 10",],
     effects: [
       {
         stat: "magic",
