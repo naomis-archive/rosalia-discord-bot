@@ -188,7 +188,11 @@ export const handleBattle = async (
           resultString += `${monster.name}'s attack was not effective.`;
         }
       }
-      
+      // does nothing
+      if (monsterChoice > 10 && monsterChoice < 20){
+        resultString += `${monster.name} did nothing.`;
+     }
+
       // did player die?
       if (playerHealth <= 0) {
         await battleDefeat(Rosa, interaction, character, monster);
