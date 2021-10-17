@@ -1,7 +1,7 @@
 export interface Adventure {
   type: "exploration" | "dungeon";
   name: string;
-  description: Array<string>;
+  description: string[];
   results: {
     monsters: string[];
     treasure: string[];

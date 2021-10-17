@@ -1,6 +1,6 @@
 export interface Sellable {
   type: "sellable";
   name: string;
-  description: Array<string>;
+  description: string[];
   value: number;
 }
