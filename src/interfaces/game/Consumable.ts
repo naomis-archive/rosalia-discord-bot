@@ -1,7 +1,7 @@
 export interface Consumable {
   type: "consumable";
   name: string;
-  description: string;
+  description: string[];
   effects: {
     stat: "attack" | "defence" | "magic" | "health" | "mana";
     bonus: number;

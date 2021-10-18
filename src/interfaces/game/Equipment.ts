@@ -1,7 +1,7 @@
 export interface Equipment {
   type: "equippable";
   name: string;
-  description: string;
+  description: string[];
   effects: {
     stat: "attack" | "defence" | "magic" | "health" | "mana";
     bonus: number;

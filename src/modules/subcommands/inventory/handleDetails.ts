@@ -6,6 +6,7 @@ import { equippables } from "../../../config/data/equippables";
 import { sellables } from "../../../config/data/sellables";
 import { CommandHandler } from "../../../interfaces/CommandHandler";
 import { errorEmbedGenerator } from "../../../utils/errorEmbedGenerator";
+import { getRandomValue } from "../../../utils/getRandomValue";
 import { rosaErrorHandler } from "../../../utils/rosaErrorHandler";
 
 /**
@@ -35,7 +36,7 @@ export const handleDetails: CommandHandler = async (Rosa, interaction) => {
       interaction.user.tag,
       interaction.user.displayAvatarURL()
     );
-    itemEmbed.setDescription(item.description);
+    itemEmbed.setDescription(getRandomValue(item.description));
     itemEmbed.addField("Value", `${item.value} gold.`, true);
     if (item.type !== "sellable") {
       item.effects.forEach((effect) =>
