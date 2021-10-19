@@ -38,12 +38,39 @@ export const explorations: Adventure[] = [
       "Rumor has it that these mountains are supposed to be the home to some trolls. Better stay on your toes.",
     ],
     results: {
-      monsters:["Troll","Yeti","Bear"],
-      treasure:["Battle Axe","Bones"],
-      dungeon:["Hidden Path","Rock Cave"],
-
-    }
-  }
+      monsters: ["Troll", "Yeti", "Bear"],
+      treasure: ["Battle Axe", "Bones"],
+      dungeon: ["Hidden Path", "Rock Cave"],
+    },
+  },
+  {
+    type: "exploration",
+    name: "Mist Land",
+    description: [
+      "A mysterious area covered with Mist. You sense dreaful magical energy in this place.",
+      "This area covered with fog seems like it is haunted. Hopefully there aren't any ghosts haunting this place",
+      "A eerie place filled with nothing but fog for as far as the eye can see. This raises questions as to what happened here.",
+    ],
+    results: {
+      monsters: ["Ghost", "Zombie", "Specter"],
+      treasure: ["Short Sword", "Broken Fence", "Broken Scythe"],
+      dungeon: ["Mysterious Well", "Spooky Animal Shelter"],
+    },
+  },
+  {
+    type: "exploration",
+    name: "Riverside Warf",
+    description: [
+      "You find a swampy land with a bunch of insects and reptiles. This place does not look very dangerous but it may still hold suprises",
+      "A place full of rivers and swamps. Quite a few tress here. Lets hope the insects are friendly",
+      "Trees to both sides, Insects everywhere, Swamps in front. This place is not very friendly to those who dont like the wild.",
+    ],
+    results: {
+      monsters: ["Giant Insectoid", "Insect Queen", "Elemental Summon"],
+      treasure: ["Insect Parts", "Leather Armor", "Long Sword"],
+      dungeon: ["Black Spring", "Overrun Village"],
+    },
+  },
 ];
 
 export const dungeons: Adventure[] = [
