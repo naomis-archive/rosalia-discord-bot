@@ -126,4 +126,51 @@ export const dungeons: Adventure[] = [
       treasure: ["Wizard Robe", "Wizard Hat"],
     },
   },
+  {
+    type: "dungeon",
+    name: "Hidden Path",
+    description: [
+      "You find a Hidden Path in the mountains. There seems to be a couple of animals through here.",
+      "There seems to be a small path through here. You had to activate a mechanism to reveal the path. Wonder what lies ahead",
+      "There seems to be a path hidden by someone. Looks like no one has used this path for a while."],
+    results: {
+      monsters:["Troll","Boar","Wisp"],
+      treasure:["Hand-and-a-Half Sword","Chainmail","Scroll of Attack"],
+     
+
+    },
+  },
+  {
+    type: "dungeon",
+    name: "Rock Cave",
+    description: [""],
+    results: {
+      monsters:["Bat","Golem","Spider"],
+      treasure:["Spider Silk","Chainmail Helmet","Scroll of Defence"],
+      
+
+    },
+  },
+  {
+    type: "dungeon",
+    name: "Mysterious Well",
+    description: [""],
+    results: {
+      monsters:[],
+      treasure:[],
+     
+
+    },
+  },
+  {
+    type: "dungeon",
+    name: "",
+    description: ["Spooky Animal Shelter"],
+    results: {
+      monsters:[],
+      treasure:[],
+     
+
+    },
+  },
 ];
