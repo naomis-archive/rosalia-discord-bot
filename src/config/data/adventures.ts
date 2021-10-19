@@ -175,7 +175,37 @@ export const dungeons: Adventure[] = [
     ],
     results: {
       monsters:["Zombie","Undead Animal","Ghost"],
-      treasure:["Zombie Claw","Animal Fang","Misty Dust"],
+      treasure:["Zombie Claw","Animal Fang","Magic Dust"],
+     
+
+    },
+  },
+  {
+    type: "dungeon",
+    name: "Black Spring",
+    description: [
+      "A magical Spring that resonates with dark magic. This magic feels like it resonates with necromancers.",
+      "A dark presence can be felt. This Spring is powerful with dark magic.",
+      "You can sense dark creatures from within. This might be the home of some dark mages."
+    ],
+    results: {
+      monsters:["Necromancer","Lesser Demon","Hostile Familiar"],
+      treasure:["Magic Dust","Used Scroll","Tattered Black Mage Robes"],
+     
+
+    },
+  },
+  {
+    type: "dungeon",
+    name: "Overrun Village",
+    description: [
+      "A village that has been overrun by bandits and plunderers. Almost all the residents have been killed and looted",
+      "A formerly thriving village until it was overrun by bandits and plunderers. There may be nothing left here",
+      "This Village seems to have become a bandit den. Looks like the bandits and Plunderers are working hand in hand."
+    ],
+    results: {
+      monsters:["Bandit","Plunderer","Guardian Spirit"],
+      treasure:["Long Sword","Leather Armor","Chainmail"],
      
 
     },
