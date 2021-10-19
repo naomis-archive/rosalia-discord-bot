@@ -154,21 +154,28 @@ export const dungeons: Adventure[] = [
   {
     type: "dungeon",
     name: "Mysterious Well",
-    description: [""],
+    description: [
+      "You find a Strange well. It seems like there might be magicial creatures in here.",
+      "A deep well but it is not filled with water. Instead it seems to be filled with a lot of magical energy.",
+      "An well that seems to have been non functional for a long time. Wonder what you will find in here."],
     results: {
-      monsters:[],
-      treasure:[],
+      monsters:["Spider", "Specter","Ghost"],
+      treasure:["Wizard Staff","Plate Helmet","Leather Armor"],
      
 
     },
   },
   {
     type: "dungeon",
-    name: "",
-    description: ["Spooky Animal Shelter"],
+    name: "Spooky Animal Shelter",
+    description: [
+      "An old Animal Shelter. It seems like it has been abandoned for a long time. You can smell a faint smell of undead",
+      "10,000 Animals used to live here. Now it's a ghost infested den. Be careful while exploring this place",
+      "This seems to have been a Animal Shelter once upon a time. Now its a Spooky place."
+    ],
     results: {
-      monsters:[],
-      treasure:[],
+      monsters:["Zombie","Undead Animal","Ghost"],
+      treasure:["Zombie Claw","Animal Fang","Misty Dust"],
      
 
     },
