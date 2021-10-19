@@ -29,6 +29,21 @@ export const explorations: Adventure[] = [
       dungeon: ["Hidden Grove", "Dark Cave"],
     },
   },
+  {
+    type: "exploration",
+    name: "Mountains",
+    description: [
+      "A huge strech of mountains. Some monsters may have set up home in here. There seem to be animal bones around here. Best to be on guard in this place!",
+      "Tall mountains that are quite high. These moutains may hold some good treasues.",
+      "Rumor has it that these mountains are supposed to be the home to some trolls. Better stay on your toes.",
+    ],
+    results: {
+      monsters:["Troll","Yeti","Bear"],
+      treasure:["Battle Axe","Bones"],
+      dungeon:["Hidden Path","Rock Cave"],
+
+    }
+  }
 ];
 
 export const dungeons: Adventure[] = [
