@@ -132,12 +132,11 @@ export const dungeons: Adventure[] = [
     description: [
       "You find a Hidden Path in the mountains. There seems to be a couple of animals through here.",
       "There seems to be a small path through here. You had to activate a mechanism to reveal the path. Wonder what lies ahead",
-      "There seems to be a path hidden by someone. Looks like no one has used this path for a while."],
+      "There seems to be a path hidden by someone. Looks like no one has used this path for a while.",
+    ],
     results: {
-      monsters:["Troll","Boar","Wisp"],
-      treasure:["Hand-and-a-Half Sword","Chainmail","Scroll of Attack"],
-     
-
+      monsters: ["Troll", "Boar", "Wisp"],
+      treasure: ["Hand-and-a-Half Sword", "Chainmail", "Scroll of Attack"],
     },
   },
   {
@@ -145,10 +144,8 @@ export const dungeons: Adventure[] = [
     name: "Rock Cave",
     description: [""],
     results: {
-      monsters:["Bat","Golem","Spider"],
-      treasure:["Spider Silk","Chainmail Helmet","Scroll of Defence"],
-      
-
+      monsters: ["Bat", "Golem", "Spider"],
+      treasure: ["Spider Silk", "Chainmail Helmet", "Scroll of Defence"],
     },
   },
   {
@@ -157,12 +154,11 @@ export const dungeons: Adventure[] = [
     description: [
       "You find a Strange well. It seems like there might be magicial creatures in here.",
       "A deep well but it is not filled with water. Instead it seems to be filled with a lot of magical energy.",
-      "An well that seems to have been non functional for a long time. Wonder what you will find in here."],
+      "An well that seems to have been non functional for a long time. Wonder what you will find in here.",
+    ],
     results: {
-      monsters:["Spider", "Specter","Ghost"],
-      treasure:["Wizard Staff","Plate Helmet","Leather Armor"],
-     
-
+      monsters: ["Spider", "Specter", "Ghost"],
+      treasure: ["Wizard Staff", "Plate Helmet", "Leather Armor"],
     },
   },
   {
@@ -171,13 +167,11 @@ export const dungeons: Adventure[] = [
     description: [
       "An old Animal Shelter. It seems like it has been abandoned for a long time. You can smell a faint smell of undead",
       "10,000 Animals used to live here. Now it's a ghost infested den. Be careful while exploring this place",
-      "This seems to have been a Animal Shelter once upon a time. Now its a Spooky place."
+      "This seems to have been a Animal Shelter once upon a time. Now its a Spooky place.",
     ],
     results: {
-      monsters:["Zombie","Undead Animal","Ghost"],
-      treasure:["Zombie Claw","Animal Fang","Magic Dust"],
-     
-
+      monsters: ["Zombie", "Undead Animal", "Ghost"],
+      treasure: ["Zombie Claw", "Animal Fang", "Magic Dust"],
     },
   },
   {
@@ -186,13 +180,11 @@ export const dungeons: Adventure[] = [
     description: [
       "A magical Spring that resonates with dark magic. This magic feels like it resonates with necromancers.",
       "A dark presence can be felt. This Spring is powerful with dark magic.",
-      "You can sense dark creatures from within. This might be the home of some dark mages."
+      "You can sense dark creatures from within. This might be the home of some dark mages.",
     ],
     results: {
-      monsters:["Necromancer","Lesser Demon","Hostile Familiar"],
-      treasure:["Magic Dust","Used Scroll","Tattered Black Mage Robes"],
-     
-
+      monsters: ["Necromancer", "Lesser Demon", "Hostile Familiar"],
+      treasure: ["Magic Dust", "Used Scroll", "Tattered Black Mage Robes"],
     },
   },
   {
@@ -201,13 +193,11 @@ export const dungeons: Adventure[] = [
     description: [
       "A village that has been overrun by bandits and plunderers. Almost all the residents have been killed and looted",
       "A formerly thriving village until it was overrun by bandits and plunderers. There may be nothing left here",
-      "This Village seems to have become a bandit den. Looks like the bandits and Plunderers are working hand in hand."
+      "This Village seems to have become a bandit den. Looks like the bandits and Plunderers are working hand in hand.",
     ],
     results: {
-      monsters:["Bandit","Plunderer","Guardian Spirit"],
-      treasure:["Long Sword","Leather Armor","Chainmail"],
-     
-
+      monsters: ["Bandit", "Plunderer", "Guardian Spirit"],
+      treasure: ["Long Sword", "Leather Armor", "Chainmail"],
     },
   },
 ];
