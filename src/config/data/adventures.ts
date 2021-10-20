@@ -142,7 +142,11 @@ export const dungeons: Adventure[] = [
   {
     type: "dungeon",
     name: "Rock Cave",
-    description: [""],
+    description: [
+      "A cave made up of Rocks. It's almost as if this place is filled with rock monsters.",
+      "A Rock Formation in the caves. This place may contain golems.",
+      "A Rock cave with tons of bats , spiders and golems."
+    ],
     results: {
       monsters: ["Bat", "Golem", "Spider"],
       treasure: ["Spider Silk", "Chainmail Helmet", "Scroll of Defence"],
