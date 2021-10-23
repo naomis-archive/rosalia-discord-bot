@@ -217,4 +217,52 @@ export const equippables: Equipment[] = [
     slot: "mainHand",
     value: 30,
   },
+  {
+    type: "equippable",
+    name: "Battle Axe",
+    description: [
+      "A huge battle Axe. This can be used to rip you opponents in half",
+      "A axe that is the size of a 6 ft person.",
+    ],
+    effects: [
+      {
+        stat: "Attack",
+        bonus: 12,
+      },
+    ],
+    slot: "mainHand",
+    value: 30,
+  },
+  {
+    type: "equippable",
+    name: "Hunting Bow",
+    description: [
+      "A regular hunting bow used to hunt animals in the wild",
+      "A weapon to attack targets from a distance",
+    ],
+    effects: [
+      {
+        stat: "Attack",
+        bonus: 6,
+      },
+    ],
+    slot: "mainHand",
+    value: 20,
+  },
+  {
+    type: "equippable",
+    name: "Arrows",
+    description: [
+      "Arrows that go hand in hand with a bow.",
+      "Sharp arrows used with a bow",
+    ],
+    effects: [
+      {
+        stat: "Attack",
+        bonus: 4,
+      },
+    ],
+    slot: "offHand",
+    value: 10,
+  },
 ];
