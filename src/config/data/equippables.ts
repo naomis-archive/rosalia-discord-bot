@@ -226,7 +226,7 @@ export const equippables: Equipment[] = [
     ],
     effects: [
       {
-        stat: "Attack",
+        stat: "attack",
         bonus: 12,
       },
     ],
@@ -242,7 +242,7 @@ export const equippables: Equipment[] = [
     ],
     effects: [
       {
-        stat: "Attack",
+        stat: "attack",
         bonus: 6,
       },
     ],
@@ -258,7 +258,7 @@ export const equippables: Equipment[] = [
     ],
     effects: [
       {
-        stat: "Attack",
+        stat: "attack",
         bonus: 4,
       },
     ],
