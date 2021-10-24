@@ -318,7 +318,7 @@ export const monsters: Monster[] = [
     drops: {
       gold: 35,
       exp: 40,
-      items: ["Broken Scythe", "Broke Crystal", "Spiritual Residue"],
+      items: ["Broken Scythe", "Broken Crystal", "Spiritual Residue"],
     },
   },
   {
@@ -492,7 +492,7 @@ export const monsters: Monster[] = [
     drops: {
       gold: 40,
       exp: 20,
-      items: ["Long Sword", "chainmail", "Arrows", "Hunting Bow"],
+      items: ["Long Sword", "Chainmail", "Arrows", "Hunting Bow"],
     },
   },
 
