@@ -262,4 +262,13 @@ export const sellables: Sellable[] = [
     description: [],
     value: 10,
   },
+  {
+    type: "sellable",
+    name: "Demon Horns",
+    description: [
+      "The broken horn of a Demon.",
+      "This horn is all that remains of a demon you defeated",
+    ],
+    value: 15,
+  },
 ];

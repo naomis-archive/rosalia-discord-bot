@@ -515,4 +515,23 @@ export const monsters: Monster[] = [
       items: ["Tome of Attack", "Hand-and-a-Half Sword", "Guardian Dust"],
     },
   },
+  {
+    name: "Lesser Demon",
+    description: [
+      "A lesser demon summoned by a necromancer. Although it is a lesser demon, it is still a powerful opponent!",
+      "You run into a Lesser Demon. It seems as though it is a summoned by a mage."
+    ],
+    stats: {
+      attack: 30,
+      defence: 20,
+      magic: 30,
+      health: 65,
+      mana: 120,
+    },
+    drops: {
+      gold: 60,
+      exp: 45,
+      items: ["Tome of Attack", "Hand-and-a-Half Sword", "Demon Horns"],
+    },
+  },
 ];
