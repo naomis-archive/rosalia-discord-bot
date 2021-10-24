@@ -303,7 +303,7 @@ export const monsters: Monster[] = [
     },
   },
   {
-    name: "specter",
+    name: "Specter",
     description: [
       "You see a disembodied specter with a scythe in hand.",
       "A specter with a scythe in hand. Almost looks like death incarnate.",
@@ -400,6 +400,26 @@ export const monsters: Monster[] = [
     },
   },
   {
+    name: "Necromancer",
+    description: [
+      "A mage that uses dark magic and commands the undead",
+      "A evil mage that raises the dead and makes them fight for them",
+      "A powerful dark magic user who uses the power of necromancy.",
+    ],
+    stats: {
+      attack: 10,
+      defence: 15,
+      magic: 20,
+      health: 30,
+      mana: 80,
+    },
+    drops: {
+      gold: 30,
+      exp: 40,
+      items: ["Necromancer's Staff", "Black Mage Robes", "Black Mage Hat"],
+    },
+  },
+  {
     name: "Bat",
     description: [
       "A dark dwelling creature called a bat.",
@@ -475,6 +495,7 @@ export const monsters: Monster[] = [
       items: ["Long Sword", "chainmail", "Arrows", "Hunting Bow"],
     },
   },
+
   {
     name: "Guardian Spirit",
     description: [
