@@ -519,7 +519,7 @@ export const monsters: Monster[] = [
     name: "Lesser Demon",
     description: [
       "A lesser demon summoned by a necromancer. Although it is a lesser demon, it is still a powerful opponent!",
-      "You run into a Lesser Demon. It seems as though it is a summoned by a mage."
+      "You run into a Lesser Demon. It seems as though it is a summoned by a mage.",
     ],
     stats: {
       attack: 30,
