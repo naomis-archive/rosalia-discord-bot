@@ -217,4 +217,106 @@ export const equippables: Equipment[] = [
     slot: "mainHand",
     value: 30,
   },
+  {
+    type: "equippable",
+    name: "Battle Axe",
+    description: [
+      "A huge battle Axe. This can be used to rip you opponents in half",
+      "A axe that is the size of a 6 ft person.",
+    ],
+    effects: [
+      {
+        stat: "attack",
+        bonus: 12,
+      },
+    ],
+    slot: "mainHand",
+    value: 30,
+  },
+  {
+    type: "equippable",
+    name: "Hunting Bow",
+    description: [
+      "A regular hunting bow used to hunt animals in the wild",
+      "A weapon to attack targets from a distance",
+    ],
+    effects: [
+      {
+        stat: "attack",
+        bonus: 6,
+      },
+    ],
+    slot: "mainHand",
+    value: 20,
+  },
+  {
+    type: "equippable",
+    name: "Arrows",
+    description: [
+      "Arrows that go hand in hand with a bow.",
+      "Sharp arrows used with a bow",
+    ],
+    effects: [
+      {
+        stat: "attack",
+        bonus: 4,
+      },
+    ],
+    slot: "offHand",
+    value: 10,
+  },
+  {
+    type: "equippable",
+    name: "Necromancer's Staff",
+    description: [
+      "A staff with powerful dark magic.",
+      "A magical staff that can be used to raise the dead",
+    ],
+    effects: [
+      {
+        stat: "attack",
+        bonus: 4,
+      },
+      { stat: "magic", bonus: 15 },
+    ],
+    slot: "mainHand",
+    value: 10,
+  },
+  {
+    type: "equippable",
+    name: "Black Mage Robes",
+    description: [
+      "A black coloured outfit symbolizing the proficeny in dark magic",
+      "Robes belonging to a black mage also known as necromancers",
+    ],
+    effects: [
+      {
+        stat: "defence",
+        bonus: 5,
+      },
+      {
+        stat: "magic",
+        bonus: 6,
+      },
+    ],
+    slot: "armor",
+    value: 10,
+  },
+  {
+    type: "equippable",
+    name: "Black Mage Hat",
+    description: [
+      "A evil looking black hat.",
+      "A hat used by black mages also known as necromancers",
+    ],
+    effects: [
+      {
+        stat: "defence",
+        bonus: 4,
+      },
+      { stat: "magic", bonus: 5 },
+    ],
+    slot: "helmet",
+    value: 10,
+  },
 ];

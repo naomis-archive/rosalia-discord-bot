@@ -29,6 +29,48 @@ export const explorations: Adventure[] = [
       dungeon: ["Hidden Grove", "Dark Cave"],
     },
   },
+  {
+    type: "exploration",
+    name: "Mountains",
+    description: [
+      "A huge strech of mountains. Some monsters may have set up home in here. There seem to be animal bones around here. Best to be on guard in this place!",
+      "Tall mountains that are quite high. These moutains may hold some good treasues.",
+      "Rumor has it that these mountains are supposed to be the home to some trolls. Better stay on your toes.",
+    ],
+    results: {
+      monsters: ["Troll", "Yeti", "Bear"],
+      treasure: ["Battle Axe", "Bones"],
+      dungeon: ["Hidden Path", "Rock Cave"],
+    },
+  },
+  {
+    type: "exploration",
+    name: "Mist Land",
+    description: [
+      "A mysterious area covered with Mist. You sense dreaful magical energy in this place.",
+      "This area covered with fog seems like it is haunted. Hopefully there aren't any ghosts haunting this place",
+      "A eerie place filled with nothing but fog for as far as the eye can see. This raises questions as to what happened here.",
+    ],
+    results: {
+      monsters: ["Ghost", "Zombie", "Specter"],
+      treasure: ["Short Sword", "Broken Fence", "Broken Scythe"],
+      dungeon: ["Mysterious Well", "Spooky Animal Shelter"],
+    },
+  },
+  {
+    type: "exploration",
+    name: "Riverside Warf",
+    description: [
+      "You find a swampy land with a bunch of insects and reptiles. This place does not look very dangerous but it may still hold suprises",
+      "A place full of rivers and swamps. Quite a few tress here. Lets hope the insects are friendly",
+      "Trees to both sides, Insects everywhere, Swamps in front. This place is not very friendly to those who dont like the wild.",
+    ],
+    results: {
+      monsters: ["Giant Insectoid", "Insect Queen", "Elemental Summon"],
+      treasure: ["Insect Parts", "Leather Armor", "Long Sword"],
+      dungeon: ["Black Spring", "Overrun Village"],
+    },
+  },
 ];
 
 export const dungeons: Adventure[] = [
@@ -82,6 +124,84 @@ export const dungeons: Adventure[] = [
     results: {
       monsters: ["Wizard"],
       treasure: ["Wizard Robe", "Wizard Hat"],
+    },
+  },
+  {
+    type: "dungeon",
+    name: "Hidden Path",
+    description: [
+      "You find a Hidden Path in the mountains. There seems to be a couple of animals through here.",
+      "There seems to be a small path through here. You had to activate a mechanism to reveal the path. Wonder what lies ahead",
+      "There seems to be a path hidden by someone. Looks like no one has used this path for a while.",
+    ],
+    results: {
+      monsters: ["Troll", "Boar", "Wisp"],
+      treasure: ["Hand-and-a-Half Sword", "Chainmail", "Scroll of Attack"],
+    },
+  },
+  {
+    type: "dungeon",
+    name: "Rock Cave",
+    description: [
+      "A cave made up of Rocks. It's almost as if this place is filled with rock monsters.",
+      "A Rock Formation in the caves. This place may contain golems.",
+      "A Rock cave with tons of bats , spiders and golems.",
+    ],
+    results: {
+      monsters: ["Bat", "Golem", "Spider"],
+      treasure: ["Spider Silk", "Chainmail Helmet", "Scroll of Defence"],
+    },
+  },
+  {
+    type: "dungeon",
+    name: "Mysterious Well",
+    description: [
+      "You find a Strange well. It seems like there might be magicial creatures in here.",
+      "A deep well but it is not filled with water. Instead it seems to be filled with a lot of magical energy.",
+      "An well that seems to have been non functional for a long time. Wonder what you will find in here.",
+    ],
+    results: {
+      monsters: ["Spider", "Specter", "Ghost"],
+      treasure: ["Wizard Staff", "Plate Helmet", "Leather Armor"],
+    },
+  },
+  {
+    type: "dungeon",
+    name: "Spooky Animal Shelter",
+    description: [
+      "An old Animal Shelter. It seems like it has been abandoned for a long time. You can smell a faint smell of undead",
+      "10,000 Animals used to live here. Now it's a ghost infested den. Be careful while exploring this place",
+      "This seems to have been a Animal Shelter once upon a time. Now its a Spooky place.",
+    ],
+    results: {
+      monsters: ["Zombie", "Undead Animal", "Ghost"],
+      treasure: ["Zombie Claw", "Animal Fang", "Magic Dust"],
+    },
+  },
+  {
+    type: "dungeon",
+    name: "Black Spring",
+    description: [
+      "A magical Spring that resonates with dark magic. This magic feels like it resonates with necromancers.",
+      "A dark presence can be felt. This Spring is powerful with dark magic.",
+      "You can sense dark creatures from within. This might be the home of some dark mages.",
+    ],
+    results: {
+      monsters: ["Necromancer", "Lesser Demon", "Hostile Familiar"],
+      treasure: ["Magic Dust", "Used Scroll", "Tattered Black Mage Robes"],
+    },
+  },
+  {
+    type: "dungeon",
+    name: "Overrun Village",
+    description: [
+      "A village that has been overrun by bandits and plunderers. Almost all the residents have been killed and looted",
+      "A formerly thriving village until it was overrun by bandits and plunderers. There may be nothing left here",
+      "This Village seems to have become a bandit den. Looks like the bandits and Plunderers are working hand in hand.",
+    ],
+    results: {
+      monsters: ["Bandit", "Plunderer", "Guardian Spirit"],
+      treasure: ["Long Sword", "Leather Armor", "Chainmail"],
     },
   },
 ];

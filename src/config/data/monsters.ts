@@ -205,4 +205,352 @@ export const monsters: Monster[] = [
       items: ["Wizard Staff"],
     },
   },
+  {
+    name: "Troll",
+    description: [
+      " A huge, feirce looking troll. It seems to be quite powerful.",
+      "It's a Troll. It might be a difficult battle",
+      "Trolls inhabit the mountians. It might be a dangerous beast",
+    ],
+    stats: {
+      attack: 15,
+      defence: 10,
+      magic: 1,
+      health: 50,
+      mana: 0,
+    },
+    drops: {
+      gold: 40,
+      exp: 35,
+      items: ["Hunting Bow", "Troll Fat", "Arrows"],
+    },
+  },
+  {
+    name: "Yeti",
+    description: [
+      "A large, bipedal ape-like creature that is covered with brown. This is a Yeti",
+      "A large creature covered with white hair. Seems like a yeti",
+    ],
+    stats: {
+      attack: 13,
+      defence: 15,
+      magic: 1,
+      health: 70,
+      mana: 0,
+    },
+    drops: {
+      gold: 60,
+      exp: 40,
+      items: ["Yeti Toe", "Yeti Tooth", "Short Sword"],
+    },
+  },
+  {
+    name: "Bear",
+    description: [
+      "A huge brown bear with sharp claws.",
+      "This bear seems to want to attack you.",
+      "A Bear! You have heard that bear's fetch high prices.",
+    ],
+    stats: {
+      attack: 10,
+      defence: 8,
+      magic: 1,
+      health: 30,
+      mana: 0,
+    },
+    drops: {
+      gold: 15,
+      exp: 25,
+      items: ["Bear claw", "Bear Pelt", "Bear Meat"],
+    },
+  },
+  {
+    name: "Ghost",
+    description: [
+      "An apparition of a dead person. It looks freaky.",
+      "A white apparition that seems to want to attack you.",
+    ],
+    stats: {
+      attack: 6,
+      defence: 4,
+      magic: 4,
+      health: 10,
+      mana: 25,
+    },
+    drops: {
+      gold: 10,
+      exp: 15,
+      items: ["Ghost dust", "Broken Crystal", "Spiritual residue"],
+    },
+  },
+  {
+    name: "Zombie",
+    description: [
+      "Seems certain conditions have caused this person to turn into a zombie.",
+      "A zombie which attacks everything in sight indiscriminatly",
+    ],
+    stats: {
+      attack: 12,
+      defence: 8,
+      magic: 1,
+      health: 30,
+      mana: 0,
+    },
+    drops: {
+      gold: 25,
+      exp: 30,
+      items: ["Zombie Claw", "Corrupted Blood", "Zombie Hand"],
+    },
+  },
+  {
+    name: "Specter",
+    description: [
+      "You see a disembodied specter with a scythe in hand.",
+      "A specter with a scythe in hand. Almost looks like death incarnate.",
+    ],
+    stats: {
+      attack: 15,
+      defence: 10,
+      magic: 6,
+      health: 35,
+      mana: 80,
+    },
+    drops: {
+      gold: 35,
+      exp: 40,
+      items: ["Broken Scythe", "Broken Crystal", "Spiritual residue"],
+    },
+  },
+  {
+    name: "Giant Insectoid",
+    description: [
+      "A giant insect-like creature that seems aggressive.",
+      "A aggressive, giant creature that almost looks like a insect",
+    ],
+    stats: {
+      attack: 20,
+      defence: 10,
+      magic: 1,
+      health: 30,
+      mana: 0,
+    },
+    drops: {
+      gold: 15,
+      exp: 20,
+      items: ["Giant Insect Wings", "Giant Insect Carcass", "Arrows"],
+    },
+  },
+  {
+    name: "Insect Queen",
+    description: [
+      "A large insect with shiny wings. This seems to be the queen of the insectoids",
+      "A giant insect queen with large shiny wings.",
+    ],
+    stats: {
+      attack: 30,
+      defence: 15,
+      magic: 4,
+      health: 45,
+      mana: 35,
+    },
+    drops: {
+      gold: 30,
+      exp: 50,
+      items: ["Long Sword", "Leather Armor", "Giant Insect Carcass"],
+    },
+  },
+  {
+    name: "Elemental Summon",
+    description: [
+      "A fire elemental summon that has control of fire magic",
+      "A earth elemental summon that has control of earth magic",
+      "A water elemental summon that has control of water magic",
+      "A wind elemental summon that has control of wind magic",
+    ],
+    stats: {
+      attack: 20,
+      defence: 10,
+      magic: 15,
+      health: 35,
+      mana: 100,
+    },
+    drops: {
+      gold: 30,
+      exp: 40,
+      items: ["Elemental Dust", "Hand-and-a-Half Sword", "Tome of Magic"],
+    },
+  },
+  {
+    name: "Boar",
+    description: [
+      "A wild boar. This are pretty comman animals",
+      "A common wild boar with fangs.",
+    ],
+    stats: {
+      attack: 10,
+      defence: 6,
+      magic: 1,
+      health: 20,
+      mana: 0,
+    },
+    drops: {
+      gold: 15,
+      exp: 10,
+      items: ["Boar Meat", "Boar Fang"],
+    },
+  },
+  {
+    name: "Necromancer",
+    description: [
+      "A mage that uses dark magic and commands the undead",
+      "A evil mage that raises the dead and makes them fight for them",
+      "A powerful dark magic user who uses the power of necromancy.",
+    ],
+    stats: {
+      attack: 10,
+      defence: 15,
+      magic: 20,
+      health: 30,
+      mana: 80,
+    },
+    drops: {
+      gold: 30,
+      exp: 40,
+      items: ["Necromancer's Staff", "Black Mage Robes", "Black Mage Hat"],
+    },
+  },
+  {
+    name: "Bat",
+    description: [
+      "A dark dwelling creature called a bat.",
+      "A unsually large bat with deadly fangs",
+    ],
+    stats: {
+      attack: 5,
+      defence: 5,
+      magic: 1,
+      health: 15,
+      mana: 0,
+    },
+    drops: {
+      gold: 5,
+      exp: 5,
+      items: ["Bat Fang", "Bat wings", "Leather Armor"],
+    },
+  },
+  {
+    name: "Golem",
+    description: [
+      "A giant rock creature that can destroy anything in it's path.",
+      "A giant golem with a high defense.",
+    ],
+    stats: {
+      attack: 25,
+      defence: 15,
+      magic: 1,
+      health: 50,
+      mana: 0,
+    },
+    drops: {
+      gold: 35,
+      exp: 25,
+      items: ["Golem Stones", "Short Sword", "Hunting Bow"],
+    },
+  },
+  {
+    name: "Undead Animal",
+    description: [
+      "A animal that seems to have died and brought back to life",
+      "Wicked magic has caused this animal to come back to life. It does not seem to have it' senses and attack everything in sight.",
+    ],
+    stats: {
+      attack: 15,
+      defence: 5,
+      magic: 1,
+      health: 20,
+      mana: 0,
+    },
+    drops: {
+      gold: 15,
+      exp: 10,
+      items: ["Rotten Animal Carcass", "Rotten Meat", "Arrows"],
+    },
+  },
+  {
+    name: "Plunderer",
+    description: [
+      "A plunderer looting the spoils. He attacks you on sight in hopes to seal all your valuables",
+      "A spoils hunting plunderer who has slight knowledge on how to use magic",
+    ],
+    stats: {
+      attack: 25,
+      defence: 15,
+      magic: 5,
+      health: 35,
+      mana: 20,
+    },
+    drops: {
+      gold: 40,
+      exp: 20,
+      items: ["Long Sword", "Chainmail", "Arrows", "Hunting Bow"],
+    },
+  },
+
+  {
+    name: "Guardian Spirit",
+    description: [
+      "The guardian spirit of this village who attacks all who want to bring harm to the village.",
+      "A powerful guardian spirit. It seems to be extremly powerful and durable.",
+    ],
+    stats: {
+      attack: 30,
+      defence: 20,
+      magic: 30,
+      health: 65,
+      mana: 120,
+    },
+    drops: {
+      gold: 60,
+      exp: 45,
+      items: ["Tome of Attack", "Hand-and-a-Half Sword", "Guardian Dust"],
+    },
+  },
+  {
+    name: "Lesser Demon",
+    description: [
+      "A lesser demon summoned by a necromancer. Although it is a lesser demon, it is still a powerful opponent!",
+      "You run into a Lesser Demon. It seems as though it is a summoned by a mage.",
+    ],
+    stats: {
+      attack: 30,
+      defence: 20,
+      magic: 30,
+      health: 65,
+      mana: 120,
+    },
+    drops: {
+      gold: 60,
+      exp: 45,
+      items: ["Tome of Attack", "Hand-and-a-Half Sword", "Demon Horns"],
+    },
+  },
+  {
+    name: "Hostile Familiar",
+    description: [
+      "A familiar summoned by a mage. It seems to be hostile.",
+      "A hostile familiar. Seems like there is a mage around here summoning these familiars!",
+    ],
+    stats: {
+      attack: 12,
+      defence: 8,
+      magic: 6,
+      health: 25,
+      mana: 30,
+    },
+    drops: {
+      gold: 20,
+      exp: 15,
+      items: ["Spiritual residue", "Short Sword"],
+    },
+  },
 ];
