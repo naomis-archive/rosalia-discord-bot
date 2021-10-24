@@ -256,5 +256,4 @@ export const sellables: Sellable[] = [
     description: [],
     value: 2,
   },
-
 ];
