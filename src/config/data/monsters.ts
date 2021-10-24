@@ -318,7 +318,7 @@ export const monsters: Monster[] = [
     drops: {
       gold: 35,
       exp: 40,
-      items: ["Broken Scythe", "Broken Crystal", "Spiritual Residue"],
+      items: ["Broken Scythe", "Broken Crystal", "Spiritual residue"],
     },
   },
   {
@@ -532,6 +532,25 @@ export const monsters: Monster[] = [
       gold: 60,
       exp: 45,
       items: ["Tome of Attack", "Hand-and-a-Half Sword", "Demon Horns"],
+    },
+  },
+  {
+    name: "Hostile Familiar",
+    description: [
+      "A familiar summoned by a mage. It seems to be hostile.",
+      "A hostile familiar. Seems like there is a mage around here summoning these familiars!",
+    ],
+    stats: {
+      attack: 12,
+      defence: 8,
+      magic: 6,
+      health: 25,
+      mana: 30,
+    },
+    drops: {
+      gold: 20,
+      exp: 15,
+      items: ["Spiritual residue", "Short Sword"],
     },
   },
 ];
