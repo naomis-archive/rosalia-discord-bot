@@ -299,7 +299,7 @@ export const monsters: Monster[] = [
     drops: {
       gold: 25,
       exp: 30,
-      items: ["Zombie Fang", "Corrupted Blood", "Zombie Hand"],
+      items: ["Zombie Claw", "Corrupted Blood", "Zombie Hand"],
     },
   },
   {
@@ -453,7 +453,7 @@ export const monsters: Monster[] = [
     drops: {
       gold: 15,
       exp: 10,
-      items: ["Animal Carcass", "Rotten Meat", "Arrows"],
+      items: ["Rotten Animal Carcass", "Rotten Meat", "Arrows"],
     },
   },
   {
