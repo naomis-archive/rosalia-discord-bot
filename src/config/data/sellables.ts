@@ -180,7 +180,7 @@ export const sellables: Sellable[] = [
   },
   {
     type: "sellable",
-    name: "Spiritual Residue",
+    name: "Spiritual residue",
     description: [],
     value: 10,
   },
@@ -258,7 +258,7 @@ export const sellables: Sellable[] = [
   },
   {
     type: "sellable",
-    name: "Guardian dust",
+    name: "Guardian Dust",
     description: [],
     value: 10,
   },
