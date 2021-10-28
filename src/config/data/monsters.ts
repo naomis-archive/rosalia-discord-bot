@@ -210,7 +210,7 @@ export const monsters: Monster[] = [
     description: [
       " A huge, feirce looking troll. It seems to be quite powerful.",
       "It's a Troll. It might be a difficult battle",
-      "Trolls inhabit the mountians. It might be a dangerous beast",
+      "Trolls inhabit the mountains. It might be a dangerous beast",
     ],
     stats: {
       attack: 15,
@@ -287,7 +287,7 @@ export const monsters: Monster[] = [
     name: "Zombie",
     description: [
       "Seems certain conditions have caused this person to turn into a zombie.",
-      "A zombie which attacks everything in sight indiscriminatly",
+      "A zombie which attacks everything in sight indiscriminately",
     ],
     stats: {
       attack: 12,
@@ -303,10 +303,10 @@ export const monsters: Monster[] = [
     },
   },
   {
-    name: "Specter",
+    name: "Spectre",
     description: [
-      "You see a disembodied specter with a scythe in hand.",
-      "A specter with a scythe in hand. Almost looks like death incarnate.",
+      "You see a disembodied spectre with a scythe in hand.",
+      "A spectre with a scythe in hand. Almost looks like death incarnate.",
     ],
     stats: {
       attack: 15,
