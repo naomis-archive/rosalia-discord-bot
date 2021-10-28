@@ -34,6 +34,14 @@ suite("Data", () => {
 
   suite("Adventure Validation", () => {
     for (const adventure of adventures) {
+      test(`${adventure.name} should be Title Case`, () => {
+        assert.equal(
+          adventure.name,
+          adventure.name.charAt(0).toUpperCase() + adventure.name.slice(1),
+          `${adventure.name} is not Title Case`
+        );
+      });
+
       test(`${adventure.name} should have valid monsters.`, () => {
         for (const monster of adventure.results.monsters) {
           const found = monsters.find((m) => m.name === monster);
@@ -59,8 +67,28 @@ suite("Data", () => {
     }
   });
 
+  suite("Item Validation", () => {
+    for (const item of items) {
+      test(`${item.name} should be Title Case`, () => {
+        assert.equal(
+          item.name,
+          item.name.charAt(0).toUpperCase() + item.name.slice(1),
+          `${item.name} is not Title Case`
+        );
+      });
+    }
+  });
+
   suite("Market Validation", () => {
     for (const market of markets) {
+      test(`${market.name} should be Title Case`, () => {
+        assert.equal(
+          market.name,
+          market.name.charAt(0).toUpperCase() + market.name.slice(1),
+          `${market.name} is not Title Case`
+        );
+      });
+
       test(`${market.name} should have valid items.`, () => {
         for (const item of market.wares) {
           const found = items.find((i) => i.name === item);
@@ -72,6 +100,14 @@ suite("Data", () => {
 
   suite("Monster Validation", () => {
     for (const monster of monsters) {
+      test(`${monster.name} should be Title Case`, () => {
+        assert.equal(
+          monster.name,
+          monster.name.charAt(0).toUpperCase() + monster.name.slice(1),
+          `${monster.name} is not Title Case`
+        );
+      });
+
       test(`${monster.name} should have valid items.`, () => {
         for (const item of monster.drops.items) {
           const found = items.find((i) => i.name === item);
