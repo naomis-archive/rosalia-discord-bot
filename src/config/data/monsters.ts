@@ -210,7 +210,7 @@ export const monsters: Monster[] = [
     description: [
       " A huge, feirce looking troll. It seems to be quite powerful.",
       "It's a Troll. It might be a difficult battle",
-      "Trolls inhabit the mountians. It might be a dangerous beast",
+      "Trolls inhabit the mountains. It might be a dangerous beast",
     ],
     stats: {
       attack: 15,
@@ -261,7 +261,7 @@ export const monsters: Monster[] = [
     drops: {
       gold: 15,
       exp: 25,
-      items: ["Bear claw", "Bear Pelt", "Bear Meat"],
+      items: ["Bear Claw", "Bear Pelt", "Bear Meat"],
     },
   },
   {
@@ -280,14 +280,14 @@ export const monsters: Monster[] = [
     drops: {
       gold: 10,
       exp: 15,
-      items: ["Ghost dust", "Broken Crystal", "Spiritual residue"],
+      items: ["Ghost Dust", "Broken Crystal", "Spiritual residue"],
     },
   },
   {
     name: "Zombie",
     description: [
       "Seems certain conditions have caused this person to turn into a zombie.",
-      "A zombie which attacks everything in sight indiscriminatly",
+      "A zombie which attacks everything in sight indiscriminately",
     ],
     stats: {
       attack: 12,
@@ -303,10 +303,10 @@ export const monsters: Monster[] = [
     },
   },
   {
-    name: "Specter",
+    name: "Spectre",
     description: [
-      "You see a disembodied specter with a scythe in hand.",
-      "A specter with a scythe in hand. Almost looks like death incarnate.",
+      "You see a disembodied spectre with a scythe in hand.",
+      "A spectre with a scythe in hand. Almost looks like death incarnate.",
     ],
     stats: {
       attack: 15,
@@ -435,14 +435,14 @@ export const monsters: Monster[] = [
     drops: {
       gold: 5,
       exp: 5,
-      items: ["Bat Fang", "Bat wings", "Leather Armor"],
+      items: ["Bat Fang", "Bat Wings", "Leather Armor"],
     },
   },
   {
     name: "Golem",
     description: [
       "A giant rock creature that can destroy anything in it's path.",
-      "A giant golem with a high defense.",
+      "A giant golem with a high defence.",
     ],
     stats: {
       attack: 25,

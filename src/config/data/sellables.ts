@@ -7,7 +7,7 @@ export const sellables: Sellable[] = [
     description: [
       "The leftover mess from defeating a slime.",
       "Slime jelly can be a food item if extracted properly",
-      "The remains of a slime you destroyed",
+      "The remains of a slime you destroyed.",
     ],
     value: 1,
   },
@@ -41,8 +41,8 @@ export const sellables: Sellable[] = [
     name: "Goblin Horn",
     description: [
       "The horn from a goblin.",
-      "A trophy from a defeated goblin",
-      "Proof of victory against a goblin",
+      "A trophy from a defeated goblin.",
+      "Proof of victory against a goblin.",
     ],
     value: 7,
   },
@@ -179,7 +179,7 @@ export const sellables: Sellable[] = [
   },
   {
     type: "sellable",
-    name: "Bear claw",
+    name: "Bear Claw",
     description: [
       "A sharp claw of a bear.",
       "A bear claw. It is very sharp and and rip a person in half.",
@@ -206,7 +206,7 @@ export const sellables: Sellable[] = [
   },
   {
     type: "sellable",
-    name: "Ghost dust",
+    name: "Ghost Dust",
     description: [
       "The remains of a ghost.",
       "Dust that was dropped after the ghost was defeated.",
@@ -268,7 +268,7 @@ export const sellables: Sellable[] = [
     type: "sellable",
     name: "Elemental Dust",
     description: [
-      "The remains of a elemtal summon.",
+      "The remains of a elemental summon.",
       "The residue of an element being.",
     ],
     value: 10,
@@ -299,7 +299,7 @@ export const sellables: Sellable[] = [
   },
   {
     type: "sellable",
-    name: "Bat wings",
+    name: "Bat Wings",
     description: [
       "The wings of a bat.",
       "Bat wings which do not have much value.",
@@ -311,7 +311,7 @@ export const sellables: Sellable[] = [
     name: "Golem Stones",
     description: [
       "The remains of a stone golem.",
-      "Hard stones which used to surrong a golem's body.",
+      "Hard stones which used to surround a golem's body.",
     ],
     value: 10,
   },
