@@ -4,7 +4,6 @@ import { MessageEmbed } from "discord.js";
 import { artList } from "../../../config/artList";
 import { CommandHandler } from "../../../interfaces/CommandHandler";
 import { errorEmbedGenerator } from "../../../utils/errorEmbedGenerator";
-import { getCounts } from "../../../utils/getCounts";
 import { getRandomValue } from "../../../utils/getRandomValue";
 import { rosaErrorHandler } from "../../../utils/rosaErrorHandler";
 
