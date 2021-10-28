@@ -6,6 +6,7 @@ import {
 
 import { Command } from "../interfaces/Command";
 import { handleAbout } from "../modules/subcommands/rosalia/handleAbout";
+import { handleArt } from "../modules/subcommands/rosalia/handleArt";
 import { handleDonate } from "../modules/subcommands/rosalia/handleDonate";
 import { handleHelp } from "../modules/subcommands/rosalia/handleHelp";
 import { handlePing } from "../modules/subcommands/rosalia/handlePing";
@@ -41,6 +42,11 @@ export const rosalia: Command = {
       new SlashCommandSubcommandBuilder()
         .setName("help")
         .setDescription("Provides helpful links for using the bot.")
+    )
+    .addSubcommand(
+      new SlashCommandSubcommandBuilder()
+        .setName("art")
+        .setDescription("Shows a random portrait of Rosalia!")
     ),
   run: async (Rosa, interaction) => {
     try {
@@ -63,6 +69,9 @@ export const rosalia: Command = {
           break;
         case "help":
           await handleHelp(Rosa, interaction);
+          break;
+        case "art":
+          await handleArt(Rosa, interaction);
           break;
         default:
           await interaction.editReply({ content: "Invalid command!" });
