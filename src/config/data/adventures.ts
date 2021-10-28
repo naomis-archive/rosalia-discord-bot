@@ -52,7 +52,7 @@ export const explorations: Adventure[] = [
       "A eerie place filled with nothing but fog for as far as the eye can see. This raises questions as to what happened here.",
     ],
     results: {
-      monsters: ["Ghost", "Zombie", "Specter"],
+      monsters: ["Ghost", "Zombie", "Spectre"],
       treasure: ["Short Sword", "Broken Fence", "Broken Scythe"],
       dungeon: ["Mysterious Well", "Cemetery"],
     },
