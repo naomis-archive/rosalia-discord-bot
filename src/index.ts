@@ -7,6 +7,7 @@ import { connectDatabase } from "./database/connectDatabase";
 import { onInteraction } from "./events/onInteraction";
 import { onReady } from "./events/onReady";
 import { RosaliaNightsong } from "./interfaces/RosaliaNightsong";
+import { createServer } from "./server/createServer";
 import { loadCommands } from "./utils/loadCommands";
 import { registerCommands } from "./utils/registerCommands";
 import { rosaLogHandler } from "./utils/rosaLogHandler";
@@ -34,6 +35,7 @@ Sentry.init({
   Rosa.webhook = new WebhookClient({ url: process.env.WH_URL || "oh no" });
 
   await connectDatabase(Rosa);
+  await createServer(Rosa);
 
   rosaLogHandler.log("debug", "Loading commands...");
   // eslint-disable-next-line require-atomic-updates
