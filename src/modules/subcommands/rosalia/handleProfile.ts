@@ -15,6 +15,7 @@ export const handleProfile: CommandHandler = async (Rosa, interaction) => {
     profileEmbed.setDescription(
       "Hi there! I'm Rosalia Nightsong! I'm a character created by nhcarrigan! You can read more about who I am by [visiting my profile](https://www.rosalianightsong.com)!"
     );
+    profileEmbed.setFooter("Having fun? Donate: https://donate.nhcarrigan.com");
 
     await interaction.editReply({ embeds: [profileEmbed] });
   } catch (error) {

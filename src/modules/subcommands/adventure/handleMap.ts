@@ -39,6 +39,7 @@ export const handleMap: CommandHandler = async (Rosa, interaction) => {
       "Dungeons",
       character.adventure.dungeons.join(", ") || "*no dungeons to clear yet*"
     );
+    mapEmbed.setFooter("Having fun? Donate: https://donate.nhcarrigan.com");
 
     await interaction.editReply({ embeds: [mapEmbed] });
   } catch (err) {

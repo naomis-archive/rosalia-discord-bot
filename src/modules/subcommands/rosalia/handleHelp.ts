@@ -36,6 +36,7 @@ export const handleHelp: CommandHandler = async (Rosa, interaction) => {
       "Privacy Policy",
       "As part of my services, I collect and use some specific Discord related information. This information includes, but may not be limited to, your user name, nickname, this server's name, and your Discord ID. [View my full policy](https://docs.rosalianightsong.com/#/privacy.md)"
     );
+    helpEmbed.setFooter("Having fun? Donate: https://donate.nhcarrigan.com");
     await interaction.editReply({ embeds: [helpEmbed] });
   } catch (err) {
     const errorId = await rosaErrorHandler(

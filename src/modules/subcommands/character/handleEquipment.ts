@@ -50,6 +50,7 @@ export const handleEquipment: CommandHandler = async (Rosa, interaction) => {
       character.equipment.accessory || "*nothing equipped*",
       true
     );
+    embed.setFooter("Having fun? Donate: https://donate.nhcarrigan.com");
 
     await interaction.editReply({ embeds: [embed] });
   } catch (error) {

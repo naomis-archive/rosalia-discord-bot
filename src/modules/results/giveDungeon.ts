@@ -61,6 +61,7 @@ export const giveDungeon = async (
       `${dungeon.name} discovered!`,
       getRandomValue(dungeon.description)
     );
+    embed.setFooter("Having fun? Donate: https://donate.nhcarrigan.com");
 
     await interaction.editReply({ embeds: [embed] });
   } catch (error) {

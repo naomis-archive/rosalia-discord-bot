@@ -26,6 +26,7 @@ export const handleAbout: CommandHandler = async (Rosa, interaction) => {
     aboutEmbed.addField("Members", members.toString(), true);
     aboutEmbed.addField("Available Commands", commands.toString(), true);
     aboutEmbed.addField("Favourite Colour", "Green", true);
+    aboutEmbed.setFooter("Having fun? Donate: https://donate.nhcarrigan.com");
 
     await interaction.editReply({ embeds: [aboutEmbed] });
   } catch (err) {
