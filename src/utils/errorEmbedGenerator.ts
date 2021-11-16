@@ -32,6 +32,7 @@ export const errorEmbedGenerator = (
     "So what can I do to fix it?",
     " If you need assistance with this feature, please [join our support server](https://chat.nhcarrigan.com). Once there, give this ErrorID to the support team to investigate."
   );
+  errorEmbed.setFooter("Having fun? Donate: https://donate.nhcarrigan.com");
   errorEmbed.addField("Error ID:", errorId.toHexString());
   errorEmbed.setTimestamp();
   return errorEmbed;

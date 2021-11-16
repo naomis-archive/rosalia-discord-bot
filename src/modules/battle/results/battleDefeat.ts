@@ -36,6 +36,7 @@ export const battleDefeat = async (
     resultEmbed.setDescription(
       `You have been defeated by the ${monster.name}. You wake up back in town.`
     );
+    resultEmbed.setFooter("Having fun? Donate: https://donate.nhcarrigan.com");
 
     await interaction.editReply({ embeds: [resultEmbed], components: [] });
   } catch (error) {

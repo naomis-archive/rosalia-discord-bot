@@ -51,6 +51,7 @@ export const giveItem = async (
     embed.setDescription(
       `You found a treasure chest! When you open it, inside is a ${randomItem.name}! Unfortunately, your backpack is full and you cannot carry any more items! You return to town empty handed.`
     );
+    embed.setFooter("Having fun? Donate: https://donate.nhcarrigan.com");
 
     if (!overLimit) {
       character.inventory[randomItem.type].push(randomItem.name);

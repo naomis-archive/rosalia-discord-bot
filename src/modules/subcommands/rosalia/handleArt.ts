@@ -24,7 +24,7 @@ export const handleArt: CommandHandler = async (Rosa, interaction) => {
         "%20"
       )}`
     );
-    artEmbed.setFooter("Would you like to make an art too?");
+    artEmbed.setFooter("Having fun? Donate: https://donate.nhcarrigan.com");
 
     await interaction.editReply({ embeds: [artEmbed] });
   } catch (err) {

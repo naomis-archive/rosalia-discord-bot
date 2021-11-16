@@ -35,6 +35,7 @@ export const handleUse: CommandHandler = async (Rosa, interaction) => {
     );
 
     const validEmbed = new MessageEmbed();
+    validEmbed.setFooter("Having fun? Donate: https://donate.nhcarrigan.com");
 
     if (!data) {
       validEmbed.setTitle("Item not found");

@@ -27,6 +27,7 @@ export const handleBeta: CommandHandler = async (Rosa, interaction) => {
         })
         .join("\n")
     );
+    embed.setFooter("Having fun? Donate: https://donate.nhcarrigan.com");
     await interaction.editReply({ embeds: [embed] });
   } catch (err) {
     const errorId = await rosaErrorHandler(
