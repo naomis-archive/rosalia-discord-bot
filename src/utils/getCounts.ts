@@ -18,7 +18,7 @@ export const getCounts = (Rosa: RosaliaNightsong): Record<string, number> => {
 
   Rosa.commands.forEach((command) => {
     const parsed = command.data.toJSON().options;
-    parsed.forEach((option) => {
+    parsed?.forEach((option) => {
       // subcommands are type 1
       if (option.type === 1) {
         commandCount++;
