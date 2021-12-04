@@ -1,4 +1,6 @@
 /* eslint-disable jsdoc/require-param */
+import { MessageEmbed } from "discord.js";
+
 import CharacterModel from "../../../database/models/CharacterModel";
 import { CommandHandler } from "../../../interfaces/CommandHandler";
 import { errorEmbedGenerator } from "../../../utils/errorEmbedGenerator";
@@ -70,6 +72,18 @@ export const handleCreate: CommandHandler = async (Rosa, interaction) => {
       content: "Your character has been created!",
       embeds: [characterEmbed],
     });
+
+    const characterCount = await CharacterModel.count();
+
+    const registerEmbed = new MessageEmbed();
+    registerEmbed.setTitle("A new adventurer has registered!");
+    registerEmbed.addField("Registrant", interaction.user.tag);
+    registerEmbed.addField(
+      "Guild",
+      interaction.guild?.name || "Unknown Guild!"
+    );
+    registerEmbed.addField("Character Count", characterCount.toLocaleString());
+    await Rosa.webhook.send({ embeds: [registerEmbed] });
   } catch (error) {
     const errorId = await rosaErrorHandler(
       Rosa,
