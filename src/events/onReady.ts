@@ -1,3 +1,5 @@
+import { MessageEmbed } from "discord.js";
+
 import { RosaliaNightsong } from "../interfaces/RosaliaNightsong";
 import { rosaLogHandler } from "../utils/rosaLogHandler";
 
@@ -9,7 +11,11 @@ import { rosaLogHandler } from "../utils/rosaLogHandler";
 export const onReady = async (Rosa: RosaliaNightsong): Promise<void> => {
   rosaLogHandler.log("debug", "Rosalia is online!");
 
-  await Rosa.webhook.send(
-    `Rosalia is online running version ${process.env.npm_package_version}`
+  const readyEmbed = new MessageEmbed();
+  readyEmbed.setTitle("Rosalia is online!");
+  readyEmbed.setDescription(
+    `Running version ${process.env.npm_package_version}`
   );
+
+  await Rosa.webhook.send({ embeds: [readyEmbed] });
 };

@@ -1,3 +1,4 @@
+import { MessageEmbed } from "discord.js";
 import { connect } from "mongoose";
 
 import { RosaliaNightsong } from "../interfaces/RosaliaNightsong";
@@ -14,7 +15,11 @@ export const connectDatabase = async (
   try {
     await connect(Rosa.configs.mongo);
 
-    await Rosa.webhook.send({ content: "Database connected!" });
+    const embed = new MessageEmbed();
+    embed.setTitle("Database Connected!");
+    embed.setDescription("Rosalia has prepared the adventurer logs.");
+
+    await Rosa.webhook.send({ embeds: [embed] });
   } catch (error) {
     await rosaErrorHandler(Rosa, "database connection", error);
   }
