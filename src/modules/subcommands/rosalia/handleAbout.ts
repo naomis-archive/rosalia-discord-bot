@@ -13,7 +13,7 @@ import { rosaErrorHandler } from "../../../utils/rosaErrorHandler";
 export const handleAbout: CommandHandler = async (Rosa, interaction) => {
   try {
     const { guilds, members, commands } = getCounts(Rosa);
-    const characterCount = await CharacterModel.count();
+    const characterCount = await CharacterModel.countDocuments();
     const aboutEmbed = new MessageEmbed();
     aboutEmbed.setTitle("Rosalia Nightsong");
     aboutEmbed.setAuthor(

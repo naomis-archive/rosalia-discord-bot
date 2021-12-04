@@ -73,7 +73,7 @@ export const handleCreate: CommandHandler = async (Rosa, interaction) => {
       embeds: [characterEmbed],
     });
 
-    const characterCount = await CharacterModel.count();
+    const characterCount = await CharacterModel.countDocuments();
 
     const registerEmbed = new MessageEmbed();
     registerEmbed.setTitle("A new adventurer has registered!");
