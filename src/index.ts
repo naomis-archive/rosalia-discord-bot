@@ -4,6 +4,8 @@ import { Client, WebhookClient } from "discord.js";
 
 import { IntentOptions } from "./config/IntentOptions";
 import { connectDatabase } from "./database/connectDatabase";
+import { onGuildCreate } from "./events/onGuildCreate";
+import { onGuildDelete } from "./events/onGuildDelete";
 import { onInteraction } from "./events/onInteraction";
 import { onReady } from "./events/onReady";
 import { RosaliaNightsong } from "./interfaces/RosaliaNightsong";
@@ -48,6 +50,10 @@ Sentry.init({
     "interactionCreate",
     async (interaction) => await onInteraction(Rosa, interaction)
   );
+
+  Rosa.on("guildCreate", async (guild) => await onGuildCreate(Rosa, guild));
+
+  Rosa.on("guildDelete", async (guild) => await onGuildDelete(Rosa, guild));
 
   await Rosa.login(process.env.DISCORD_TOKEN);
 
