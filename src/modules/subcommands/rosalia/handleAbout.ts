@@ -1,6 +1,7 @@
 /* eslint-disable jsdoc/require-param */
 import { MessageEmbed } from "discord.js";
 
+import CharacterModel from "../../../database/models/CharacterModel";
 import { CommandHandler } from "../../../interfaces/CommandHandler";
 import { errorEmbedGenerator } from "../../../utils/errorEmbedGenerator";
 import { getCounts } from "../../../utils/getCounts";
@@ -12,6 +13,7 @@ import { rosaErrorHandler } from "../../../utils/rosaErrorHandler";
 export const handleAbout: CommandHandler = async (Rosa, interaction) => {
   try {
     const { guilds, members, commands } = getCounts(Rosa);
+    const characterCount = await CharacterModel.count();
     const aboutEmbed = new MessageEmbed();
     aboutEmbed.setTitle("Rosalia Nightsong");
     aboutEmbed.setAuthor(
@@ -25,6 +27,11 @@ export const handleAbout: CommandHandler = async (Rosa, interaction) => {
     aboutEmbed.addField("Guilds", guilds.toString(), true);
     aboutEmbed.addField("Members", members.toString(), true);
     aboutEmbed.addField("Available Commands", commands.toString(), true);
+    aboutEmbed.addField(
+      "Registered Adventurers",
+      characterCount.toLocaleString(),
+      true
+    );
     aboutEmbed.addField("Favourite Colour", "Green", true);
     aboutEmbed.setFooter("Having fun? Donate: https://donate.nhcarrigan.com");
 
