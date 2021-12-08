@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/nhcarrigan/rosalia-nightsong#readme",
   "devDependencies": {
-    "@types/chai": "4.2.22",
+    "@types/chai": "4.3.0",
     "@types/express": "4.17.13",
     "@types/mocha": "9.0.0",
     "@types/node": "16.11.12",
