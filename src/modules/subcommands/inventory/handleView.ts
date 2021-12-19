@@ -35,7 +35,10 @@ export const handleView: CommandHandler = async (Rosa, interaction) => {
       : "*no sellable items*";
 
     const embed = new MessageEmbed();
-    embed.setFooter("Having fun? Donate: https://donate.nhcarrigan.com");
+    embed.setFooter(
+      "Having fun? Donate: https://donate.nhcarrigan.com",
+      "https://cdn.nhcarrigan.com/profile-transparent.png"
+    );
     embed.setTitle(`${character.name}'s Inventory!`);
     embed.setAuthor(interaction.user.tag, interaction.user.displayAvatarURL());
     embed.setDescription(

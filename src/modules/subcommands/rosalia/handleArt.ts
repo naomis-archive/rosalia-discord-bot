@@ -24,7 +24,10 @@ export const handleArt: CommandHandler = async (Rosa, interaction) => {
         "%20"
       )}`
     );
-    artEmbed.setFooter("Having fun? Donate: https://donate.nhcarrigan.com");
+    artEmbed.setFooter(
+      "Having fun? Donate: https://donate.nhcarrigan.com",
+      "https://cdn.nhcarrigan.com/profile-transparent.png"
+    );
 
     await interaction.editReply({ embeds: [artEmbed] });
   } catch (err) {

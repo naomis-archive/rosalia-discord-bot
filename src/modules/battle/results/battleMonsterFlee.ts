@@ -39,7 +39,10 @@ export const battleMonsterFlee = async (
     resultEmbed.setDescription(
       `The ${monster.name} ran away! You return to town feeling a bit disappointed.`
     );
-    resultEmbed.setFooter("Having fun? Donate: https://donate.nhcarrigan.com");
+    resultEmbed.setFooter(
+      "Having fun? Donate: https://donate.nhcarrigan.com",
+      "https://cdn.nhcarrigan.com/profile-transparent.png"
+    );
 
     await interaction.editReply({ embeds: [resultEmbed], components: [] });
   } catch (error) {
