@@ -33,7 +33,10 @@ export const handleAbout: CommandHandler = async (Rosa, interaction) => {
       true
     );
     aboutEmbed.addField("Favourite Colour", "Green", true);
-    aboutEmbed.setFooter("Having fun? Donate: https://donate.nhcarrigan.com");
+    aboutEmbed.setFooter(
+      "Having fun? Donate: https://donate.nhcarrigan.com",
+      "https://cdn.nhcarrigan.com/profile-transparent.png"
+    );
 
     await interaction.editReply({ embeds: [aboutEmbed] });
   } catch (err) {

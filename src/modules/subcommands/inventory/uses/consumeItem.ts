@@ -39,7 +39,10 @@ export const consumeItem = async (
     embed.addField("Magic", character.stats.magic.toString(), true);
     embed.addField("Health", character.stats.health.toString(), true);
     embed.addField("Mana", character.stats.mana.toString(), true);
-    embed.setFooter("Having fun? Donate: https://donate.nhcarrigan.com");
+    embed.setFooter(
+      "Having fun? Donate: https://donate.nhcarrigan.com",
+      "https://cdn.nhcarrigan.com/profile-transparent.png"
+    );
 
     return embed;
   } catch (error) {

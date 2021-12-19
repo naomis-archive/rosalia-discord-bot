@@ -39,7 +39,10 @@ export const battleFlee = async (
     resultEmbed.setDescription(
       `You have managed to escape from the ${monster.name}`
     );
-    resultEmbed.setFooter("Having fun? Donate: https://donate.nhcarrigan.com");
+    resultEmbed.setFooter(
+      "Having fun? Donate: https://donate.nhcarrigan.com",
+      "https://cdn.nhcarrigan.com/profile-transparent.png"
+    );
 
     await interaction.editReply({ embeds: [resultEmbed], components: [] });
   } catch (error) {

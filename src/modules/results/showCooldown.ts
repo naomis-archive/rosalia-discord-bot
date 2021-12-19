@@ -26,6 +26,9 @@ export const showCooldown = (cooldown: number): MessageEmbed => {
     "Time remaining:",
     `${days}d ${hours}h ${minutes}m ${secondsRemain}s`
   );
-  embed.setFooter("Having fun? Donate: https://donate.nhcarrigan.com");
+  embed.setFooter(
+    "Having fun? Donate: https://donate.nhcarrigan.com",
+    "https://cdn.nhcarrigan.com/profile-transparent.png"
+  );
   return embed;
 };

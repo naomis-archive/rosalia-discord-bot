@@ -78,7 +78,10 @@ export const handleBattle = async (
     initialEmbed.addField("Player Health", playerHealth.toString(), true);
     initialEmbed.addField("Player Mana", playerMana.toString(), true);
     initialEmbed.addField("\u200b", "\u200b", true);
-    initialEmbed.setFooter("Having fun? Donate: https://donate.nhcarrigan.com");
+    initialEmbed.setFooter(
+      "Having fun? Donate: https://donate.nhcarrigan.com",
+      "https://cdn.nhcarrigan.com/profile-transparent.png"
+    );
 
     const response = (await interaction.editReply({
       embeds: [initialEmbed],
@@ -215,7 +218,8 @@ export const handleBattle = async (
       resultEmbed.addField("Player Mana", playerMana.toString(), true);
       resultEmbed.addField("\u200b", "\u200b", true);
       resultEmbed.setFooter(
-        "Having fun? Donate: https://donate.nhcarrigan.com"
+        "Having fun? Donate: https://donate.nhcarrigan.com",
+        "https://cdn.nhcarrigan.com/profile-transparent.png"
       );
 
       await interaction.editReply({ embeds: [resultEmbed] });

@@ -31,7 +31,10 @@ export const handleVisit: CommandHandler = async (Rosa, interaction) => {
     const itemData = [...consumables, ...equippables, ...sellables];
 
     const marketEmbed = new MessageEmbed();
-    marketEmbed.setFooter("Having fun? Donate: https://donate.nhcarrigan.com");
+    marketEmbed.setFooter(
+      "Having fun? Donate: https://donate.nhcarrigan.com",
+      "https://cdn.nhcarrigan.com/profile-transparent.png"
+    );
     marketEmbed.setTitle(shoppe.name);
     marketEmbed.setDescription(shoppe.description);
 

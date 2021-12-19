@@ -94,7 +94,10 @@ export const battleVictory = async (
     resultEmbed.setDescription(
       resultString + "\nYou return to town feeling excited about your conquest."
     );
-    resultEmbed.setFooter("Having fun? Donate: https://donate.nhcarrigan.com");
+    resultEmbed.setFooter(
+      "Having fun? Donate: https://donate.nhcarrigan.com",
+      "https://cdn.nhcarrigan.com/profile-transparent.png"
+    );
 
     await interaction.editReply({ embeds: [resultEmbed], components: [] });
   } catch (error) {

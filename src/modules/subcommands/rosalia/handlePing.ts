@@ -24,7 +24,10 @@ export const handlePing: CommandHandler = async (
       isSlow ? "I'm sorry for being slow..." : "Wow! I did it!"
     );
     pingEmbed.setDescription(`Response time: ${delay}ms`);
-    pingEmbed.setFooter("Having fun? Donate: https://donate.nhcarrigan.com");
+    pingEmbed.setFooter(
+      "Having fun? Donate: https://donate.nhcarrigan.com",
+      "https://cdn.nhcarrigan.com/profile-transparent.png"
+    );
 
     await interaction.editReply({ embeds: [pingEmbed] });
   } catch (err) {

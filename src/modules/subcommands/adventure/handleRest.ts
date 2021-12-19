@@ -71,7 +71,10 @@ export const handleRest: CommandHandler = async (Rosa, interaction) => {
     restEmbed.setDescription(
       `Your rest was ${room}. You recovered ${healthGain} health and ${manaGain} mana.`
     );
-    restEmbed.setFooter("Having fun? Donate: https://donate.nhcarrigan.com");
+    restEmbed.setFooter(
+      "Having fun? Donate: https://donate.nhcarrigan.com",
+      "https://cdn.nhcarrigan.com/profile-transparent.png"
+    );
 
     await interaction.editReply({ embeds: [restEmbed] });
   } catch (err) {

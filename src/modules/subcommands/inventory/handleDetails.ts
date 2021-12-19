@@ -43,7 +43,10 @@ export const handleDetails: CommandHandler = async (Rosa, interaction) => {
         itemEmbed.addField(`${effect.stat} bonus:`, `${effect.bonus}`, true)
       );
     }
-    itemEmbed.setFooter("Having fun? Donate: https://donate.nhcarrigan.com");
+    itemEmbed.setFooter(
+      "Having fun? Donate: https://donate.nhcarrigan.com",
+      "https://cdn.nhcarrigan.com/profile-transparent.png"
+    );
 
     await interaction.editReply({ embeds: [itemEmbed] });
   } catch (error) {
