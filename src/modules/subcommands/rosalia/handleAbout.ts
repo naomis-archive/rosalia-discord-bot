@@ -1,5 +1,5 @@
 /* eslint-disable jsdoc/require-param */
-import { MessageEmbed } from "discord.js";
+import { MessageActionRow, MessageButton, MessageEmbed } from "discord.js";
 
 import CharacterModel from "../../../database/models/CharacterModel";
 import { CommandHandler } from "../../../interfaces/CommandHandler";
@@ -38,7 +38,25 @@ export const handleAbout: CommandHandler = async (Rosa, interaction) => {
       "https://cdn.nhcarrigan.com/profile-transparent.png"
     );
 
-    await interaction.editReply({ embeds: [aboutEmbed] });
+    const supportServerButton = new MessageButton()
+      .setLabel("Join the Support Server")
+      .setStyle("LINK")
+      .setURL("https://chat.nhcarrigan.com");
+    const inviteButton = new MessageButton()
+      .setLabel("Add Rosalia to your server!")
+      .setURL("https://invite.rosalianightsong.com");
+    const codeButton = new MessageButton()
+      .setLabel("View Rosalia's Source Code")
+      .setStyle("LINK")
+      .setURL("https://github.com/rosalianightsong/discord-bot");
+
+    const row = new MessageActionRow().addComponents([
+      supportServerButton,
+      inviteButton,
+      codeButton,
+    ]);
+
+    await interaction.editReply({ embeds: [aboutEmbed], components: [row] });
   } catch (err) {
     const errorId = await rosaErrorHandler(
       Rosa,

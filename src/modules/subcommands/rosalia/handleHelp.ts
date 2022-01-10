@@ -1,5 +1,5 @@
 /* eslint-disable jsdoc/require-param */
-import { MessageEmbed } from "discord.js";
+import { MessageActionRow, MessageButton, MessageEmbed } from "discord.js";
 
 import { CommandHandler } from "../../../interfaces/CommandHandler";
 import { errorEmbedGenerator } from "../../../utils/errorEmbedGenerator";
@@ -18,19 +18,19 @@ export const handleHelp: CommandHandler = async (Rosa, interaction) => {
     );
     helpEmbed.addField(
       "Support Server",
-      "If you need some extra guidance, [join my support server](https://chat.nhcarrigan.com) where our team will be more than happy to guide you."
+      "If you need some extra guidance, join my support server where our team will be more than happy to guide you."
     );
     helpEmbed.addField(
       "Documentation",
-      "As an alternative, you are welcome to view my [documentation](https://docs.rosalianightsong.com) to see what I can do."
+      "As an alternative, you are welcome to view my documentation to see what I can do."
     );
     helpEmbed.addField(
       "Source Code",
-      "You can also dive in to my [source code](https://github.com/RosaliaNightsong/discord-bot) and look at my code yourself."
+      "You can also dive in to my source code and look at my code yourself."
     );
     helpEmbed.addField(
       "Bug Report",
-      "Have I failed you in some way? You can [report an issue](https://github.com/RosaliaNightsong/discord-bot/issues/choose), or let us know in the support server."
+      "Have I failed you in some way? You can report an issue, or let us know in the support server."
     );
     helpEmbed.addField(
       "Privacy Policy",
@@ -40,7 +40,36 @@ export const handleHelp: CommandHandler = async (Rosa, interaction) => {
       "Having fun? Donate: https://donate.nhcarrigan.com",
       "https://cdn.nhcarrigan.com/profile-transparent.png"
     );
-    await interaction.editReply({ embeds: [helpEmbed] });
+    const supportServerButton = new MessageButton()
+      .setLabel("Join the Support Server")
+      .setStyle("LINK")
+      .setURL("https://chat.nhcarrigan.com");
+    const inviteButton = new MessageButton()
+      .setLabel("Add Becca to your server!")
+      .setStyle("LINK")
+      .setURL("https://invite.beccalyria.com");
+    const codeButton = new MessageButton()
+      .setLabel("View Becca's Source Code")
+      .setStyle("LINK")
+      .setURL("https://github.com/beccalyria/discord-bot");
+    const docsButton = new MessageButton()
+      .setLabel("View the Documentation")
+      .setStyle("LINK")
+      .setURL("https://docs.beccalyria.com");
+    const reportButton = new MessageButton()
+      .setLabel("Report an Issue")
+      .setStyle("LINK")
+      .setURL("https://github.com/beccalyria/discord-bot/issues/new/choose");
+
+    const row = new MessageActionRow().addComponents([
+      supportServerButton,
+      inviteButton,
+      codeButton,
+      docsButton,
+      reportButton,
+    ]);
+
+    await interaction.editReply({ embeds: [helpEmbed], components: [row] });
   } catch (err) {
     const errorId = await rosaErrorHandler(
       Rosa,

@@ -1,5 +1,5 @@
 /* eslint-disable jsdoc/require-param */
-import { MessageEmbed } from "discord.js";
+import { MessageActionRow, MessageButton, MessageEmbed } from "discord.js";
 
 import { CommandHandler } from "../../../interfaces/CommandHandler";
 import { errorEmbedGenerator } from "../../../utils/errorEmbedGenerator";
@@ -20,7 +20,14 @@ export const handleProfile: CommandHandler = async (Rosa, interaction) => {
       "https://cdn.nhcarrigan.com/profile-transparent.png"
     );
 
-    await interaction.editReply({ embeds: [profileEmbed] });
+    const profileButton = new MessageButton()
+      .setLabel("View Rosalia's Profile")
+      .setStyle("LINK")
+      .setURL("https://www.rosalianightsong.com");
+
+    const row = new MessageActionRow().addComponents([profileButton]);
+
+    await interaction.editReply({ embeds: [profileEmbed], components: [row] });
   } catch (error) {
     const errorId = await rosaErrorHandler(
       Rosa,
