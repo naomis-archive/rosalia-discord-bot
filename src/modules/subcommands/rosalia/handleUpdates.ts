@@ -16,7 +16,7 @@ export const handleUpdates: CommandHandler = async (Rosa, interaction) => {
     const updateEmbed = new MessageEmbed();
     updateEmbed.setTitle("Update Information");
     updateEmbed.setDescription(
-      "Rosa's updates are deployed every Sunday around 8AM Pacific Time. This is important information to know, as these deployments clear the cache. This results in any outstanding cache-reliant features, such as polls, trivia games, or scheduled posts, to be lost. Please plan your interactions around this schedule."
+      "Rosa's updates are deployed every Saturday around 8AM Pacific Time."
     );
     updateEmbed.addField("Latest Updates", updateList.join("\n"));
     updateEmbed.addField(
