@@ -30,7 +30,11 @@ export const registerCommands = async (
       options?: APIApplicationCommandOption[];
     }[] = [];
 
-    Rosa.commands.forEach((command) => commandData.push(command.data.toJSON()));
+    Rosa.commands.forEach((command) => {
+      const data = command.data.toJSON();
+      data.options?.sort((a, b) => a.name.localeCompare(b.name));
+      commandData.push(data);
+    });
     if (process.env.NODE_ENV === "production") {
       rosaLogHandler.log("debug", "registering commands globally!");
       await rest.put(Routes.applicationCommands(Rosa.configs.userId), {
