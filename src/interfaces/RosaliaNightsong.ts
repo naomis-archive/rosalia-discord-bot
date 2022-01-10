@@ -11,4 +11,5 @@ export interface RosaliaNightsong extends Client {
     userId: string;
     mongo: string;
   };
+  commitHash: string;
 }

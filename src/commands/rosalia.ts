@@ -13,6 +13,7 @@ import { handleDonate } from "../modules/subcommands/rosalia/handleDonate";
 import { handleHelp } from "../modules/subcommands/rosalia/handleHelp";
 import { handlePing } from "../modules/subcommands/rosalia/handlePing";
 import { handleProfile } from "../modules/subcommands/rosalia/handleProfile";
+import { handleUpdates } from "../modules/subcommands/rosalia/handleUpdates";
 import { errorEmbedGenerator } from "../utils/errorEmbedGenerator";
 import { rosaErrorHandler } from "../utils/rosaErrorHandler";
 
@@ -61,6 +62,11 @@ export const rosalia: Command = {
       new SlashCommandSubcommandBuilder()
         .setName("contact")
         .setDescription("Provides information to contact the bot's developers.")
+    )
+    .addSubcommand(
+      new SlashCommandSubcommandBuilder()
+        .setName("updates")
+        .setDescription("Provides the changelog for the latest release.")
     ),
   run: async (Rosa, interaction) => {
     try {
@@ -92,6 +98,9 @@ export const rosalia: Command = {
           break;
         case "contact":
           await handleContact(Rosa, interaction);
+          break;
+        case "updates":
+          await handleUpdates(Rosa, interaction);
           break;
         default:
           await interaction.editReply({ content: "Invalid command!" });

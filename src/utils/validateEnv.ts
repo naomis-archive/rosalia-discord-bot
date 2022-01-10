@@ -1,3 +1,5 @@
+import { execSync } from "child_process";
+
 import { RosaliaNightsong } from "../interfaces/RosaliaNightsong";
 
 import { rosaLogHandler } from "./rosaLogHandler";
@@ -37,6 +39,7 @@ export const validateEnv = (Rosa: RosaliaNightsong): boolean => {
   if (process.env.NODE_ENV !== "production") {
     rosaLogHandler.log("debug", "Running in development mode!");
   }
+  Rosa.commitHash = execSync("git rev-parse HEAD").toString().trim();
   Rosa.configs = {
     homeId: process.env.HOME_GUILD,
     token: process.env.DISCORD_TOKEN,
