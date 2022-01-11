@@ -48,7 +48,7 @@
     "typescript": "4.5.4"
   },
   "dependencies": {
-    "@discordjs/builders": "^0.9.0",
+    "@discordjs/builders": "^0.11.0",
     "@discordjs/rest": "^0.1.0-canary.0",
     "@sentry/integrations": "^6.15.0",
     "@sentry/node": "^6.15.0",
