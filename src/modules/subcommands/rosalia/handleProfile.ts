@@ -13,7 +13,7 @@ export const handleProfile: CommandHandler = async (Rosa, interaction) => {
     const profileEmbed = new MessageEmbed();
     profileEmbed.setTitle("Rosalia's Profile");
     profileEmbed.setDescription(
-      "Hi there! I'm Rosalia Nightsong! I'm a character created by nhcarrigan! You can read more about who I am by [visiting my profile](https://www.rosalianightsong.com)!"
+      "Hi there! I'm Rosalia Nightsong! I'm a character created by nhcarrigan! You can read more about who I am by [visiting my profile](https://www.rosalianightsong.com?utm_source=discord&utm_medium=profile-command)!"
     );
     profileEmbed.setFooter(
       "Having fun? Donate: https://donate.nhcarrigan.com",
@@ -23,7 +23,9 @@ export const handleProfile: CommandHandler = async (Rosa, interaction) => {
     const profileButton = new MessageButton()
       .setLabel("View Rosalia's Profile")
       .setStyle("LINK")
-      .setURL("https://www.rosalianightsong.com");
+      .setURL(
+        "https://www.rosalianightsong.com?utm_source=discord&utm_medium=profile-command"
+      );
 
     const row = new MessageActionRow().addComponents([profileButton]);
 
