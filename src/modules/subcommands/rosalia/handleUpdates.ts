@@ -26,7 +26,7 @@ export const handleUpdates: CommandHandler = async (Rosa, interaction) => {
     updateEmbed.addField("Next Scheduled Update", nextUpdate);
     updateEmbed.addField(
       "Changelog",
-      "View Rosalia's entire change log [in her documentation](https://docs.rosalianightsong.com/#/changelog)."
+      "View Rosalia's entire change log [in her documentation](https://docs.rosalianightsong.com/#/changelog?utm_source=discord&utm_medium=updates-command)."
     );
     updateEmbed.addField(
       "Commit Hash",
@@ -44,7 +44,9 @@ export const handleUpdates: CommandHandler = async (Rosa, interaction) => {
       .setLabel("View Changelog")
       .setEmoji("<:RosaNotes:883854700762505287>")
       .setStyle("LINK")
-      .setURL("https://docs.rosalianightsong.com/#/changelog");
+      .setURL(
+        "https://docs.rosalianightsong.com/#/changelog?utm_source=discord&utm_medium=updates-command"
+      );
 
     const row = new MessageActionRow().addComponents([button]);
     await interaction.editReply({ embeds: [updateEmbed], components: [row] });

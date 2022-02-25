@@ -32,7 +32,9 @@ export const handleArt: CommandHandler = async (Rosa, interaction) => {
     const artButton = new MessageButton()
       .setLabel("View More Art!")
       .setStyle("LINK")
-      .setURL("https://www.rosalianightsong.com/gallery");
+      .setURL(
+        "https://www.rosalianightsong.com/gallery?utm_source=discord&utm_medium=art-command"
+      );
 
     const row = new MessageActionRow().addComponents([artButton]);
 
