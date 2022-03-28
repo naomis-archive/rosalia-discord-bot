@@ -5,7 +5,7 @@ import { RosaliaNightsong } from "../interfaces/RosaliaNightsong";
  * command counts.
  *
  * @param {RosaliaNightsong} Rosa Rosa's Discord instance.
- * @returns {Object} An object representing the aggregated counts.
+ * @returns {object} An object representing the aggregated counts.
  */
 export const getCounts = (Rosa: RosaliaNightsong): Record<string, number> => {
   const guildCount = Rosa.guilds.cache.size;
