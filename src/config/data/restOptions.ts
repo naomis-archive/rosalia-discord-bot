@@ -1,3 +1,5 @@
+import { APIApplicationCommandOptionChoice } from "discord-api-types/v10";
+
 export const restOptions: Record<
   Room,
   { health: number; mana: number; gold: number }
@@ -31,10 +33,19 @@ export const restOptions: Record<
 
 export type Room = "terrible" | "poor" | "standard" | "nice" | "extravagant";
 
-export const restChoices: [string, Room][] = [
-  ["Sleep on the street (0 gold)", "terrible"],
-  ["Rent a bed in the common room of the local tavern (10 gold)", "poor"],
-  ["Rent a standard room at the inn. (25 gold)", "standard"],
-  ["Rent a nicer room from the noble quarters. (50 gold)", "nice"],
-  ["Find a fancy room in the royal district. (100 gold)", "extravagant"],
+export const restChoices: APIApplicationCommandOptionChoice<Room>[] = [
+  { name: "Sleep on the street (0 gold)", value: "terrible" },
+  {
+    name: "Rent a bed in the common room of the local tavern (10 gold)",
+    value: "poor",
+  },
+  { name: "Rent a standard room at the inn. (25 gold)", value: "standard" },
+  {
+    name: "Rent a nicer room from the noble quarters. (50 gold)",
+    value: "nice",
+  },
+  {
+    name: "Find a fancy room in the royal district. (100 gold)",
+    value: "extravagant",
+  },
 ];

@@ -19,15 +19,15 @@ suite("Data", () => {
 
     for (const option of Object.keys(restOptions)) {
       test(`${option} should have a matching choice.`, () => {
-        const found = restChoices.find((el) => el[1] === option);
+        const found = restChoices.find((el) => el.value === option);
         assert.exists(found, `${option} does not have a matching choice.`);
       });
     }
 
-    for (const choice of restChoices) {
-      test(`${choice[1]} should have a matching option.`, () => {
-        const found = Object.keys(restOptions).includes(choice[1]);
-        assert.isTrue(found, `${choice[1]} does not have a matching option.`);
+    for (const { value } of restChoices) {
+      test(`${value} should have a matching option.`, () => {
+        const found = Object.keys(restOptions).includes(value);
+        assert.isTrue(found, `${value} does not have a matching option.`);
       });
     }
   });
