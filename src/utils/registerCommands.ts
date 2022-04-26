@@ -1,5 +1,8 @@
 import { REST } from "@discordjs/rest";
-import { APIApplicationCommandOption, Routes } from "discord-api-types/v9";
+import {
+  Routes,
+  RESTPostAPIApplicationCommandsJSONBody,
+} from "discord-api-types/v9";
 
 import { RosaliaNightsong } from "../interfaces/RosaliaNightsong";
 
@@ -23,12 +26,7 @@ export const registerCommands = async (
   try {
     const rest = new REST({ version: "9" }).setToken(Rosa.configs.token);
 
-    const commandData: {
-      name: string;
-      description?: string;
-      type?: number;
-      options?: APIApplicationCommandOption[];
-    }[] = [];
+    const commandData: RESTPostAPIApplicationCommandsJSONBody[] = [];
 
     Rosa.commands.forEach((command) => {
       const data = command.data.toJSON();

@@ -1,3 +1,5 @@
+import { APIApplicationCommandOptionChoice } from "discord-api-types/v10";
+
 import { Market } from "../../interfaces/game/Market";
 
 export const markets: Market[] = [
@@ -53,7 +55,5 @@ export const markets: Market[] = [
 
 export const purchasableItems: string[] = markets.map((el) => el.wares).flat();
 
-export const marketChoices: [string, string][] = markets.map((el) => [
-  el.name,
-  el.key,
-]);
+export const marketChoices: APIApplicationCommandOptionChoice<string>[] =
+  markets.map(({ name, key }) => ({ name, value: key }));

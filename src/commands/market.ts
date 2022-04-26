@@ -25,7 +25,7 @@ export const market: Command = {
             .setName("location")
             .setDescription("The market location to visit.")
             .setRequired(true)
-            .addChoices(marketChoices)
+            .addChoices(...marketChoices)
         )
     )
     .addSubcommand(

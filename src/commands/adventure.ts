@@ -58,7 +58,7 @@ export const adventure: Command = {
             .setName("room")
             .setDescription("Choose what room you'd like to sleep in.")
             .setRequired(true)
-            .addChoices(restChoices)
+            .addChoices(...restChoices)
         )
     )
     .addSubcommand(
