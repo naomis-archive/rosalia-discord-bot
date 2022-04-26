@@ -49,7 +49,7 @@
   },
   "dependencies": {
     "@discordjs/builders": "^0.12.0",
-    "@discordjs/rest": "^0.3.0",
+    "@discordjs/rest": "^0.4.0",
     "@sentry/integrations": "^6.16.1",
     "@sentry/node": "^6.16.1",
     "discord.js": "^13.6.0",
