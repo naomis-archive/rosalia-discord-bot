@@ -44,6 +44,7 @@ export const handleAbout: CommandHandler = async (Rosa, interaction) => {
       .setURL("https://chat.nhcarrigan.com");
     const inviteButton = new MessageButton()
       .setLabel("Add Rosalia to your server!")
+      .setStyle("LINK")
       .setURL("https://invite.rosalianightsong.com");
     const codeButton = new MessageButton()
       .setLabel("View Rosalia's Source Code")
