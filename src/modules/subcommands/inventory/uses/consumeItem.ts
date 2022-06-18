@@ -41,7 +41,7 @@ export const consumeItem = async (
     embed.addField("Mana", character.stats.mana.toString(), true);
     embed.setFooter(
       "Having fun? Donate: https://donate.nhcarrigan.com",
-      "https://cdn.nhcarrigan.com/profile-transparent.png"
+      "https://cdn.nhcarrigan.com/profile.png"
     );
 
     return embed;

@@ -45,7 +45,7 @@ export const handleDetails: CommandHandler = async (Rosa, interaction) => {
     }
     itemEmbed.setFooter(
       "Having fun? Donate: https://donate.nhcarrigan.com",
-      "https://cdn.nhcarrigan.com/profile-transparent.png"
+      "https://cdn.nhcarrigan.com/profile.png"
     );
 
     await interaction.editReply({ embeds: [itemEmbed] });

@@ -17,7 +17,7 @@ export const handleProfile: CommandHandler = async (Rosa, interaction) => {
     );
     profileEmbed.setFooter(
       "Having fun? Donate: https://donate.nhcarrigan.com",
-      "https://cdn.nhcarrigan.com/profile-transparent.png"
+      "https://cdn.nhcarrigan.com/profile.png"
     );
 
     const profileButton = new MessageButton()
