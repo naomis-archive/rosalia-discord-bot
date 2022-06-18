@@ -38,7 +38,7 @@ export const handleHelp: CommandHandler = async (Rosa, interaction) => {
     );
     helpEmbed.setFooter(
       "Having fun? Donate: https://donate.nhcarrigan.com",
-      "https://cdn.nhcarrigan.com/profile-transparent.png"
+      "https://cdn.nhcarrigan.com/profile.png"
     );
     const supportServerButton = new MessageButton()
       .setLabel("Join the Support Server")

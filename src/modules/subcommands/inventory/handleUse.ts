@@ -37,7 +37,7 @@ export const handleUse: CommandHandler = async (Rosa, interaction) => {
     const validEmbed = new MessageEmbed();
     validEmbed.setFooter(
       "Having fun? Donate: https://donate.nhcarrigan.com",
-      "https://cdn.nhcarrigan.com/profile-transparent.png"
+      "https://cdn.nhcarrigan.com/profile.png"
     );
 
     if (!data) {

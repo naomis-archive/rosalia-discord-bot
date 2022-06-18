@@ -80,7 +80,7 @@ export const handleBattle = async (
     initialEmbed.addField("\u200b", "\u200b", true);
     initialEmbed.setFooter(
       "Having fun? Donate: https://donate.nhcarrigan.com",
-      "https://cdn.nhcarrigan.com/profile-transparent.png"
+      "https://cdn.nhcarrigan.com/profile.png"
     );
 
     const response = (await interaction.editReply({
@@ -219,7 +219,7 @@ export const handleBattle = async (
       resultEmbed.addField("\u200b", "\u200b", true);
       resultEmbed.setFooter(
         "Having fun? Donate: https://donate.nhcarrigan.com",
-        "https://cdn.nhcarrigan.com/profile-transparent.png"
+        "https://cdn.nhcarrigan.com/profile.png"
       );
 
       await interaction.editReply({ embeds: [resultEmbed] });

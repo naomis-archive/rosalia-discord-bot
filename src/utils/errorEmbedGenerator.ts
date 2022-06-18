@@ -34,7 +34,7 @@ export const errorEmbedGenerator = (
   );
   errorEmbed.setFooter(
     "Having fun? Donate: https://donate.nhcarrigan.com",
-    "https://cdn.nhcarrigan.com/profile-transparent.png"
+    "https://cdn.nhcarrigan.com/profile.png"
   );
   errorEmbed.addField("Error ID:", errorId.toHexString());
   errorEmbed.setTimestamp();

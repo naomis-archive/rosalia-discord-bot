@@ -35,7 +35,7 @@ export const handleAbout: CommandHandler = async (Rosa, interaction) => {
     aboutEmbed.addField("Favourite Colour", "Green", true);
     aboutEmbed.setFooter(
       "Having fun? Donate: https://donate.nhcarrigan.com",
-      "https://cdn.nhcarrigan.com/profile-transparent.png"
+      "https://cdn.nhcarrigan.com/profile.png"
     );
 
     const supportServerButton = new MessageButton()
