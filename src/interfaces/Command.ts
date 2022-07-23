@@ -11,7 +11,7 @@ export interface Command {
   /**
    * Handles the logic for running a given command.
    *
-   * @param {CommandInteraction} interaction The interaction payload from Discord.
+   * @param {ChatInputCommandInteraction} interaction The interaction payload from Discord.
    */
   run: (
     Rosa: RosaliaNightsong,
