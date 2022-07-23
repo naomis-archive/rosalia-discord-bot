@@ -1,5 +1,10 @@
 /* eslint-disable jsdoc/require-param */
-import { MessageActionRow, MessageButton, MessageEmbed } from "discord.js";
+import {
+  ActionRowBuilder,
+  ButtonBuilder,
+  ButtonStyle,
+  EmbedBuilder,
+} from "discord.js";
 
 import { artList } from "../../../config/artList";
 import { CommandHandler } from "../../../interfaces/CommandHandler";
@@ -13,7 +18,7 @@ import { rosaErrorHandler } from "../../../utils/rosaErrorHandler";
 export const handleArt: CommandHandler = async (Rosa, interaction) => {
   try {
     const art = getRandomValue(artList);
-    const artEmbed = new MessageEmbed();
+    const artEmbed = new EmbedBuilder();
     artEmbed.setTitle(art.artName);
     artEmbed.setDescription(
       `This portrait of me was done by [${art.artist}](${art.artistUrl})`
@@ -24,19 +29,21 @@ export const handleArt: CommandHandler = async (Rosa, interaction) => {
         "%20"
       )}`
     );
-    artEmbed.setFooter(
-      "Having fun? Donate: https://donate.nhcarrigan.com",
-      "https://cdn.nhcarrigan.com/profile.png"
-    );
+    artEmbed.setFooter({
+      text: "Having fun? Donate: https://donate.nhcarrigan.com",
+      iconURL: "https://cdn.nhcarrigan.com/profile.png",
+    });
 
-    const artButton = new MessageButton()
+    const artButton = new ButtonBuilder()
       .setLabel("View More Art!")
-      .setStyle("LINK")
+      .setStyle(ButtonStyle.Link)
       .setURL(
         "https://www.rosalianightsong.com/gallery?utm_source=discord&utm_medium=art-command"
       );
 
-    const row = new MessageActionRow().addComponents([artButton]);
+    const row = new ActionRowBuilder<ButtonBuilder>().addComponents([
+      artButton,
+    ]);
 
     await interaction.editReply({ embeds: [artEmbed], components: [row] });
   } catch (err) {

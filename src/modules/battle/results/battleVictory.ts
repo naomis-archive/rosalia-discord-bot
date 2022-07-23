@@ -1,4 +1,4 @@
-import { CommandInteraction, MessageEmbed } from "discord.js";
+import { CommandInteraction, EmbedBuilder } from "discord.js";
 
 import { consumables } from "../../../config/data/consumables";
 import { equippables } from "../../../config/data/equippables";
@@ -85,19 +85,19 @@ export const battleVictory = async (
     character.markModified("inventory");
     await character.save();
 
-    const resultEmbed = new MessageEmbed();
+    const resultEmbed = new EmbedBuilder();
     resultEmbed.setTitle("Battle Won!");
-    resultEmbed.setAuthor(
-      interaction.user.tag,
-      interaction.user.displayAvatarURL()
-    );
+    resultEmbed.setAuthor({
+      name: interaction.user.tag,
+      iconURL: interaction.user.displayAvatarURL(),
+    });
     resultEmbed.setDescription(
       resultString + "\nYou return to town feeling excited about your conquest."
     );
-    resultEmbed.setFooter(
-      "Having fun? Donate: https://donate.nhcarrigan.com",
-      "https://cdn.nhcarrigan.com/profile.png"
-    );
+    resultEmbed.setFooter({
+      text: "Having fun? Donate: https://donate.nhcarrigan.com",
+      iconURL: "https://cdn.nhcarrigan.com/profile.png",
+    });
 
     await interaction.editReply({ embeds: [resultEmbed], components: [] });
   } catch (error) {

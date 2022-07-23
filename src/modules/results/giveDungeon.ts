@@ -1,4 +1,4 @@
-import { CommandInteraction, MessageEmbed } from "discord.js";
+import { CommandInteraction, EmbedBuilder } from "discord.js";
 
 import { dungeons } from "../../config/data/adventures";
 import { Adventure } from "../../interfaces/game/Adventure";
@@ -39,7 +39,7 @@ export const giveDungeon = async (
       return;
     }
 
-    const embed = new MessageEmbed();
+    const embed = new EmbedBuilder();
     embed.setTitle(`${adventure.name} Results!`);
 
     if (character.adventure.dungeons.includes(dungeon.name)) {
@@ -53,18 +53,23 @@ export const giveDungeon = async (
     character.adventure.dungeons.push(dungeon.name);
     character.markModified("adventure");
     await character.save();
-    embed.setAuthor(interaction.user.tag, interaction.user.displayAvatarURL());
+    embed.setAuthor({
+      name: interaction.user.tag,
+      iconURL: interaction.user.displayAvatarURL(),
+    });
     embed.setDescription(
       `While exploring the area, you discover something strange... You make a note of the location and return back to town.`
     );
-    embed.addField(
-      `${dungeon.name} discovered!`,
-      getRandomValue(dungeon.description)
-    );
-    embed.setFooter(
-      "Having fun? Donate: https://donate.nhcarrigan.com",
-      "https://cdn.nhcarrigan.com/profile.png"
-    );
+    embed.addFields([
+      {
+        name: `${dungeon.name} discovered!`,
+        value: getRandomValue(dungeon.description),
+      },
+    ]);
+    embed.setFooter({
+      text: "Having fun? Donate: https://donate.nhcarrigan.com",
+      iconURL: "https://cdn.nhcarrigan.com/profile.png",
+    });
 
     await interaction.editReply({ embeds: [embed] });
   } catch (error) {

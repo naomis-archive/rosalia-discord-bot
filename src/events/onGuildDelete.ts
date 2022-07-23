@@ -1,4 +1,4 @@
-import { Guild, MessageEmbed } from "discord.js";
+import { Guild, EmbedBuilder } from "discord.js";
 
 import { RosaliaNightsong } from "../interfaces/RosaliaNightsong";
 import { rosaErrorHandler } from "../utils/rosaErrorHandler";
@@ -12,10 +12,12 @@ import { rosaErrorHandler } from "../utils/rosaErrorHandler";
  */
 export const onGuildDelete = async (Rosa: RosaliaNightsong, guild: Guild) => {
   try {
-    const embed = new MessageEmbed();
+    const embed = new EmbedBuilder();
     embed.setTitle("Rosalia has returned from an adventure!");
-    embed.addField("Guild Name", guild.name);
-    embed.addField("Guild ID", guild.id);
+    embed.addFields([
+      { name: "Guild Name", value: guild.name },
+      { name: "Guild ID", value: guild.id },
+    ]);
 
     await Rosa.webhook.send({ embeds: [embed] });
   } catch (err) {

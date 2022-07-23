@@ -1,6 +1,6 @@
 import { RewriteFrames } from "@sentry/integrations";
 import * as Sentry from "@sentry/node";
-import { Client, WebhookClient } from "discord.js";
+import { ActivityType, Client, WebhookClient } from "discord.js";
 
 import { IntentOptions } from "./config/IntentOptions";
 import { connectDatabase } from "./database/connectDatabase";
@@ -59,6 +59,6 @@ Sentry.init({
 
   Rosa.user?.setActivity({
     name: "an RPG on Discord!",
-    type: "PLAYING",
+    type: ActivityType.Playing,
   });
 })();

@@ -1,5 +1,5 @@
 /* eslint-disable jsdoc/require-param */
-import { MessageEmbed } from "discord.js";
+import { EmbedBuilder } from "discord.js";
 
 import { consumables } from "../../../config/data/consumables";
 import { equippables } from "../../../config/data/equippables";
@@ -34,18 +34,18 @@ export const handleUse: CommandHandler = async (Rosa, interaction) => {
       (i) => i.name.toLowerCase() === target.toLowerCase()
     );
 
-    const validEmbed = new MessageEmbed();
-    validEmbed.setFooter(
-      "Having fun? Donate: https://donate.nhcarrigan.com",
-      "https://cdn.nhcarrigan.com/profile.png"
-    );
+    const validEmbed = new EmbedBuilder();
+    validEmbed.setFooter({
+      text: "Having fun? Donate: https://donate.nhcarrigan.com",
+      iconURL: "https://cdn.nhcarrigan.com/profile.png",
+    });
 
     if (!data) {
       validEmbed.setTitle("Item not found");
-      validEmbed.setAuthor(
-        interaction.user.tag,
-        interaction.user.displayAvatarURL()
-      );
+      validEmbed.setAuthor({
+        name: interaction.user.tag,
+        iconURL: interaction.user.displayAvatarURL(),
+      });
       validEmbed.setDescription(
         "That item does not appear to exist. Please try again."
       );

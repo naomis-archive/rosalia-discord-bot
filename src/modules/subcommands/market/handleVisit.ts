@@ -1,6 +1,6 @@
 /* eslint-disable jsdoc/require-param */
 
-import { MessageEmbed } from "discord.js";
+import { EmbedBuilder } from "discord.js";
 
 import { consumables } from "../../../config/data/consumables";
 import { equippables } from "../../../config/data/equippables";
@@ -30,21 +30,23 @@ export const handleVisit: CommandHandler = async (Rosa, interaction) => {
 
     const itemData = [...consumables, ...equippables, ...sellables];
 
-    const marketEmbed = new MessageEmbed();
-    marketEmbed.setFooter(
-      "Having fun? Donate: https://donate.nhcarrigan.com",
-      "https://cdn.nhcarrigan.com/profile.png"
-    );
+    const marketEmbed = new EmbedBuilder();
+    marketEmbed.setFooter({
+      text: "Having fun? Donate: https://donate.nhcarrigan.com",
+      iconURL: "https://cdn.nhcarrigan.com/profile.png",
+    });
     marketEmbed.setTitle(shoppe.name);
     marketEmbed.setDescription(shoppe.description);
 
     for (const ware of shoppe.wares) {
       const item = itemData.find((el) => el.name === ware);
-      marketEmbed.addField(
-        `${item?.name} - ${(item?.value || 0) * 5} gold` || "Unknown Item",
-        getRandomValue(item?.description || [""]) ||
-          `Could not load data for ${ware}`
-      );
+      marketEmbed.addFields({
+        name:
+          `${item?.name} - ${(item?.value || 0) * 5} gold` || "Unknown Item",
+        value:
+          getRandomValue(item?.description || [""]) ||
+          `Could not load data for ${ware}`,
+      });
     }
 
     await interaction.editReply({ embeds: [marketEmbed] });

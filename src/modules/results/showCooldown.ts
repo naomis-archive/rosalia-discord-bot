@@ -1,4 +1,4 @@
-import { MessageEmbed } from "discord.js";
+import { EmbedBuilder } from "discord.js";
 
 /**
  * Takes a milliseconds value and parses it into
@@ -6,9 +6,9 @@ import { MessageEmbed } from "discord.js";
  * responses.
  *
  * @param {number} cooldown The user's remaining cooldown, in ms.
- * @returns {MessageEmbed} A Discord message embed.
+ * @returns {EmbedBuilder} A Discord message embed.
  */
-export const showCooldown = (cooldown: number): MessageEmbed => {
+export const showCooldown = (cooldown: number): EmbedBuilder => {
   const seconds = Math.round(cooldown / 1000);
   const days = seconds >= 86400 ? Math.floor(seconds / 86400) : 0;
   const hours =
@@ -19,16 +19,18 @@ export const showCooldown = (cooldown: number): MessageEmbed => {
       : 0;
   const secondsRemain = seconds - days * 86400 - hours * 3600 - minutes * 60;
 
-  const embed = new MessageEmbed();
+  const embed = new EmbedBuilder();
   embed.setTitle("You are busy!");
   embed.setDescription("You are still occupied with your last activity.");
-  embed.addField(
-    "Time remaining:",
-    `${days}d ${hours}h ${minutes}m ${secondsRemain}s`
-  );
-  embed.setFooter(
-    "Having fun? Donate: https://donate.nhcarrigan.com",
-    "https://cdn.nhcarrigan.com/profile.png"
-  );
+  embed.addFields([
+    {
+      name: "Time remaining:",
+      value: `${days}d ${hours}h ${minutes}m ${secondsRemain}s`,
+    },
+  ]);
+  embed.setFooter({
+    text: "Having fun? Donate: https://donate.nhcarrigan.com",
+    iconURL: "https://cdn.nhcarrigan.com/profile.png",
+  });
   return embed;
 };

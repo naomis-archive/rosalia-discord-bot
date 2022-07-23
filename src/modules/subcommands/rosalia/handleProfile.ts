@@ -1,5 +1,10 @@
 /* eslint-disable jsdoc/require-param */
-import { MessageActionRow, MessageButton, MessageEmbed } from "discord.js";
+import {
+  ActionRowBuilder,
+  ButtonBuilder,
+  ButtonStyle,
+  EmbedBuilder,
+} from "discord.js";
 
 import { CommandHandler } from "../../../interfaces/CommandHandler";
 import { errorEmbedGenerator } from "../../../utils/errorEmbedGenerator";
@@ -10,24 +15,26 @@ import { rosaErrorHandler } from "../../../utils/rosaErrorHandler";
  */
 export const handleProfile: CommandHandler = async (Rosa, interaction) => {
   try {
-    const profileEmbed = new MessageEmbed();
+    const profileEmbed = new EmbedBuilder();
     profileEmbed.setTitle("Rosalia's Profile");
     profileEmbed.setDescription(
       "Hi there! I'm Rosalia Nightsong! I'm a character created by nhcarrigan! You can read more about who I am by [visiting my profile](https://www.rosalianightsong.com?utm_source=discord&utm_medium=profile-command)!"
     );
-    profileEmbed.setFooter(
-      "Having fun? Donate: https://donate.nhcarrigan.com",
-      "https://cdn.nhcarrigan.com/profile.png"
-    );
+    profileEmbed.setFooter({
+      text: "Having fun? Donate: https://donate.nhcarrigan.com",
+      iconURL: "https://cdn.nhcarrigan.com/profile.png",
+    });
 
-    const profileButton = new MessageButton()
+    const profileButton = new ButtonBuilder()
       .setLabel("View Rosalia's Profile")
-      .setStyle("LINK")
+      .setStyle(ButtonStyle.Link)
       .setURL(
         "https://www.rosalianightsong.com?utm_source=discord&utm_medium=profile-command"
       );
 
-    const row = new MessageActionRow().addComponents([profileButton]);
+    const row = new ActionRowBuilder<ButtonBuilder>().addComponents([
+      profileButton,
+    ]);
 
     await interaction.editReply({ embeds: [profileEmbed], components: [row] });
   } catch (error) {

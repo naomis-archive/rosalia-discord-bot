@@ -1,5 +1,5 @@
 /* eslint-disable jsdoc/require-param */
-import { MessageEmbed } from "discord.js";
+import { EmbedBuilder } from "discord.js";
 
 import CharacterModel from "../../../database/models/CharacterModel";
 import { CommandHandler } from "../../../interfaces/CommandHandler";
@@ -22,38 +22,38 @@ export const handleEquipment: CommandHandler = async (Rosa, interaction) => {
       return;
     }
 
-    const embed = new MessageEmbed();
+    const embed = new EmbedBuilder();
     embed.setTitle(`${character.name}'s Equipment`);
-    embed.setAuthor(interaction.user.tag, interaction.user.displayAvatarURL());
-    embed.addField(
-      "Main Hand",
-      character.equipment.mainHand || "*nothing equipped*",
-      true
-    );
-    embed.addField(
-      "Helmet",
-      character.equipment.helmet || "*nothing equipped*",
-      true
-    );
-    embed.addField(
-      "Off Hand",
-      character.equipment.offHand || "*nothing equipped*",
-      true
-    );
-    embed.addField(
-      "Armor",
-      character.equipment.armor || "*nothing equipped*",
-      true
-    );
-    embed.addField(
-      "Accessory",
-      character.equipment.accessory || "*nothing equipped*",
-      true
-    );
-    embed.setFooter(
-      "Having fun? Donate: https://donate.nhcarrigan.com",
-      "https://cdn.nhcarrigan.com/profile.png"
-    );
+    embed.setAuthor({
+      name: interaction.user.tag,
+      iconURL: interaction.user.displayAvatarURL(),
+    });
+    embed.addFields([
+      {
+        name: "Main Hand",
+        value: character.equipment.mainHand || "*nothing equipped*",
+      },
+      {
+        name: "Off Hand",
+        value: character.equipment.offHand || "*nothing equipped*",
+      },
+      {
+        name: "Helmet",
+        value: character.equipment.helmet || "*nothing equipped*",
+      },
+      {
+        name: "Armor",
+        value: character.equipment.armor || "*nothing equipped*",
+      },
+      {
+        name: "Accessory",
+        value: character.equipment.accessory || "*nothing equipped*",
+      },
+    ]);
+    embed.setFooter({
+      text: "Having fun? Donate: https://donate.nhcarrigan.com",
+      iconURL: "https://cdn.nhcarrigan.com/profile.png",
+    });
 
     await interaction.editReply({ embeds: [embed] });
   } catch (error) {

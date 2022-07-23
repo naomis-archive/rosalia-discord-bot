@@ -2,7 +2,7 @@ import {
   SlashCommandBuilder,
   SlashCommandSubcommandsOnlyBuilder,
 } from "@discordjs/builders";
-import { CommandInteraction } from "discord.js";
+import { ChatInputCommandInteraction } from "discord.js";
 
 import { RosaliaNightsong } from "./RosaliaNightsong";
 
@@ -15,6 +15,6 @@ export interface Command {
    */
   run: (
     Rosa: RosaliaNightsong,
-    interaction: CommandInteraction
+    interaction: ChatInputCommandInteraction
   ) => Promise<void>;
 }

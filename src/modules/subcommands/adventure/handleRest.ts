@@ -1,5 +1,5 @@
 /* eslint-disable jsdoc/require-param */
-import { MessageEmbed } from "discord.js";
+import { EmbedBuilder } from "discord.js";
 
 import { restOptions, Room } from "../../../config/data/restOptions";
 import CharacterModel from "../../../database/models/CharacterModel";
@@ -62,19 +62,19 @@ export const handleRest: CommandHandler = async (Rosa, interaction) => {
     character.markModified("stats");
     await character.save();
 
-    const restEmbed = new MessageEmbed();
+    const restEmbed = new EmbedBuilder();
     restEmbed.setTitle("You took a rest!");
-    restEmbed.setAuthor(
-      interaction.user.tag,
-      interaction.user.displayAvatarURL()
-    );
+    restEmbed.setAuthor({
+      name: interaction.user.tag,
+      iconURL: interaction.user.displayAvatarURL(),
+    });
     restEmbed.setDescription(
       `Your rest was ${room}. You recovered ${healthGain} health and ${manaGain} mana.`
     );
-    restEmbed.setFooter(
-      "Having fun? Donate: https://donate.nhcarrigan.com",
-      "https://cdn.nhcarrigan.com/profile.png"
-    );
+    restEmbed.setFooter({
+      text: "Having fun? Donate: https://donate.nhcarrigan.com",
+      iconURL: "https://cdn.nhcarrigan.com/profile.png",
+    });
 
     await interaction.editReply({ embeds: [restEmbed] });
   } catch (err) {

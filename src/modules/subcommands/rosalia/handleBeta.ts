@@ -1,5 +1,5 @@
 /* eslint-disable jsdoc/require-param */
-import { MessageEmbed } from "discord.js";
+import { EmbedBuilder } from "discord.js";
 
 import { betaTesters } from "../../../config/betaTesters";
 import { CommandHandler } from "../../../interfaces/CommandHandler";
@@ -12,7 +12,7 @@ import { rosaErrorHandler } from "../../../utils/rosaErrorHandler";
  */
 export const handleBeta: CommandHandler = async (Rosa, interaction) => {
   try {
-    const embed = new MessageEmbed();
+    const embed = new EmbedBuilder();
     embed.setTitle("Special Thanks to our beta testers!");
     embed.setDescription(
       betaTesters
@@ -27,10 +27,10 @@ export const handleBeta: CommandHandler = async (Rosa, interaction) => {
         })
         .join("\n")
     );
-    embed.setFooter(
-      "Having fun? Donate: https://donate.nhcarrigan.com",
-      "https://cdn.nhcarrigan.com/profile.png"
-    );
+    embed.setFooter({
+      text: "Having fun? Donate: https://donate.nhcarrigan.com",
+      iconURL: "https://cdn.nhcarrigan.com/profile.png",
+    });
     await interaction.editReply({ embeds: [embed] });
   } catch (err) {
     const errorId = await rosaErrorHandler(

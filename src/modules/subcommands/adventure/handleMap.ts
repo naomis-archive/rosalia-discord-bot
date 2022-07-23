@@ -1,5 +1,5 @@
 /* eslint-disable jsdoc/require-param */
-import { MessageEmbed } from "discord.js";
+import { EmbedBuilder } from "discord.js";
 
 import CharacterModel from "../../../database/models/CharacterModel";
 import { CommandHandler } from "../../../interfaces/CommandHandler";
@@ -22,27 +22,32 @@ export const handleMap: CommandHandler = async (Rosa, interaction) => {
       return;
     }
 
-    const mapEmbed = new MessageEmbed();
+    const mapEmbed = new EmbedBuilder();
     mapEmbed.setTitle("Available Destinations!");
-    mapEmbed.setAuthor(
-      interaction.user.tag,
-      interaction.user.displayAvatarURL()
-    );
+    mapEmbed.setAuthor({
+      name: interaction.user.tag,
+      iconURL: interaction.user.displayAvatarURL(),
+    });
     mapEmbed.setDescription(
       "These are the locations you are able to visit on an adventure."
     );
-    mapEmbed.addField(
-      "Exploration",
-      character.adventure.areas.join(", ") || "*no areas to explore yet*"
-    );
-    mapEmbed.addField(
-      "Dungeons",
-      character.adventure.dungeons.join(", ") || "*no dungeons to clear yet*"
-    );
-    mapEmbed.setFooter(
-      "Having fun? Donate: https://donate.nhcarrigan.com",
-      "https://cdn.nhcarrigan.com/profile.png"
-    );
+    mapEmbed.addFields([
+      {
+        name: "Exploration",
+        value:
+          character.adventure.areas.join(", ") || "*no areas to explore yet*",
+      },
+      {
+        name: "Dungeons",
+        value:
+          character.adventure.dungeons.join(", ") ||
+          "*no dungeons to explore yet*",
+      },
+    ]);
+    mapEmbed.setFooter({
+      text: "Having fun? Donate: https://donate.nhcarrigan.com",
+      iconURL: "https://cdn.nhcarrigan.com/profile.png",
+    });
 
     await interaction.editReply({ embeds: [mapEmbed] });
   } catch (err) {

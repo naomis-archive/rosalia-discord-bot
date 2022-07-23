@@ -2,7 +2,7 @@ import { REST } from "@discordjs/rest";
 import {
   Routes,
   RESTPostAPIApplicationCommandsJSONBody,
-} from "discord-api-types/v9";
+} from "discord-api-types/v10";
 
 import { RosaliaNightsong } from "../interfaces/RosaliaNightsong";
 
@@ -24,7 +24,7 @@ export const registerCommands = async (
   Rosa: RosaliaNightsong
 ): Promise<boolean> => {
   try {
-    const rest = new REST({ version: "9" }).setToken(Rosa.configs.token);
+    const rest = new REST({ version: "10" }).setToken(Rosa.configs.token);
 
     const commandData: RESTPostAPIApplicationCommandsJSONBody[] = [];
 

@@ -1,5 +1,5 @@
 /* eslint-disable jsdoc/require-param */
-import { MessageEmbed } from "discord.js";
+import { EmbedBuilder } from "discord.js";
 
 import { consumables } from "../../../config/data/consumables";
 import { equippables } from "../../../config/data/equippables";
@@ -33,21 +33,21 @@ export const handleSell: CommandHandler = async (Rosa, interaction) => {
       (i) => i.name.toLowerCase() === target.toLowerCase()
     );
 
-    const sellEmbed = new MessageEmbed();
-    sellEmbed.setFooter(
-      "Having fun? Donate: https://donate.nhcarrigan.com",
-      "https://cdn.nhcarrigan.com/profile.png"
-    );
+    const sellEmbed = new EmbedBuilder();
+    sellEmbed.setFooter({
+      text: "Having fun? Donate: https://donate.nhcarrigan.com",
+      iconURL: "https://cdn.nhcarrigan.com/profile.png",
+    });
 
     if (!data) {
       sellEmbed.setTitle("Item not found");
       sellEmbed.setDescription(
         "That item does not appear to exist. Please try again."
       );
-      sellEmbed.setAuthor(
-        interaction.user.tag,
-        interaction.user.displayAvatarURL()
-      );
+      sellEmbed.setAuthor({
+        name: interaction.user.tag,
+        iconURL: interaction.user.displayAvatarURL(),
+      });
       await interaction.editReply({ embeds: [sellEmbed] });
       return;
     }
@@ -93,7 +93,9 @@ export const handleSell: CommandHandler = async (Rosa, interaction) => {
 
     sellEmbed.setTitle(`${data.name} sold`);
     sellEmbed.setDescription(`You sold ${data.name} for ${data.value} gold.`);
-    sellEmbed.addField("Gold", `${character.inventory.gold}`);
+    sellEmbed.addFields([
+      { name: "Gold", value: `${character.inventory.gold}` },
+    ]);
 
     await interaction.editReply({ embeds: [sellEmbed] });
   } catch (error) {

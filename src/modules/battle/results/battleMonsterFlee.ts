@@ -1,4 +1,4 @@
-import { CommandInteraction, MessageEmbed } from "discord.js";
+import { CommandInteraction, EmbedBuilder } from "discord.js";
 
 import { Character } from "../../../interfaces/game/Character";
 import { Monster } from "../../../interfaces/game/Monster";
@@ -30,19 +30,19 @@ export const battleMonsterFlee = async (
     character.markModified("stats");
     await character.save();
 
-    const resultEmbed = new MessageEmbed();
+    const resultEmbed = new EmbedBuilder();
     resultEmbed.setTitle("Monster fled!");
-    resultEmbed.setAuthor(
-      interaction.user.tag,
-      interaction.user.displayAvatarURL()
-    );
+    resultEmbed.setAuthor({
+      name: interaction.user.tag,
+      iconURL: interaction.user.displayAvatarURL(),
+    });
     resultEmbed.setDescription(
       `The ${monster.name} ran away! You return to town feeling a bit disappointed.`
     );
-    resultEmbed.setFooter(
-      "Having fun? Donate: https://donate.nhcarrigan.com",
-      "https://cdn.nhcarrigan.com/profile.png"
-    );
+    resultEmbed.setFooter({
+      text: "Having fun? Donate: https://donate.nhcarrigan.com",
+      iconURL: "https://cdn.nhcarrigan.com/profile.png",
+    });
 
     await interaction.editReply({ embeds: [resultEmbed], components: [] });
   } catch (error) {
