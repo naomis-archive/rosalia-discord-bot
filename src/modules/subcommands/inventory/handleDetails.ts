@@ -1,5 +1,5 @@
 /* eslint-disable jsdoc/require-param */
-import { MessageEmbed } from "discord.js";
+import { EmbedBuilder } from "discord.js";
 
 import { consumables } from "../../../config/data/consumables";
 import { equippables } from "../../../config/data/equippables";
@@ -20,7 +20,7 @@ export const handleDetails: CommandHandler = async (Rosa, interaction) => {
       (i) => i.name.toLowerCase() === target.toLowerCase()
     );
 
-    const itemEmbed = new MessageEmbed();
+    const itemEmbed = new EmbedBuilder();
 
     if (!item) {
       itemEmbed.setTitle("Item not found");
@@ -32,21 +32,29 @@ export const handleDetails: CommandHandler = async (Rosa, interaction) => {
     }
 
     itemEmbed.setTitle(item.name);
-    itemEmbed.setAuthor(
-      interaction.user.tag,
-      interaction.user.displayAvatarURL()
-    );
+    itemEmbed.setAuthor({
+      name: interaction.user.tag,
+      iconURL: interaction.user.displayAvatarURL(),
+    });
     itemEmbed.setDescription(getRandomValue(item.description));
-    itemEmbed.addField("Value", `${item.value} gold.`, true);
+    itemEmbed.addFields({
+      name: "Value",
+      value: `${item.value} gold.`,
+      inline: true,
+    });
     if (item.type !== "sellable") {
-      item.effects.forEach((effect) =>
-        itemEmbed.addField(`${effect.stat} bonus:`, `${effect.bonus}`, true)
+      itemEmbed.addFields(
+        item.effects.map((effect) => ({
+          name: `${effect.stat} bonus:`,
+          value: String(effect.bonus),
+          inline: true,
+        }))
       );
     }
-    itemEmbed.setFooter(
-      "Having fun? Donate: https://donate.nhcarrigan.com",
-      "https://cdn.nhcarrigan.com/profile.png"
-    );
+    itemEmbed.setFooter({
+      text: "Having fun? Donate: https://donate.nhcarrigan.com",
+      iconURL: "https://cdn.nhcarrigan.com/profile.png",
+    });
 
     await interaction.editReply({ embeds: [itemEmbed] });
   } catch (error) {

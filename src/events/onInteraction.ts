@@ -12,7 +12,7 @@ export const onInteraction = async (
   Rosa: RosaliaNightsong,
   interaction: Interaction
 ): Promise<void> => {
-  if (!interaction.isCommand()) {
+  if (!interaction.isChatInputCommand()) {
     return;
   }
   const target = Rosa.commands.find(

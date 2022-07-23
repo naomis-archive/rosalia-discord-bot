@@ -1,9 +1,10 @@
 import {
+  ActionRowBuilder,
+  ButtonBuilder,
+  ButtonStyle,
   CommandInteraction,
+  EmbedBuilder,
   Message,
-  MessageActionRow,
-  MessageButton,
-  MessageEmbed,
 } from "discord.js";
 
 import { Character } from "../../interfaces/game/Character";
@@ -45,43 +46,45 @@ export const handleBattle = async (
       magic: playerMagic,
     } = character.stats;
 
-    const attackButton = new MessageButton()
+    const attackButton = new ButtonBuilder()
       .setLabel("Attack")
-      .setStyle("SUCCESS")
+      .setStyle(ButtonStyle.Success)
       .setCustomId("attack");
-    const magicButton = new MessageButton()
+    const magicButton = new ButtonBuilder()
       .setLabel("Magic")
-      .setStyle("PRIMARY")
+      .setStyle(ButtonStyle.Primary)
       .setCustomId("magic");
-    const fleeButton = new MessageButton()
+    const fleeButton = new ButtonBuilder()
       .setLabel("Flee")
-      .setStyle("DANGER")
+      .setStyle(ButtonStyle.Danger)
       .setCustomId("flee");
-    const enabledRow = new MessageActionRow().addComponents([
+    const enabledRow = new ActionRowBuilder<ButtonBuilder>().addComponents([
       attackButton,
       magicButton,
       fleeButton,
     ]);
 
-    const initialEmbed = new MessageEmbed();
+    const initialEmbed = new EmbedBuilder();
     initialEmbed.setTitle("Battle Started!");
     initialEmbed.setDescription(
       `A ${monster.name} has appeared before you!\n${monster.description}`
     );
-    initialEmbed.setAuthor(
-      interaction.user.tag.toString(),
-      interaction.user.displayAvatarURL()
-    );
-    initialEmbed.addField("Monster Health", monsterHealth.toString(), true);
-    initialEmbed.addField("Monster Mana", monsterMana.toString(), true);
-    initialEmbed.addField("\u200b", "\u200b", true);
-    initialEmbed.addField("Player Health", playerHealth.toString(), true);
-    initialEmbed.addField("Player Mana", playerMana.toString(), true);
-    initialEmbed.addField("\u200b", "\u200b", true);
-    initialEmbed.setFooter(
-      "Having fun? Donate: https://donate.nhcarrigan.com",
-      "https://cdn.nhcarrigan.com/profile.png"
-    );
+    initialEmbed.setAuthor({
+      name: interaction.user.tag.toString(),
+      iconURL: interaction.user.displayAvatarURL(),
+    });
+    initialEmbed.addFields([
+      { name: "Monster Health", value: monsterHealth.toString(), inline: true },
+      { name: "Monster Mana", value: monsterMana.toString(), inline: true },
+      { name: "\u200b", value: "\u200b", inline: true },
+      { name: "Player Health", value: playerHealth.toString(), inline: true },
+      { name: "Player Mana", value: playerMana.toString(), inline: true },
+      { name: "\u200b", value: "\u200b", inline: true },
+    ]);
+    initialEmbed.setFooter({
+      text: "Having fun? Donate: https://donate.nhcarrigan.com",
+      iconURL: "https://cdn.nhcarrigan.com/profile.png",
+    });
 
     const response = (await interaction.editReply({
       embeds: [initialEmbed],
@@ -204,23 +207,29 @@ export const handleBattle = async (
       }
 
       // if we reach here, then time for another battle round so update the embed.
-      const resultEmbed = new MessageEmbed();
+      const resultEmbed = new EmbedBuilder();
       resultEmbed.setTitle("Battle continues!");
       resultEmbed.setDescription(resultString);
-      resultEmbed.setAuthor(
-        interaction.user.tag.toString(),
-        interaction.user.displayAvatarURL()
-      );
-      resultEmbed.addField("Monster Health", monsterHealth.toString(), true);
-      resultEmbed.addField("Monster Mana", monsterMana.toString(), true);
-      resultEmbed.addField("\u200b", "\u200b", true);
-      resultEmbed.addField("Player Health", playerHealth.toString(), true);
-      resultEmbed.addField("Player Mana", playerMana.toString(), true);
-      resultEmbed.addField("\u200b", "\u200b", true);
-      resultEmbed.setFooter(
-        "Having fun? Donate: https://donate.nhcarrigan.com",
-        "https://cdn.nhcarrigan.com/profile.png"
-      );
+      resultEmbed.setAuthor({
+        name: interaction.user.tag.toString(),
+        iconURL: interaction.user.displayAvatarURL(),
+      });
+      resultEmbed.addFields([
+        {
+          name: "Monster Health",
+          value: monsterHealth.toString(),
+          inline: true,
+        },
+        { name: "Monster Mana", value: monsterMana.toString(), inline: true },
+        { name: "\u200b", value: "\u200b", inline: true },
+        { name: "Player Health", value: playerHealth.toString(), inline: true },
+        { name: "Player Mana", value: playerMana.toString(), inline: true },
+        { name: "\u200b", value: "\u200b", inline: true },
+      ]);
+      resultEmbed.setFooter({
+        text: "Having fun? Donate: https://donate.nhcarrigan.com",
+        iconURL: "https://cdn.nhcarrigan.com/profile.png",
+      });
 
       await interaction.editReply({ embeds: [resultEmbed] });
     });

@@ -1,5 +1,5 @@
 /* eslint-disable jsdoc/require-param */
-import { MessageEmbed } from "discord.js";
+import { EmbedBuilder } from "discord.js";
 
 import CharacterModel from "../../../database/models/CharacterModel";
 import { CommandHandler } from "../../../interfaces/CommandHandler";
@@ -34,27 +34,45 @@ export const handleView: CommandHandler = async (Rosa, interaction) => {
       ? sellable.join(", ")
       : "*no sellable items*";
 
-    const embed = new MessageEmbed();
-    embed.setFooter(
-      "Having fun? Donate: https://donate.nhcarrigan.com",
-      "https://cdn.nhcarrigan.com/profile.png"
-    );
+    const embed = new EmbedBuilder();
+    embed.setFooter({
+      text: "Having fun? Donate: https://donate.nhcarrigan.com",
+      iconURL: "https://cdn.nhcarrigan.com/profile.png",
+    });
     embed.setTitle(`${character.name}'s Inventory!`);
-    embed.setAuthor(interaction.user.tag, interaction.user.displayAvatarURL());
+    embed.setAuthor({
+      name: interaction.user.tag,
+      iconURL: interaction.user.displayAvatarURL(),
+    });
     embed.setDescription(
       "These are the items you currently have in your inventory."
     );
-    embed.addField("Equippable Items", equippableString);
-    embed.addField("Consumable Items", consumableString);
-    embed.addField("Sellable Items", sellableString);
-    embed.addField(
-      "Backpack Slots",
-      `${equippable.length + consumable.length + sellable.length} / ${
-        character.inventory.backpack
-      }`,
-      true
-    );
-    embed.addField("Gold", `${character.inventory.gold}`, true);
+    embed.addFields([
+      {
+        name: "Equippable Items",
+        value: equippableString,
+      },
+      {
+        name: "Consumable Items",
+        value: consumableString,
+      },
+      {
+        name: "Sellable Items",
+        value: sellableString,
+      },
+      {
+        name: "Backpack Slots",
+        value: `${equippable.length + consumable.length + sellable.length} / ${
+          character.inventory.backpack
+        }`,
+        inline: true,
+      },
+      {
+        name: "Gold",
+        value: String(character.inventory.gold),
+        inline: true,
+      },
+    ]);
 
     await interaction.editReply({ embeds: [embed] });
   } catch (error) {

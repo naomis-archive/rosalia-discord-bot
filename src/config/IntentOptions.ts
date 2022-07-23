@@ -1,3 +1,3 @@
-import { IntentsString } from "discord.js";
+import { GatewayIntentBits } from "discord.js";
 
-export const IntentOptions: IntentsString[] = ["GUILDS"];
+export const IntentOptions = [GatewayIntentBits.Guilds];

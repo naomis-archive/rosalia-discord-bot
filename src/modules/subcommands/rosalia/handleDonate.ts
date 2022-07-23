@@ -1,5 +1,10 @@
 /* eslint-disable jsdoc/require-param */
-import { MessageActionRow, MessageButton, MessageEmbed } from "discord.js";
+import {
+  ActionRowBuilder,
+  ButtonBuilder,
+  ButtonStyle,
+  EmbedBuilder,
+} from "discord.js";
 
 import { CommandHandler } from "../../../interfaces/CommandHandler";
 import { errorEmbedGenerator } from "../../../utils/errorEmbedGenerator";
@@ -10,26 +15,26 @@ import { rosaErrorHandler } from "../../../utils/rosaErrorHandler";
  */
 export const handleDonate: CommandHandler = async (Rosa, interaction) => {
   try {
-    const donateEmbed = new MessageEmbed();
+    const donateEmbed = new EmbedBuilder();
     donateEmbed.setTitle("Sponsor my Development!");
     donateEmbed.setDescription(
       "It would mean so much to me if you would help sponsor my development. Your kind donations would mean nhcarrigan could continue building new features, maintaining the server I live on, and so much more! Check the buttons below for ways you can donate!"
     );
 
-    const githubButton = new MessageButton()
+    const githubButton = new ButtonBuilder()
       .setLabel("Donate on GitHub!")
-      .setStyle("LINK")
+      .setStyle(ButtonStyle.Link)
       .setURL("https://github.com/sponsors/nhcarrigan");
-    const patreonButton = new MessageButton()
+    const patreonButton = new ButtonBuilder()
       .setLabel("Donate on Patreon!")
-      .setStyle("LINK")
+      .setStyle(ButtonStyle.Link)
       .setURL("https://www.patreon.com/nhcarrigan");
-    const paypalButton = new MessageButton()
+    const paypalButton = new ButtonBuilder()
       .setLabel("Donate on Paypal!")
-      .setStyle("LINK")
+      .setStyle(ButtonStyle.Link)
       .setURL("https://paypal.me/nhcarrigan");
 
-    const row = new MessageActionRow().addComponents([
+    const row = new ActionRowBuilder<ButtonBuilder>().addComponents([
       githubButton,
       patreonButton,
       paypalButton,

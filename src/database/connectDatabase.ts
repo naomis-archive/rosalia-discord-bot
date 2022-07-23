@@ -1,4 +1,4 @@
-import { MessageEmbed } from "discord.js";
+import { EmbedBuilder } from "discord.js";
 import { connect } from "mongoose";
 
 import { RosaliaNightsong } from "../interfaces/RosaliaNightsong";
@@ -15,7 +15,7 @@ export const connectDatabase = async (
   try {
     await connect(Rosa.configs.mongo);
 
-    const embed = new MessageEmbed();
+    const embed = new EmbedBuilder();
     embed.setTitle("Database Connected!");
     embed.setDescription("Rosalia has prepared the adventurer logs.");
 

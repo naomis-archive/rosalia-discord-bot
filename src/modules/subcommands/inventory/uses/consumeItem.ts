@@ -1,4 +1,4 @@
-import { MessageEmbed } from "discord.js";
+import { EmbedBuilder } from "discord.js";
 
 import { Character } from "../../../../interfaces/game/Character";
 import { Consumable } from "../../../../interfaces/game/Consumable";
@@ -12,13 +12,13 @@ import { rosaErrorHandler } from "../../../../utils/rosaErrorHandler";
  * @param {RosaliaNightsong} Rosa Rosalia's Discord instance.
  * @param {Consumable} item The item to consume.
  * @param {Character} character The character consuming the item.
- * @returns {MessageEmbed} An embed with the stats after consuming the item.
+ * @returns {EmbedBuilder} An embed with the stats after consuming the item.
  */
 export const consumeItem = async (
   Rosa: RosaliaNightsong,
   item: Consumable,
   character: Character
-): Promise<MessageEmbed> => {
+): Promise<EmbedBuilder> => {
   try {
     const index = character.inventory.consumable.findIndex(
       (el) => el === item.name
@@ -32,17 +32,31 @@ export const consumeItem = async (
     character.markModified("inventory");
     await character.save();
 
-    const embed = new MessageEmbed();
+    const embed = new EmbedBuilder();
     embed.setTitle(`Consumed ${item.name}`);
-    embed.addField("Attack", character.stats.attack.toString(), true);
-    embed.addField("Defence", character.stats.defence.toString(), true);
-    embed.addField("Magic", character.stats.magic.toString(), true);
-    embed.addField("Health", character.stats.health.toString(), true);
-    embed.addField("Mana", character.stats.mana.toString(), true);
-    embed.setFooter(
-      "Having fun? Donate: https://donate.nhcarrigan.com",
-      "https://cdn.nhcarrigan.com/profile.png"
-    );
+    embed.addFields([
+      {
+        name: "Attack",
+        value: character.stats.attack.toString(),
+        inline: true,
+      },
+      {
+        name: "Defense",
+        value: character.stats.defence.toString(),
+        inline: true,
+      },
+      { name: "Magic", value: character.stats.magic.toString(), inline: true },
+      {
+        name: "Health",
+        value: character.stats.health.toString(),
+        inline: true,
+      },
+      { name: "Mana", value: character.stats.mana.toString(), inline: true },
+    ]);
+    embed.setFooter({
+      text: "Having fun? Donate: https://donate.nhcarrigan.com",
+      iconURL: "https://cdn.nhcarrigan.com/profile.png",
+    });
 
     return embed;
   } catch (error) {

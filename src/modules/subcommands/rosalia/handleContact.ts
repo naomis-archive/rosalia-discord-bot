@@ -1,5 +1,5 @@
 /*eslint-disable jsdoc/require-param */
-import { MessageActionRow, MessageButton } from "discord.js";
+import { ActionRowBuilder, ButtonBuilder, ButtonStyle } from "discord.js";
 
 import { CommandHandler } from "../../../interfaces/CommandHandler";
 import { errorEmbedGenerator } from "../../../utils/errorEmbedGenerator";
@@ -10,20 +10,20 @@ import { rosaErrorHandler } from "../../../utils/rosaErrorHandler";
  */
 export const handleContact: CommandHandler = async (Rosa, interaction) => {
   try {
-    const discordButton = new MessageButton()
-      .setStyle("LINK")
+    const discordButton = new ButtonBuilder()
+      .setStyle(ButtonStyle.Link)
       .setLabel("Join our support server.")
       .setURL("https://chat.nhcarrigan.com");
-    const twitterButton = new MessageButton()
-      .setStyle("LINK")
+    const twitterButton = new ButtonBuilder()
+      .setStyle(ButtonStyle.Link)
       .setLabel("Follow us on Twitter.")
       .setURL("https://twitter.com/RosaNightsong");
-    const githubButton = new MessageButton()
-      .setStyle("LINK")
+    const githubButton = new ButtonBuilder()
+      .setStyle(ButtonStyle.Link)
       .setLabel("Create an issue on GitHub.")
       .setURL("https://github.com/RosaliaNightsong/discord-bot");
 
-    const row = new MessageActionRow().addComponents([
+    const row = new ActionRowBuilder<ButtonBuilder>().addComponents([
       discordButton,
       twitterButton,
       githubButton,

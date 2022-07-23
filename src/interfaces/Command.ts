@@ -2,7 +2,7 @@ import {
   SlashCommandBuilder,
   SlashCommandSubcommandsOnlyBuilder,
 } from "@discordjs/builders";
-import { CommandInteraction } from "discord.js";
+import { ChatInputCommandInteraction } from "discord.js";
 
 import { RosaliaNightsong } from "./RosaliaNightsong";
 
@@ -11,10 +11,10 @@ export interface Command {
   /**
    * Handles the logic for running a given command.
    *
-   * @param {CommandInteraction} interaction The interaction payload from Discord.
+   * @param {ChatInputCommandInteraction} interaction The interaction payload from Discord.
    */
   run: (
     Rosa: RosaliaNightsong,
-    interaction: CommandInteraction
+    interaction: ChatInputCommandInteraction
   ) => Promise<void>;
 }

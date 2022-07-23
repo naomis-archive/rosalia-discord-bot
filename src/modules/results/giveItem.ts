@@ -1,4 +1,4 @@
-import { CommandInteraction, MessageEmbed } from "discord.js";
+import { CommandInteraction, EmbedBuilder } from "discord.js";
 
 import { consumables } from "../../config/data/consumables";
 import { equippables } from "../../config/data/equippables";
@@ -45,16 +45,19 @@ export const giveItem = async (
     ].length;
     const overLimit = inventoryHeld >= inventoryLimit;
 
-    const embed = new MessageEmbed();
+    const embed = new EmbedBuilder();
     embed.setTitle(`${adventure.name} Results!`);
-    embed.setAuthor(interaction.user.tag, interaction.user.displayAvatarURL());
+    embed.setAuthor({
+      name: interaction.user.tag,
+      iconURL: interaction.user.displayAvatarURL(),
+    });
     embed.setDescription(
       `You found a treasure chest! When you open it, inside is a ${randomItem.name}! Unfortunately, your backpack is full and you cannot carry any more items! You return to town empty handed.`
     );
-    embed.setFooter(
-      "Having fun? Donate: https://donate.nhcarrigan.com",
-      "https://cdn.nhcarrigan.com/profile.png"
-    );
+    embed.setFooter({
+      text: "Having fun? Donate: https://donate.nhcarrigan.com",
+      iconURL: "https://cdn.nhcarrigan.com/profile.png",
+    });
 
     if (!overLimit) {
       character.inventory[randomItem.type].push(randomItem.name);

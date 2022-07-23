@@ -1,5 +1,10 @@
 /* eslint-disable jsdoc/require-param */
-import { MessageActionRow, MessageButton, MessageEmbed } from "discord.js";
+import {
+  ActionRowBuilder,
+  ButtonBuilder,
+  ButtonStyle,
+  EmbedBuilder,
+} from "discord.js";
 
 import CharacterModel from "../../../database/models/CharacterModel";
 import { CommandHandler } from "../../../interfaces/CommandHandler";
@@ -14,44 +19,66 @@ export const handleAbout: CommandHandler = async (Rosa, interaction) => {
   try {
     const { guilds, members, commands } = getCounts(Rosa);
     const characterCount = await CharacterModel.countDocuments();
-    const aboutEmbed = new MessageEmbed();
+    const aboutEmbed = new EmbedBuilder();
     aboutEmbed.setTitle("Rosalia Nightsong");
-    aboutEmbed.setAuthor(
-      interaction.user.tag,
-      interaction.user.displayAvatarURL()
-    );
+    aboutEmbed.setAuthor({
+      name: interaction.user.tag,
+      iconURL: interaction.user.displayAvatarURL(),
+    });
     aboutEmbed.setDescription(
       "I am a Discord bot that offers a fun and relaxing RPG game you can play in your servers! I was created by [nhcarrigan](https://www.nhcarrigan.com). You can view my [source code](https://github.com/RosaliaNightsong/discord-bot) or join my [official chat server](https://chat.nhcarrigan.com)!"
     );
-    aboutEmbed.addField("Creation date", "Sunday, 31 May 2020", true);
-    aboutEmbed.addField("Guilds", guilds.toString(), true);
-    aboutEmbed.addField("Members", members.toString(), true);
-    aboutEmbed.addField("Available Commands", commands.toString(), true);
-    aboutEmbed.addField(
-      "Registered Adventurers",
-      characterCount.toLocaleString(),
-      true
-    );
-    aboutEmbed.addField("Favourite Colour", "Green", true);
-    aboutEmbed.setFooter(
-      "Having fun? Donate: https://donate.nhcarrigan.com",
-      "https://cdn.nhcarrigan.com/profile.png"
-    );
+    aboutEmbed.addFields([
+      {
+        name: "Creation Date",
+        value: "Sunday, 31 May 2020",
+        inline: true,
+      },
+      {
+        name: "Guilds",
+        value: guilds.toString(),
+        inline: true,
+      },
+      {
+        name: "Members",
+        value: members.toString(),
+        inline: true,
+      },
+      {
+        name: "Commands",
+        value: commands.toString(),
+        inline: true,
+      },
+      {
+        name: "Registered Adventurers",
+        value: characterCount.toString(),
+        inline: true,
+      },
+      {
+        name: "Favorite Colour",
+        value: "Green",
+        inline: true,
+      },
+    ]);
+    aboutEmbed.setFooter({
+      text: "Having fun? Donate: https://donate.nhcarrigan.com",
+      iconURL: "https://cdn.nhcarrigan.com/profile.png",
+    });
 
-    const supportServerButton = new MessageButton()
+    const supportServerButton = new ButtonBuilder()
       .setLabel("Join the Support Server")
-      .setStyle("LINK")
+      .setStyle(ButtonStyle.Link)
       .setURL("https://chat.nhcarrigan.com");
-    const inviteButton = new MessageButton()
+    const inviteButton = new ButtonBuilder()
       .setLabel("Add Rosalia to your server!")
-      .setStyle("LINK")
+      .setStyle(ButtonStyle.Link)
       .setURL("https://invite.rosalianightsong.com");
-    const codeButton = new MessageButton()
+    const codeButton = new ButtonBuilder()
       .setLabel("View Rosalia's Source Code")
-      .setStyle("LINK")
+      .setStyle(ButtonStyle.Link)
       .setURL("https://github.com/rosalianightsong/discord-bot");
 
-    const row = new MessageActionRow().addComponents([
+    const row = new ActionRowBuilder<ButtonBuilder>().addComponents([
       supportServerButton,
       inviteButton,
       codeButton,

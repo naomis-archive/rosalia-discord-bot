@@ -1,5 +1,5 @@
 /* eslint-disable jsdoc/require-param */
-import { MessageEmbed } from "discord.js";
+import { EmbedBuilder } from "discord.js";
 
 import { CommandHandler } from "../../../interfaces/CommandHandler";
 import { errorEmbedGenerator } from "../../../utils/errorEmbedGenerator";
@@ -16,18 +16,14 @@ export const handlePing: CommandHandler = async (
     const { createdTimestamp } = interaction;
 
     const delay = Date.now() - createdTimestamp;
-    const isSlow = delay > 100;
 
-    const pingEmbed = new MessageEmbed();
+    const pingEmbed = new EmbedBuilder();
     pingEmbed.setTitle("Pong!");
-    pingEmbed.setFooter(
-      isSlow ? "I'm sorry for being slow..." : "Wow! I did it!"
-    );
     pingEmbed.setDescription(`Response time: ${delay}ms`);
-    pingEmbed.setFooter(
-      "Having fun? Donate: https://donate.nhcarrigan.com",
-      "https://cdn.nhcarrigan.com/profile.png"
-    );
+    pingEmbed.setFooter({
+      text: "Having fun? Donate: https://donate.nhcarrigan.com",
+      iconURL: "https://cdn.nhcarrigan.com/profile.png",
+    });
 
     await interaction.editReply({ embeds: [pingEmbed] });
   } catch (err) {

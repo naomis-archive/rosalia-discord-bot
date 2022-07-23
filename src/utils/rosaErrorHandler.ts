@@ -1,6 +1,6 @@
 /* eslint-disable jsdoc/no-undefined-types */
 import * as Sentry from "@sentry/node";
-import { MessageEmbed } from "discord.js";
+import { EmbedBuilder } from "discord.js";
 import { Types } from "mongoose";
 
 import { RosaliaNightsong } from "../interfaces/RosaliaNightsong";
@@ -35,16 +35,20 @@ export const rosaErrorHandler = async (
   Sentry.captureException(err);
 
   const errorId = new Types.ObjectId();
-  const errorEmbed = new MessageEmbed();
+  const errorEmbed = new EmbedBuilder();
   errorEmbed.setTitle(
     `${context} error ${guild ? "in " + guild : "from an unknown source"}.`
   );
-  errorEmbed.setDescription(customSubstring(err.message, 2000));
-  errorEmbed.addField(
-    "Stack Trace:",
-    `\`\`\`\n${customSubstring(err.stack || "null", 1000)}\n\`\`\``
-  );
-  errorEmbed.addField("Error ID", errorId.toHexString());
+  errorEmbed.addFields([
+    {
+      name: "Stack Trace:",
+      value: `\`\`\`\n${customSubstring(err.stack || "null", 1000)}\n\`\`\``,
+    },
+    {
+      name: "Error ID:",
+      value: errorId.toHexString(),
+    },
+  ]);
   errorEmbed.setTimestamp();
 
   await Rosa.webhook.send({ embeds: [errorEmbed] });

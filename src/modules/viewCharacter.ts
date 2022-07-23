@@ -1,4 +1,4 @@
-import { MessageEmbed } from "discord.js";
+import { EmbedBuilder } from "discord.js";
 
 import { Character } from "../interfaces/game/Character";
 
@@ -6,22 +6,24 @@ import { Character } from "../interfaces/game/Character";
  * Generates a message embed to display the information for a character.
  *
  * @param {Character} character The character to display information for.
- * @returns {MessageEmbed} The generated embed.
+ * @returns {EmbedBuilder} The generated embed.
  */
-export const viewCharacter = (character: Character): MessageEmbed => {
+export const viewCharacter = (character: Character): EmbedBuilder => {
   const { name, description, race, gender, stats } = character;
-  const embed = new MessageEmbed();
+  const embed = new EmbedBuilder();
   embed.setTitle(`${name}, the ${gender} ${race}`);
   embed.setDescription(description);
-  embed.addField("Attack", stats.attack.toString(), true);
-  embed.addField("Defence", stats.defence.toString(), true);
-  embed.addField("Magic", stats.magic.toString(), true);
-  embed.addField("Health", stats.health.toString(), true);
-  embed.addField("Mana", stats.mana.toString(), true);
-  embed.setFooter(
-    "Having fun? Donate: https://donate.nhcarrigan.com",
-    "https://cdn.nhcarrigan.com/profile.png"
-  );
+  embed.addFields([
+    { name: "Attack", value: stats.attack.toString(), inline: true },
+    { name: "Defence", value: stats.defence.toString(), inline: true },
+    { name: "Magic", value: stats.magic.toString(), inline: true },
+    { name: "Health", value: stats.health.toString(), inline: true },
+    { name: "Mana", value: stats.mana.toString(), inline: true },
+  ]);
+  embed.setFooter({
+    text: "Having fun? Donate: https://donate.nhcarrigan.com",
+    iconURL: "https://cdn.nhcarrigan.com/profile.png",
+  });
 
   return embed;
 };
