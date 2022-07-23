@@ -1,5 +1,3 @@
-export const updateList = [
-  "- Patched an error in the `/rosalia about` command.",
-];
+export const updateList = ["- Migrated to `discord.js` version 14"];
 
-export const nextUpdate = "<t:1651935600:F>";
+export const nextUpdate = "<t:1659200400:F>";
