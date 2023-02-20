@@ -55,7 +55,7 @@ export const giveItem = async (
       `You found a treasure chest! When you open it, inside is a ${randomItem.name}! Unfortunately, your backpack is full and you cannot carry any more items! You return to town empty handed.`
     );
     embed.setFooter({
-      text: "Having fun? Donate: https://donate.nhcarrigan.com",
+      text: "Join our server: https://discord.gg/nhcarrigan",
       iconURL: "https://cdn.nhcarrigan.com/profile.png",
     });
 

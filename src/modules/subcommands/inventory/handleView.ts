@@ -36,7 +36,7 @@ export const handleView: CommandHandler = async (Rosa, interaction) => {
 
     const embed = new EmbedBuilder();
     embed.setFooter({
-      text: "Having fun? Donate: https://donate.nhcarrigan.com",
+      text: "Join our server: https://discord.gg/nhcarrigan",
       iconURL: "https://cdn.nhcarrigan.com/profile.png",
     });
     embed.setTitle(`${character.name}'s Inventory!`);

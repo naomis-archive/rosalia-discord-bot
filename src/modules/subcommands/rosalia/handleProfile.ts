@@ -21,7 +21,7 @@ export const handleProfile: CommandHandler = async (Rosa, interaction) => {
       "Hi there! I'm Rosalia Nightsong! I'm a character created by nhcarrigan! You can read more about who I am by [visiting my profile](https://www.rosalianightsong.com?utm_source=discord&utm_medium=profile-command)!"
     );
     profileEmbed.setFooter({
-      text: "Having fun? Donate: https://donate.nhcarrigan.com",
+      text: "Join our server: https://discord.gg/nhcarrigan",
       iconURL: "https://cdn.nhcarrigan.com/profile.png",
     });
 

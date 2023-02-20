@@ -82,7 +82,7 @@ export const handleBattle = async (
       { name: "\u200b", value: "\u200b", inline: true },
     ]);
     initialEmbed.setFooter({
-      text: "Having fun? Donate: https://donate.nhcarrigan.com",
+      text: "Join our server: https://discord.gg/nhcarrigan",
       iconURL: "https://cdn.nhcarrigan.com/profile.png",
     });
 
@@ -227,7 +227,7 @@ export const handleBattle = async (
         { name: "\u200b", value: "\u200b", inline: true },
       ]);
       resultEmbed.setFooter({
-        text: "Having fun? Donate: https://donate.nhcarrigan.com",
+        text: "Join our server: https://discord.gg/nhcarrigan",
         iconURL: "https://cdn.nhcarrigan.com/profile.png",
       });
 

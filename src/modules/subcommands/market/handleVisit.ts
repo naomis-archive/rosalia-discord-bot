@@ -32,7 +32,7 @@ export const handleVisit: CommandHandler = async (Rosa, interaction) => {
 
     const marketEmbed = new EmbedBuilder();
     marketEmbed.setFooter({
-      text: "Having fun? Donate: https://donate.nhcarrigan.com",
+      text: "Join our server: https://discord.gg/nhcarrigan",
       iconURL: "https://cdn.nhcarrigan.com/profile.png",
     });
     marketEmbed.setTitle(shoppe.name);

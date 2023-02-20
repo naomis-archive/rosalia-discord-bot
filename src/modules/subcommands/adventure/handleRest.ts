@@ -72,7 +72,7 @@ export const handleRest: CommandHandler = async (Rosa, interaction) => {
       `Your rest was ${room}. You recovered ${healthGain} health and ${manaGain} mana.`
     );
     restEmbed.setFooter({
-      text: "Having fun? Donate: https://donate.nhcarrigan.com",
+      text: "Join our server: https://discord.gg/nhcarrigan",
       iconURL: "https://cdn.nhcarrigan.com/profile.png",
     });
 

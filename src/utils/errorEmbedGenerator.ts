@@ -42,7 +42,7 @@ export const errorEmbedGenerator = (
   ]);
 
   errorEmbed.setFooter({
-    text: "Having fun? Donate: https://donate.nhcarrigan.com",
+    text: "Join our server: https://discord.gg/nhcarrigan",
     iconURL: "https://cdn.nhcarrigan.com/profile.png",
   });
   errorEmbed.setTimestamp();

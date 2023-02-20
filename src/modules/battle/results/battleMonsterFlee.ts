@@ -40,7 +40,7 @@ export const battleMonsterFlee = async (
       `The ${monster.name} ran away! You return to town feeling a bit disappointed.`
     );
     resultEmbed.setFooter({
-      text: "Having fun? Donate: https://donate.nhcarrigan.com",
+      text: "Join our server: https://discord.gg/nhcarrigan",
       iconURL: "https://cdn.nhcarrigan.com/profile.png",
     });
 
