@@ -37,7 +37,7 @@ export const battleDefeat = async (
       `You have been defeated by the ${monster.name}. You wake up back in town.`
     );
     resultEmbed.setFooter({
-      text: "Having fun? Donate: https://donate.nhcarrigan.com",
+      text: "Join our server: https://discord.gg/nhcarrigan",
       iconURL: "https://cdn.nhcarrigan.com/profile.png",
     });
 

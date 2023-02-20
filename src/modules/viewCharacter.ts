@@ -21,7 +21,7 @@ export const viewCharacter = (character: Character): EmbedBuilder => {
     { name: "Mana", value: stats.mana.toString(), inline: true },
   ]);
   embed.setFooter({
-    text: "Having fun? Donate: https://donate.nhcarrigan.com",
+    text: "Join our server: https://discord.gg/nhcarrigan",
     iconURL: "https://cdn.nhcarrigan.com/profile.png",
   });
 
