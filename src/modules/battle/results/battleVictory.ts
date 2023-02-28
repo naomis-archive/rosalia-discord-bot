@@ -95,7 +95,7 @@ export const battleVictory = async (
       resultString + "\nYou return to town feeling excited about your conquest."
     );
     resultEmbed.setFooter({
-      text: "Join our server: https://discord.gg/nhcarrigan",
+      text: "Join our server: https://chat.naomi.lgbt",
       iconURL: "https://cdn.nhcarrigan.com/profile.png",
     });
 

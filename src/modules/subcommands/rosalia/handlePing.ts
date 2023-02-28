@@ -21,7 +21,7 @@ export const handlePing: CommandHandler = async (
     pingEmbed.setTitle("Pong!");
     pingEmbed.setDescription(`Response time: ${delay}ms`);
     pingEmbed.setFooter({
-      text: "Join our server: https://discord.gg/nhcarrigan",
+      text: "Join our server: https://chat.naomi.lgbt",
       iconURL: "https://cdn.nhcarrigan.com/profile.png",
     });
 

@@ -32,7 +32,7 @@ export const handleVisit: CommandHandler = async (Rosa, interaction) => {
 
     const marketEmbed = new EmbedBuilder();
     marketEmbed.setFooter({
-      text: "Join our server: https://discord.gg/nhcarrigan",
+      text: "Join our server: https://chat.naomi.lgbt",
       iconURL: "https://cdn.nhcarrigan.com/profile.png",
     });
     marketEmbed.setTitle(shoppe.name);

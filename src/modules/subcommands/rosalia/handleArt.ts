@@ -30,7 +30,7 @@ export const handleArt: CommandHandler = async (Rosa, interaction) => {
       )}`
     );
     artEmbed.setFooter({
-      text: "Join our server: https://discord.gg/nhcarrigan",
+      text: "Join our server: https://chat.naomi.lgbt",
       iconURL: "https://cdn.nhcarrigan.com/profile.png",
     });
 

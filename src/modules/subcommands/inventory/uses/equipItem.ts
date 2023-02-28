@@ -75,7 +75,7 @@ export const equipItem = async (
       { name: "Mana", value: character.stats.mana.toString(), inline: true },
     ]);
     embed.setFooter({
-      text: "Join our server: https://discord.gg/nhcarrigan",
+      text: "Join our server: https://chat.naomi.lgbt",
       iconURL: "https://cdn.nhcarrigan.com/profile.png",
     });
 
