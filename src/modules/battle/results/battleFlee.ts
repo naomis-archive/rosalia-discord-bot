@@ -40,7 +40,7 @@ export const battleFlee = async (
       `You have managed to escape from the ${monster.name}`
     );
     resultEmbed.setFooter({
-      text: "Join our server: https://discord.gg/nhcarrigan",
+      text: "Join our server: https://chat.naomi.lgbt",
       iconURL: "https://cdn.nhcarrigan.com/profile.png",
     });
 

@@ -36,7 +36,7 @@ export const handleUse: CommandHandler = async (Rosa, interaction) => {
 
     const validEmbed = new EmbedBuilder();
     validEmbed.setFooter({
-      text: "Join our server: https://discord.gg/nhcarrigan",
+      text: "Join our server: https://chat.naomi.lgbt",
       iconURL: "https://cdn.nhcarrigan.com/profile.png",
     });
 

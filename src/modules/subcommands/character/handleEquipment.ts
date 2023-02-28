@@ -51,7 +51,7 @@ export const handleEquipment: CommandHandler = async (Rosa, interaction) => {
       },
     ]);
     embed.setFooter({
-      text: "Join our server: https://discord.gg/nhcarrigan",
+      text: "Join our server: https://chat.naomi.lgbt",
       iconURL: "https://cdn.nhcarrigan.com/profile.png",
     });
 
