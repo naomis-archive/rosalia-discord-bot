@@ -71,7 +71,9 @@ export const handleHelp: CommandHandler = async (Rosa, interaction) => {
     const reportButton = new ButtonBuilder()
       .setLabel("Report an Issue")
       .setStyle(ButtonStyle.Link)
-      .setURL("https://github.com/RosaliaNightsong/discord-bot/issues/new/choose");
+      .setURL(
+        "https://github.com/RosaliaNightsong/discord-bot/issues/new/choose"
+      );
 
     const row = new ActionRowBuilder<ButtonBuilder>().addComponents([
       supportServerButton,
