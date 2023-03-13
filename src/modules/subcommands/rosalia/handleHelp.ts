@@ -57,21 +57,21 @@ export const handleHelp: CommandHandler = async (Rosa, interaction) => {
       .setStyle(ButtonStyle.Link)
       .setURL("https://chat.nhcarrigan.com");
     const inviteButton = new ButtonBuilder()
-      .setLabel("Add Becca to your server!")
+      .setLabel("Add Rosalia to your server!")
       .setStyle(ButtonStyle.Link)
-      .setURL("https://invite.beccalyria.com");
+      .setURL("https://invite.rosalianightsong.com");
     const codeButton = new ButtonBuilder()
-      .setLabel("View Becca's Source Code")
+      .setLabel("View Rosalia's Source Code")
       .setStyle(ButtonStyle.Link)
-      .setURL("https://github.com/beccalyria/discord-bot");
+      .setURL("https://github.com/RosaliaNightsong/discord-bot");
     const docsButton = new ButtonBuilder()
       .setLabel("View the Documentation")
       .setStyle(ButtonStyle.Link)
-      .setURL("https://docs.beccalyria.com");
+      .setURL("https://docs.rosalianightsong.com");
     const reportButton = new ButtonBuilder()
       .setLabel("Report an Issue")
       .setStyle(ButtonStyle.Link)
-      .setURL("https://github.com/beccalyria/discord-bot/issues/new/choose");
+      .setURL("https://github.com/RosaliaNightsong/discord-bot/issues/new/choose");
 
     const row = new ActionRowBuilder<ButtonBuilder>().addComponents([
       supportServerButton,
