@@ -1,1 +1,4 @@
-export const updateList = ["- Migrated to `discord.js` version 14"];
+export const updateList = [
+  "- Fixed the incorrect links in the buttons for `/rosalia help`.",
+  "- Tweaked the layout of `/rosalia updates` to no longer show a weekly release.",
+];
