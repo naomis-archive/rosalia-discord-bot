@@ -6,7 +6,7 @@ import {
   EmbedBuilder,
 } from "discord.js";
 
-import { nextUpdate, updateList } from "../../../config/data/updates";
+import { updateList } from "../../../config/data/updates";
 import { CommandHandler } from "../../../interfaces/CommandHandler";
 import { errorEmbedGenerator } from "../../../utils/errorEmbedGenerator";
 import { rosaErrorHandler } from "../../../utils/rosaErrorHandler";
@@ -20,11 +20,8 @@ export const handleUpdates: CommandHandler = async (Rosa, interaction) => {
     const { commitHash: hash } = Rosa;
     const updateEmbed = new EmbedBuilder();
     updateEmbed.setTitle("Update Information");
-    updateEmbed.setDescription(
-      "Rosa's updates are deployed every Saturday around 8AM Pacific Time."
-    );
+    updateEmbed.setDescription(updateList.join("\n"));
     updateEmbed.addFields([
-      { name: "Latest Updates", value: updateList.join("\n") },
       {
         name: "Current Version",
         value: process.env.npm_package_version || "0.0.0",
@@ -40,10 +37,6 @@ export const handleUpdates: CommandHandler = async (Rosa, interaction) => {
           0,
           7
         )}](https://github.com/rosalianightsong/discord-bot/commit/${hash})`,
-      },
-      {
-        name: "Next Update",
-        value: nextUpdate,
       },
     ]);
     updateEmbed.setFooter({
