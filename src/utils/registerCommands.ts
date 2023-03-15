@@ -1,8 +1,8 @@
-import { REST } from "@discordjs/rest";
 import {
   Routes,
   RESTPostAPIApplicationCommandsJSONBody,
 } from "discord-api-types/v10";
+import { REST } from "discord.js";
 
 import { RosaliaNightsong } from "../interfaces/RosaliaNightsong";
 
