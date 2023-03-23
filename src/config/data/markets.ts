@@ -1,4 +1,4 @@
-import { APIApplicationCommandOptionChoice } from "discord-api-types/v10";
+import { APIApplicationCommandOptionChoice } from "discord.js";
 
 import { Market } from "../../interfaces/game/Market";
 
