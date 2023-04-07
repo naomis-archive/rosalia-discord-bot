@@ -14,10 +14,10 @@ export const handleContact: CommandHandler = async (Rosa, interaction) => {
       .setStyle(ButtonStyle.Link)
       .setLabel("Join our support server.")
       .setURL("https://chat.nhcarrigan.com");
-    const twitterButton = new ButtonBuilder()
+    const mastodonButton = new ButtonBuilder()
       .setStyle(ButtonStyle.Link)
-      .setLabel("Follow us on Twitter.")
-      .setURL("https://twitter.com/RosaNightsong");
+      .setLabel("Follow us on Mastodon.")
+      .setURL("https://mastodon.naomi.lgbt/@rosalia");
     const githubButton = new ButtonBuilder()
       .setStyle(ButtonStyle.Link)
       .setLabel("Create an issue on GitHub.")
@@ -25,7 +25,7 @@ export const handleContact: CommandHandler = async (Rosa, interaction) => {
 
     const row = new ActionRowBuilder<ButtonBuilder>().addComponents([
       discordButton,
-      twitterButton,
+      mastodonButton,
       githubButton,
     ]);
     await interaction.editReply({
