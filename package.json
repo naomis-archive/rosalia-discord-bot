@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/nhcarrigan/rosalia-nightsong#readme",
   "devDependencies": {
-    "@nhcarrigan/eslint-config": "1.1.0",
+    "@nhcarrigan/eslint-config": "1.1.1",
     "@nhcarrigan/prettier-config": "1.0.0",
     "@nhcarrigan/typescript-config": "1.0.0",
     "@types/chai": "4.3.4",
