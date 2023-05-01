@@ -24,10 +24,7 @@ export const handleArt: CommandHandler = async (Rosa, interaction) => {
       `This portrait of me was done by [${art.artist}](${art.artistUrl})`
     );
     artEmbed.setImage(
-      `https://www.rosalianightsong.com/assets/art/${art.fileName.replace(
-        /\s/g,
-        "%20"
-      )}`
+      `https://cdn.naomi.lgbt/rosalia/art/${art.fileName.replace(/\s/g, "%20")}`
     );
     artEmbed.setFooter({
       text: "Join our server: https://chat.naomi.lgbt",
