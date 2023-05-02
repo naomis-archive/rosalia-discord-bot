@@ -1,4 +1,3 @@
-/* eslint-disable jsdoc/require-param */
 import { EmbedBuilder } from "discord.js";
 
 import { CommandHandler } from "../../../interfaces/CommandHandler";

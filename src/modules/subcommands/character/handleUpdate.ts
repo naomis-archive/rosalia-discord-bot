@@ -1,4 +1,3 @@
-/* eslint-disable jsdoc/require-param */
 import CharacterModel from "../../../database/models/CharacterModel";
 import { CommandHandler } from "../../../interfaces/CommandHandler";
 import { errorEmbedGenerator } from "../../../utils/errorEmbedGenerator";

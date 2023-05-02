@@ -1,4 +1,3 @@
-/* eslint-disable jsdoc/require-param */
 import {
   ActionRowBuilder,
   ButtonBuilder,

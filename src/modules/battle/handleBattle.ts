@@ -92,7 +92,6 @@ export const handleBattle = async (
     })) as Message;
 
     const collector = response.createMessageComponentCollector({
-      // eslint-disable-next-line jsdoc/require-jsdoc
       filter: (click) => click.user.id === interaction.user.id,
     });
 
