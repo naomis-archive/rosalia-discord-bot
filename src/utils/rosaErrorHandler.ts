@@ -1,4 +1,3 @@
-/* eslint-disable jsdoc/no-undefined-types */
 import * as Sentry from "@sentry/node";
 import { EmbedBuilder } from "discord.js";
 import { Types } from "mongoose";

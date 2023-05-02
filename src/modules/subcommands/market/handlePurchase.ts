@@ -1,4 +1,3 @@
-/* eslint-disable jsdoc/require-param */
 import { consumables } from "../../../config/data/consumables";
 import { equippables } from "../../../config/data/equippables";
 import { purchasableItems } from "../../../config/data/markets";

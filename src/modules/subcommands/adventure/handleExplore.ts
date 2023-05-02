@@ -1,4 +1,3 @@
-/* eslint-disable jsdoc/require-param */
 import { explorations } from "../../../config/data/adventures";
 import { monsters } from "../../../config/data/monsters";
 import CharacterModel from "../../../database/models/CharacterModel";

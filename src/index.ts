@@ -40,8 +40,7 @@ Sentry.init({
   await createServer(Rosa);
 
   rosaLogHandler.log("debug", "Loading commands...");
-  // eslint-disable-next-line require-atomic-updates
-  Rosa.commands = await loadCommands(Rosa);
+  await loadCommands(Rosa);
   await registerCommands(Rosa);
 
   Rosa.on("ready", async () => await onReady(Rosa));
